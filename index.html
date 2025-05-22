@@ -56,9 +56,11 @@
     <!-- Menu principal -->
     <nav id="menu-principal" class="navbar navbar-expand-lg bg-light menu-principal">
         <div class="container-fluid mx-3">
-            <a class="navbar-brand" id="amaweb" href="/">
-                <img class="brand-hover" src="img/navbar-logo-horizontal.svg" alt="Logo AMAWeb">
-            </a>
+            <h1 style="font-size: 1.75rem !important;">
+                <a class="navbar-brand" id="amaweb" href="/">
+                    <img class="brand-hover" src="img/navbar-logo-horizontal.svg" alt="Logo AMAWeb">
+                </a>
+            </h1>
             <div id="navbarNav">
                 <ul class="nav navbar-nav gap-1">
                     <li class="nav-item dropdown">
@@ -70,6 +72,7 @@
                             <li><a class="dropdown-item" href="/avaliador">Avaliador</a></li>
                             <li><a class="dropdown-item" href="/manual">Manual</a></li>
                             <li><a class="dropdown-item" href="/observatorio">Observatório</a></li>
+                            <li><a class="dropdown-item" href="/checklist">Checklist</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -78,253 +81,22 @@
     </nav>
 
     <!-- Conteúdo principal -->
-    <div id="conteudo-principal">
-        <div class="container p-lg-5" id="main">
-            <div class="row d-none d-lg-flex align-items-center pt-5">
-                <div class="col-md-6">
-                    <h1 class="display-4 mb-3 fw-medium"><strong>Tornando a web acessível para todos</strong></h1>
-                    <p class="page-header-ui-text mb-5 pe-5">Bem-vindo ao <strong>AMAWeb - Avaliação e Monitoramento de Acessibilidade na Web</strong>, uma plataforma robusta para tornar websites mais acessíveis de acordo com as diretrizes WCAG.</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img class="" width="90%" src="img/header-mockup.png" alt="">
-                </div>
-            </div>
-            <div class="d-lg-none pt-5">
-                <div class="text-center">
-                    <h1 class="display-4 mb-3 fw-medium"><strong>Tornando a web acessível para todos</strong></h1>
-                    <p class="page-header-ui-text mb-5">Bem-vindo ao <strong>AMAWeb - Avaliação e Monitoramento de Acessibilidade na Web</strong>, uma plataforma robusta para tornar websites mais acessíveis de acordo com as diretrizes WCAG.</p>
-                </div>
-                <div class="text-center">
-                    <img class="img-fluid" width="" src="img/header-mockup.png" alt="">
-                </div>
-            </div>
-        </div>
-        <img class="curve d-block" src="./img/header-vector.png" alt="">
-    </div>
-
-    <!-- Sobre -->
-    <!-- <div class="container p-lg-5" id="sobre">
-        <h2 class="fw-bold mb-4">Conheça o AMAWeb</h2>
-        <p>O AMAWeb foi concebido com a missão de promover a acessibilidade digital, facilitando a aplicação das normas WCAG em websites de todo o mundo. Combinando a expertise da UNIFESP e do Centro Tecnológico de Acessibilidade, em colaboração com o Ministério Público Federal, oferecemos uma solução robusta e gratuita para tornar a web um lugar melhor para todos.</p>
-    </div> -->
-
-    <!-- Ferramentas -->
-    <div id="ferramentas">
-        <div class="container p-lg-5 py-5">
-            <div class="row text-center d-none d-lg-block">
-                <h2 class="fw-bold mb-4">Ferramentas essenciais para acessibilidade</h2>
-                <p class="col-lg-7 mx-auto mb-5">O AMAWeb foi concebido com a missão de promover a acessibilidade digital, facilitando a aplicação das normas WCAG, sua avaliação e monitoramento. Nossas ferramentas <strong>estão em construção</strong>, mas já é possível conhecê-las nos links a seguir.</p>
-            </div>
-            <div class="text-left d-lg-none">
-                <h2 class="fw-bold mb-4">Ferramentas essenciais para acessibilidade</h2>
-                <p>O AMAWeb foi concebido com a missão de promover a acessibilidade digital, facilitando a aplicação das normas WCAG, sua avaliação e monitoramento. Nossas ferramentas <strong>estão em construção</strong>, mas já é possível conhecê-las nos links a seguir.</p>
-            </div>
-            <div class="row g-4 justify-content-around">
-                <div class="col-sm-6 col-lg-4">
-                    <a href="/avaliador" class="text-decoration-none">
-                        <div class="card base__ferramentas_card h-100 custom-card bg-white">
-                            <img src="img/tool-avaliador.png" class="card-img-top rounded img-fluid" alt="">
-                            <div class="card-body text-left px-4">
-                                <h3 class="card-title mt-3"><strong>Avaliador</strong></h3>
-                                <p class="card-text d-lg-block ">Nossa poderosa ferramenta de avaliação varre o código de qualquer website para identificar e sugerir melhorias de acessibilidade com base nas normas WCAG.</p>
-                            </div>
-                            <div class="card-link px-4 pb-2">
-                                <p class="fw-medium">Avalie seu site -></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            
-                <div class="col-sm-6 col-lg-4">
-                    <a href="/manual" class="text-decoration-none">
-                        <div class="card base__ferramentas_card h-100 custom-card bg-white">
-                            <img src="img/tool-manual.png" class="card-img-top rounded img-fluid" alt="">
-                            <div class="card-body text-left px-4">
-                                <h3 class="card-title mt-3"><strong>Manual</strong></h3>
-                                <p class="card-text d-lg-block">Nosso manual simplifica a complexidade das normas WCAG, organizando-as de forma intuitiva e didática para ajudar na implementação das melhores práticas de acessibilidade.</p>
-                            </div>
-                            <div class="card-link px-4 pb-2">
-                                <p class="fw-medium">Confira o manual -></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            
-                <div class="col-sm-6 col-lg-4">
-                    <a href="/observatorio" class="text-decoration-none">
-                        <div class="card base__ferramentas_card h-100 custom-card bg-white">
-                            <img src="img/tool-observatorio.png" class="card-img-top rounded img-fluid" alt="">
-                            <div class="card-body text-left px-4">
-                                <h3 class="card-title mt-3"><strong>Observatório</strong></h3>
-                                <p class="card-text d-lg-block">O Observatório oferece uma visão geral dos websites avaliados pela nossa plataforma. Explore listas e dados detalhados sobre avaliações anteriores, os principais problemas encontrados e muito mais.</p>
-                            </div>
-                            <div class="card-link px-4 pb-2">
-                                <p class="fw-medium">Explore o observatório -></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div> 
-
-    <!-- Equipe -->
-    <div id="equipe" class="container px-lg-5 pt-5">
-        <div class="text-center d-none d-lg-block">
-            <h2 class="fw-bold mb-4">Nossa equipe</h2>
-            <p class="col-lg-7 mx-auto mb-5">O AMAWeb surgiu de uma parceria entre a UNIFESP e o Centro Tecnológico de Acessibilidade do IFRS, com apoio do Ministério Público Federal.</p>
-        </div>
-        <div class="text-left d-lg-none">
-            <h2 class="fw-bold mb-4">Nossa equipe</h2>
-            <p>O AMAWeb surgiu de uma parceria entre a UNIFESP e o Centro Tecnológico de Acessibilidade do IFRS, com apoio do Ministério Público Federal.</p>
-        </div>
-        <div class="row justify-content-around">
-            <!-- Card 1 -->
-            <div class="col-6 col-lg-4">
-                <a class="text-decoration-none" href="http://lattes.cnpq.br/3705063712805065">
-                    <div class="card mb-4 text-center shadow-sm custom-bg">
-                        <img src="./img/team-member-Tiago.png" class="card-img-top rounded-circle mx-auto mt-3 d-block" alt="Foto do rosto de Tiago, homem com barba e cabelo castanho escuro">
-                        <div class="card-body">
-                            <h3 class="nome h6 text-uppercase fw-bold text-nowrap text-truncate">Tiago Silva da Silva</h3>
-                            <small class="d-block text-nowrap text-truncate">Coordenador</small>
-                            <small class="d-block text-nowrap text-truncate">UNIFESP</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Card 2 -->
-            <div class="col-6 col-lg-4">
-                <a class="text-decoration-none" href="http://lattes.cnpq.br/9561380141568454">
-                    <div class="card mb-4 text-center shadow-sm">
-                        <img src="./img/team-member-Bruna.png" class="card-img-top rounded-circle mx-auto mt-3 d-block" alt="Foto do rosto de Bruna, mulher com cabelo e olhos castanhos">
-                        <div class="card-body">
-                            <h3 class="nome h6 text-uppercase fw-bold text-nowrap text-truncate">Bruna Poletto Salton</h3>
-                            <small class="d-block text-nowrap text-truncate">Vice-coordenadora</small>
-                            <small class="d-block text-nowrap text-truncate">CTA - IFRS</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Card 3 -->
-            <div class="col-6 col-lg-4">
-                <a class="text-decoration-none" href="http://lattes.cnpq.br/3482578273143669">
-                    <div class="card mb-4 text-center shadow-sm">
-                        <img src="./img/team-member-Felipe.png" class="card-img-top rounded-circle mx-auto mt-3 d-block" alt="Foto do rosto de Felipe, homem com barba volumosa e cabelo curto, ambos castanhos">
-                        <div class="card-body">
-                            <h3 class="nome h6 text-uppercase fw-bold text-nowrap text-truncate">Felipe Dias da Silveira</h3>
-                            <small class="d-block text-nowrap text-truncate">Desenvolvedor</small>
-                            <small class="d-block text-nowrap text-truncate">UNIFESP</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Card 4 -->
-            <div class="col-6 col-lg-4">
-                <a class="text-decoration-none" href="http://lattes.cnpq.br/4772239532005681">
-                    <div class="card mb-4 text-center shadow-sm">
-                        <img src="./img/team-member-Lael.png" class="card-img-top rounded-circle mx-auto mt-3 d-block" alt="Foto do rosto de Lael, homem sem barba com cabelo curto cacheado castanho claro">
-                        <div class="card-body">
-                            <h3 class="nome h6 text-uppercase fw-bold text-nowrap text-truncate">Lael Nervis</h3>
-                            <small class="d-block text-nowrap text-truncate">Desenvolvedor</small>
-                            <small class="d-block text-nowrap text-truncate">CTA - IFRS</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Card 5 -->
-            <div class="col-6 col-lg-4">
-                <a class="text-decoration-none" href="http://lattes.cnpq.br/2704793719750603">
-                    <div class="card mb-4 text-center shadow-sm">
-                        <img src="./img/team-member-Gustavo.png" class="card-img-top rounded-circle mx-auto mt-3 d-block" alt="Foto do rosto de Gustavo, homem sem barba com cabelo castanho comprido até os ombros">
-                        <div class="card-body">
-                            <h3 class="nome h6 text-uppercase fw-bold text-nowrap text-truncate">Gustavo Collaço</h3>
-                            <small class="d-block text-nowrap text-truncate">Desenvolvedor</small>
-                            <small class="d-block text-nowrap text-truncate">UNIFESP</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Card 6 -->
-            <div class="col-6 col-lg-4">
-                <a class="text-decoration-none" href="http://lattes.cnpq.br/6702103619013812">
-                    <div class="card mb-4 text-center shadow-sm">
-                        <img src="./img/team-member-Cristian.png" class="card-img-top rounded-circle mx-auto mt-3 d-block" alt="Foto do rosto de Crístian, homem loiro com cabelo curto e barba">
-                        <div class="card-body">
-                            <h3 class="nome h6 text-uppercase fw-bold text-nowrap text-truncate">Crístian Gusberti</h3>
-                            <small class="d-block text-nowrap text-truncate">Desenvolvedor</small>
-                            <small class="d-block text-nowrap text-truncate">CTA - IFRS</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Card 7 -->
-            <div class="col-6 col-lg-4">
-                <a class="text-decoration-none" href="http://lattes.cnpq.br/2319650783216533">
-                    <div class="card mb-4 text-center shadow-sm">
-                        <img src="./img/team-member-Gabriel.png" class="card-img-top rounded-circle mx-auto mt-3 d-block" alt="Foto do rosto de Gabriel, homem com barba e cabelo curto loiro">
-                        <div class="card-body">
-                            <h3 class="nome h6 text-uppercase fw-bold text-nowrap text-truncate">Gabriel Belchior Campanile</h3>
-                            <small class="d-block text-nowrap text-truncate">Desenvolvedor</small>
-                            <small class="d-block text-nowrap text-truncate">UNIFESP</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Card 8 -->
-            <div class="col-6 col-lg-4">
-                <a class="text-decoration-none" href="http://lattes.cnpq.br/4565610982057550">
-                    <div class="card mb-4 text-center shadow-sm">
-                        <img src="./img/team-member-Joao.png" class="card-img-top rounded-circle mx-auto mt-3 d-block" alt="Foto do rosto de João, homem sem barba com cabelo castanho liso e curto que usa óculos de grau">
-                        <div class="card-body">
-                            <h3 class="h6 text-uppercase fw-bold text-nowrap text-truncate">João Vitor Mancio Chaves</h3>
-                            <small class="d-block text-nowrap text-truncate">Desenvolvedor</small>
-                            <small class="d-block text-nowrap text-truncate">UNIFESP</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- Card 9 -->
-            <div class="col-6 col-lg-4">
-                <a class="text-decoration-none" href="http://lattes.cnpq.br/8564844746819651">
-                    <div class="card mb-4 text-center shadow-sm">
-                        <img src="./img/team-member-Andre.png" class="card-img-top rounded-circle mx-auto mt-3 d-block" alt="Foto do rosto de André, homem sem barba com cabelo castanho e curto">
-                        <div class="card-body">
-                            <h3 class="h6 text-uppercase fw-bold text-nowrap text-truncate">André Pimenta Freire</h3>
-                            <small class="d-block text-nowrap text-truncate">Colaborador</small>
-                            <small class="d-block text-nowrap text-truncate">UFLA</small>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contribua -->
-    <div class="container px-lg-5 pt-4">
-        <div class="row p-lg-5 d-none d-lg-flex" id="contribua-lg">
-            <div class="col-lg-6 m-lg-auto">
-                <img class="img-fluid" src="img/contribute-img.png" alt="">
-            </div>
-            <div class="col-lg-6 my-lg-auto my-lg-5">
-                <h2 class="fw-bold mb-4">Contribua com o AMAWeb e ajude a tornar a web mais acessível</h2>
-                <p class="">Entre em contato conosco para mais informações e oportunidades de colaboração.</p>
-                <div class="d-flex">
-                    <a href="mailto:amaweb@unifesp.br" class="btn button_secondary text-primary flex-grow-1 p-2"><i class="bi bi-envelope-fill"> </i> Entre em contato</a>      
-                </div>
-            </div>
-        </div>
-        <div class="row m-1 px-1 py-4 d-lg-none" id="contribua-lg-none">
-            <div class="mb-5">
-                <img class="img-fluid" src="img/contribute-img.png" alt="">
-            </div>
-            <div class="text-center">
-                <h2 class="h4 fw-bold mb-4">Contribua com o AMAWeb e ajude a tornar a web mais acessível</h2>
-                <p class="">Entre em contato conosco para mais informações e oportunidades de colaboração.</p>
-                <div class="d-flex">
-                    <a href="mailto:amaweb@unifesp.br" class="btn button_secondary text-primary flex-grow-1 p-2"><i class="bi bi-envelope-fill"> </i> Entre em contato</a>      
-                </div>
-            </div>
-        </div>
+    <div id="">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <h2>Checklist</h2>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
     </div>
 
     <!-- Footer -->
