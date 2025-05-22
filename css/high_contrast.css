@@ -1,0 +1,144 @@
+/* ------------------ */
+/*   ALTO CONTRASTE   */
+/* ------------------ */
+
+.alto-contraste,
+.alto-contraste a,
+.alto-contraste button,
+.alto-contraste footer,
+.alto-contraste nav,
+.alto-contraste p {
+    color: #ffffff !important;
+    background-color: #000000 !important;
+}
+
+.alto-contraste .btn.button_secondary {
+    background: #111111 !important;
+    color: #ffffff !important;
+}
+
+.alto-contraste #ferramentas {
+    background-color: #000000 !important;
+}
+
+.alto-contraste #conteudo-principal,
+.alto-contraste #contribua-lg,
+.alto-contraste #contribua-lg-none {
+    background-image: url();
+    background-color: #000000 !important;
+}
+
+.alto-contraste #manuals,
+.alto-contraste #manuals p,
+.alto-contraste #contribute,
+.alto-contraste #contribute p,
+.alto-contraste #footer,
+.alto-contraste #footer p,
+.alto-contraste #footer a,
+.alto-contraste #developed-by {
+    color: #ffffff !important;
+    background-color: #111111 !important;
+}
+
+.alto-contraste nav {
+    border-bottom: 1px solid #ffffff;
+}
+
+.alto-contraste .barra-acessibilidade a:hover,
+.alto-contraste .barra-acessibilidade a:focus {
+    color: #ffffff !important;
+}
+
+.alto-contraste footer {
+    border-top: 1px solid #ffffff;
+}
+
+.alto-contraste nav a {
+    border-color: #ffffff;
+    margin: 0 2px;
+}
+
+.alto-contraste .btn,
+.alto-contraste .btn-primary,
+.alto-contraste .btn-dark,
+.alto-contraste span.badge,
+.alto-contraste .menu-principal .navbar-toggler {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+
+.alto-contraste .btn-dark:focus,
+.alto-contraste .btn-dark:hover,
+.alto-contraste .btn-primary:focus,
+.alto-contraste .btn-primary:hover {
+    box-shadow: 0 0 1em #1069D9;
+}
+
+/* Alto contraste para card em hover e active */
+.alto-contraste .card {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+    border-radius: 0.25rem; /* Ensure the card has rounded corners */
+    overflow: hidden; /* Ensures that child elements respect border radius */
+}
+
+.alto-contraste .card-body,
+.alto-contraste .card-link {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+}
+
+.alto-contraste .card:hover {
+    border: 1px solid #ffffff !important;
+    background: #111111 !important;
+    border-radius: 0.25rem; /* Ensure rounded corners on hover */
+}
+
+.alto-contraste .card:hover h3,
+.alto-contraste .card:hover h4,
+.alto-contraste .card:hover .h4,
+.alto-contraste .card:hover h6,
+.alto-contraste .card:hover small {
+    color: #ffffff !important;
+}
+
+.alto-contraste .card:active h3,
+.alto-contraste .card:active h4,
+.alto-contraste .card:active .h4,
+.alto-contraste .card:active h6,
+.alto-contraste .card:active small {
+    color: #aaaaaa !important;
+}
+
+.alto-contraste .card:active {
+    border: 1px solid #aaaaaa !important;
+    background: #333333 !important;
+    border-radius: 0.25rem; /* Ensure rounded corners on active state */
+}
+
+.alto-contraste .card .card-title,
+.alto-contraste .card .card-text,
+.alto-contraste .card .fw-medium {
+    background: #111111 !important;
+    color: #ffffff !important;
+}
+
+/* Alto contraste para button em hover e active */
+.alto-contraste .btn.button_secondary:hover {
+    border: 1.5px solid #ffffff !important;
+    background: #111111 !important;
+    color: #ffffff !important;
+}
+
+.alto-contraste .btn.button_secondary:active {
+    border: 1.5px solid #aaaaaa !important;
+    background: #333333 !important;
+    color: #aaaaaa !important;
+}
+
+/* Remover sombra botão "voltar ao topo" */
+.alto-contraste #btn-back-to-top {
+    box-shadow: none !important;
+}
+
