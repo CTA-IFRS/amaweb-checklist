@@ -24,6 +24,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/high_contrast.css">
 
     <!-- Font Inter -->
@@ -79,26 +80,272 @@
             </div>
         </div>
     </nav>
+    <!--##########################################################-->
 
     <!-- Conteúdo principal -->
-    <div id="">
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <h2>Checklist</h2>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+    <div id="checklist" class="bg-white">
+      <div class="container pt-5">
+        <div class="column">
+          <h2 class="fw-bold">Checklist ABNT NBR 17225</h2>
+          <p>Esta checklist foi criada para auxiliar na conformidade com esta Norma. Para cada item, há uma coluna informando se ele é um requisito ou uma recomendação. Também há uma coluna com informações referentes ao respectivo critério de sucesso (C.S.) e nível de conformidade (A, AA ou AAA) do documento WCAG 2.2. A última coluna serve para a marcação da conformidade. “Sim” signifca que atende ao item. “Não” signifca não atende e “N/A” signifca que esse critério não se aplica.</p>
+        </div>
+        <div class="d-flex flex-row justify-content-between flex-wrap pt-4">
+            <button type="button" class="btn btn-primary">Filtros<i class="bi bi-funnel pl-1"></i></button>
+            <div role="group" aria-labelledby="exibir-como-label" class="d-flex flex-row">
+                <label id="exibir-como-label" for="exibir-como-select">Exibir como:</label>
+                <select id="exibir-como-select" name="exibir-como" class="form-select ml-2 mr-2">
+                    <option value="secao">Seção</option>
+                    <option value="lista">Lista</option>
+                </select>
+                <button type="button" class="btn btn-outline-primary">Aplicar</button>
+            </div>
+            <div id="filtros" class="w-100 p-4 mt-4">
+              <div class="d-flex justify-content-between">
+                <h2 id="filtros-title" class="text-gray-900 mb-4">Filtros</h2>
+                <button type="button" aria-label="Fechar" class="btn-close"></button>
+              </div>
+              <form id="form-filtros" class="row">
+                <fieldset class="col-3 py-2">
+                  <legend class="mb-4">Classificação</legend>
+                  <div class="form-group form-check mb-4">
+                    <input type="checkbox" class="form-check-input" id="filtro_requisitos">
+                    <label class="form-check-label" for="filtro_requisitos">Exibir “requisitos”</label>
+                  </div>
+                  <div class="form-group form-check mb-4">
+                    <input type="checkbox" class="form-check-input" id="filtro_recomendacoes">
+                    <label class="form-check-label" for="filtro_recomendacoes">Exibir “recomendações”</label>
+                  </div>
+                </fieldset>
+                <fieldset class="col-9 row py-2">
+                  <legend class="mb-4">DIRETRIZES</legend>
+                  <div class="esquerda col-5">
+                    <div class="form-group form-check mb-4">
+                      <input type="checkbox" class="form-check-input" id="filtro_exibir_tudo">
+                      <label class="form-check-label" for="filtro_exibir_tudo">Exibir tudo</label>
+                    </div>
+                    <div class="form-group form-check mb-4">
+                      <input type="checkbox" class="form-check-input" id="filtro_interacao_teclado">
+                      <label class="form-check-label" for="filtro_interacao_teclado">Exibir “Interação por teclado”</label>
+                    </div>
+                    <div class="form-group form-check mb-4">
+                      <input type="checkbox" class="form-check-input" id="filtro_imagens">
+                      <label class="form-check-label" for="filtro_imagens">Exibir “Imagens”</label>
+                    </div>
+                    <div class="form-group form-check mb-4">
+                      <input type="checkbox" class="form-check-input" id="filtro_cabecalhos">
+                      <label class="form-check-label" for="filtro_cabecalhos">Exibir “Cabeçalhos”</label>
+                    </div>
+                    <div class="form-group form-check mb-4">
+                      <input type="checkbox" class="form-check-input" id="filtro_listas">
+                      <label class="form-check-label" for="filtro_listas">Exibir “Listas”</label>
+                    </div>
+                    <div class="form-group form-check mb-4">
+                      <input type="checkbox" class="form-check-input" id="filtro_tabelas">
+                      <label class="form-check-label" for="filtro_tabelas">Exibir “Tabelas”</label>
+                    </div>
+                    <div class="form-group form-check mb-4">
+                      <input type="checkbox" class="form-check-input" id="filtro_links_navegacao">
+                      <label class="form-check-label" for="filtro_links_navegacao">Exibir “Links e navegação”</label>
+                    </div>
+                    <div class="form-group form-check mb-4">
+                      <input type="checkbox" class="form-check-input" id="filtro_botoes_controles">
+                      <label class="form-check-label" for="filtro_botoes_controles">Exibir “Botões e controles”</label>
+                    </div>
+                  </div>
+                  <div class="direita col-7">
+                    <div class="form-group form-check mb-4">
+                      <input type="checkbox" class="form-check-input" id="filtro_formularios_dados">
+                      <label class="form-check-label" for="filtro_formularios_dados">Exibir “Formulários e entrada de dados”</label>
+                    </div>
+                    <div class="form-group form-check mb-4">
+                      <input type="checkbox" class="form-check-input" id="filtro_apresentacao">
+                      <label class="form-check-label" for="filtro_apresentacao">Exibir “Apresentação”</label>
+                    </div>
+                    <div class="form-group form-check mb-4">
+                      <input type="checkbox" class="form-check-input" id="filtro_uso_cores">
+                      <label class="form-check-label" for="filtro_uso_cores">Exibir “Uso de cores”</label>
+                    </div>
+                    <div class="form-group form-check mb-4">
+                      <input type="checkbox" class="form-check-input" id="filtro_conteudo_textual">
+                      <label class="form-check-label" for="filtro_conteudo_textual">Exibir “Conteúdo textual”</label>
+                    </div>
+                    <div class="form-group form-check mb-4">
+                      <input type="checkbox" class="form-check-input" id="filtro_codificacao_marcacao">
+                      <label class="form-check-label" for="filtro_codificacao_marcacao">Exibir “Codifcação e marcação semântica”</label>
+                    </div>
+                    <div class="form-group form-check mb-4">
+                      <input type="checkbox" class="form-check-input" id="filtro_audio_video">
+                      <label class="form-check-label" for="filtro_audio_video">Exibir “Áudio e vídeo”</label>
+                    </div>
+                    <div class="form-group form-check mb-4">
+                      <input type="checkbox" class="form-check-input" id="filtro_animacao">
+                      <label class="form-check-label" for="filtro_animacao">Exibir “Animação”</label>
+                    </div>
+                    <div class="form-group form-check mb-4">
+                      <input type="checkbox" class="form-check-input" id="filtro_tempo">
+                      <label class="form-check-label" for="filtro_tempo">Exibir “Tempo”</label>
+                    </div>
+                  </div>
+                </fieldset>
+                <div class="d-flex justify-content-end">
+                  <button type="button" id="btn-restaurar" class="btn btn-outline-primary">Retornar ao padrão</button>
+                  <button type="submit" class="btn btn-primary ml-2">Aplicar filtros</button>
+                </div>
+              </form>
+            </div>
+        </div>
+        <div id="conteudo_checklist">
+          <nav id="navegacaoDiretrizes" class="navbar p-0 pt-4">
+              <div class="container-fluid p-0" id="navbarNav">
+                  <ul class="navbar-nav d-flex flex-row w-100 align-items-center justify-content-start">
+                    <li class="nav-item flex-shrink-0">
+                      <button class="nav-link btn btn-link active" id="tab-secao1" role="tab">
+                        <i class="bi bi-keyboard" style="font-size: 20px;"></i> <span class="nav-title">Interação por teclado</span>
+                      </button>
+                    </li>
+                    <li class="nav-item flex-shrink-0">
+                      <button class="nav-link btn btn-link">
+                        <i class="bi bi-card-image" style="font-size: 19px;"></i> <span class="nav-title">Imagens</span>
+                      </button>
+                    </li>
+                    <li class="nav-item flex-shrink-0">
+                      <button class="nav-link btn btn-link">
+                        <i class="bi bi-card-heading" style="font-size: 19px;"></i> <span class="nav-title">Cabeçalhos</span>
+                      </button>
+                    </li>
+                    <li class="nav-item flex-shrink-0">
+                      <button class="nav-link btn btn-link">
+                        <i class="bi bi-grid-1x2"></i> <span class="nav-title">Regiões</span>
+                      </button>
+                    </li>
+                    <li class="nav-item flex-shrink-0">
+                      <button class="nav-link btn btn-link">
+                        <i class="bi bi-list-ul" style="font-size: 19px;"></i> <span class="nav-title">Listas</span>
+                      </button>
+                    </li>
+                    <li class="nav-item flex-shrink-0">
+                      <button class="nav-link btn btn-link">
+                        <i class="bi bi-layout-three-columns" style="font-size: 17px;"></i> <span class="nav-title">Tabelas</span>
+                      </button>
+                    </li>
+                    <li class="nav-item flex-shrink-0">
+                      <button class="nav-link btn btn-link">
+                        <i class="bi bi-hand-index-thumb" style="font-size: 20px;"></i> <span class="nav-title">Links e navegação</span>
+                      </button>
+                    </li>
+                    <li class="nav-item flex-shrink-0">
+                      <button class="nav-link btn btn-link">
+                        <i class="bi bi-toggles" style="font-size: 17px;"></i> <span class="nav-title">Botões e controles</span>
+                      </button>
+                    </li>
+                    <li class="nav-item flex-shrink-0">
+                      <button class="nav-link btn btn-link">
+                        <i class="bi bi-menu-button-wide" style="font-size: 18px;"></i> <span class="nav-title">Formulários e entrada de dados</span>
+                      </button>
+                    </li>
+                    <li class="nav-item flex-shrink-0">
+                      <button class="nav-link btn btn-link">
+                        <i class="bi bi-layout-text-window" style="font-size: 18px;"></i> <span class="nav-title">Apresentação</span>
+                      </button>
+                    </li>
+                    <li class="nav-item flex-shrink-0">
+                      <button class="nav-link btn btn-link">
+                        <i class="bi bi-circle-half" style="font-size: 18px;"></i> <span class="nav-title">Uso de cores</span>
+                      </button>
+                    </li>
+                    <li class="nav-item flex-shrink-0">
+                      <button class="nav-link btn btn-link">
+                        <i class="bi bi-type" style="font-size: 19px;"></i> <span class="nav-title">Conteúdo textual</span>
+                      </button>
+                    </li>
+                    <li class="nav-item flex-shrink-0">
+                      <button class="nav-link btn btn-link">
+                        <i class="bi bi-code-slash" style="font-size: 19px;"></i> <span class="nav-title">Codifcação e marcação semântica</span>
+                      </button>
+                    </li>
+                    <li class="nav-item flex-shrink-0">
+                      <button class="nav-link btn btn-link">
+                        <i class="bi bi-volume-up-fill" style="font-size: 20px;"></i> <span class="nav-title">Áudio e vídeo</span>
+                      </button>
+                    </li>
+                    <li class="nav-item flex-shrink-0">
+                      <button class="nav-link btn btn-link">
+                        <i class="bi bi-film"></i> <span class="nav-title">Animação</span>
+                      </button>
+                    </li>
+                    <li class="nav-item flex-shrink-0">
+                      <button class="nav-link btn btn-link">
+                        <i class="bi bi-alarm" style="font-size: 18px;"></i> <span class="nav-title">Tempo</span>
+                      </button>
+                    </li>
+                  </ul>
+              </div>
+          </nav>
+          <section id="secao1" role="tabpanel" aria-labelledby="tab-secao1" class="pt-4">
+            <h2>Interação por teclado</h2>
+            <p>Alguns usuários não conseguem utilizar o mouse, ou podem utilizar tecnologia assistiva que não permitem o uso preciso ou total do cursor. É importante que a interface e o conteúdo possam ser navegados e operados utilizando somente o teclado.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Critério WCAG</th>
+                  <th>Checklist</th>
+                  <th>Observações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="classificacao">
+                    <span class="badge bg-primary">Requisito</span>
+                  </td>
+                  <td>
+                    <h3>5.1.1 Indicador de foco visível</h3>
+                    <p>Todos os elementos focáveis possuem um indicador de foco visível.</p>
+                  </td>
+                  <td>
+                    <p>2.4.7 (AA)</p>
+                  </td>
+                  <td>
+                    <select class="form-select" aria-label="Selecionar checklist para indicador de foco visível">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </td>
+                  <td><input class="form-control" type="text" aria-label="Observações para indicador de foco visível"/></td>
+                </tr>
+                <tr>
+                  <td class="classificacao">
+                    <span class="badge bg-primary">Recomendações</span>
+                  </td>
+                  <td>
+                    <h3>5.1.2 Elemento em foco totalmente visível</h3>
+                    <p>Todos os elementos focáveis estão completamente visíveis quando recebem foco.
+                      <br>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.1.3,
+                      <br>Elemento em foco parcialmente visível.
+                    </p>
+                  </td>
+                  <td>
+                    <p>2.4.7 (AA)</p>
+                  </td>
+                  <td>
+                    <select class="form-select" aria-label="Selecionar checklist para indicador de foco visível">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </td>
+                  <td><input class="form-control" type="text" aria-label="Observações para indicador de foco visível" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </div>
     </div>
-
+    <!--##########################################################-->
     <!-- Footer -->
     <footer class="container-fluid mt-5" id="footer">
         <div class="container p-5 d-none d-lg-block">

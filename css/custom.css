@@ -1,0 +1,167 @@
+#filtros {
+    background-color: #F5F8FA;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.15);
+}
+#filtros-title {
+    font-weight: 700;
+    font-size: 24px;
+}
+.text-gray-900 {
+    color: #283239;
+}
+#filtros legend {
+    font-weight: 600;
+    font-size: 14px;
+    color: #5F7686;
+    text-transform: uppercase;
+}
+#filtros fieldset:nth-child(2) {
+    border-left: 1px solid #E7EBEE;
+    padding-left: 70px;
+}
+.pl-1 {
+    padding-left: 0.25rem !important;
+}
+.pr-1 {
+    padding-right: 0.25rem !important;
+}
+.pl-2 {
+    padding-left: 0.5rem !important;
+}
+.pr-2 {
+    padding-right: 0.5rem !important;
+}
+.pl-3 {
+    padding-left: 1rem !important;
+}
+.pr-3 {
+    padding-right: 1rem !important;
+}
+.pl-4 {
+    padding-left: 1.5rem !important;
+}
+.pr-4 {
+    padding-right: 1.5rem !important;
+}
+.pl-5 {
+    padding-left: 3rem !important;
+}
+.pr-5 {
+    padding-right: 3rem !important;
+}
+.ml-1 {
+    margin-left: 0.25rem !important;
+}
+.mr-1 {
+    margin-right: 0.25rem !important;
+}
+.ml-2 {
+    margin-left: 0.5rem !important;
+}
+.mr-2 {
+    margin-right: 0.5rem !important;
+}
+.ml-3 {
+    margin-left: 1rem !important;
+}
+.mr-3 {
+    margin-right: 1rem !important;
+}
+.ml-4 {
+    margin-left: 1.5rem !important;
+}
+.mr-4 {
+    margin-right: 1.5rem !important;
+}
+.ml-5 {
+    margin-left: 3rem !important;
+}
+.mr-5 {
+    margin-right: 3rem !important;
+}
+#navegacaoDiretrizes {
+    box-shadow: none;
+    border-bottom: 2px solid #94A7B3;
+    box-sizing: border-box;
+}
+#navegacaoDiretrizes .navbar-nav {
+    gap: 2rem !important;
+}
+#navegacaoDiretrizes .navbar-nav .nav-link.active {
+    color: var(--primary-primary-900, #104736);
+    font-weight: 700;
+    border-bottom: 3px solid #1C886B;
+}
+#navegacaoDiretrizes .nav-title {
+    display: none;
+    transition: 0.3s ease;
+}
+#navegacaoDiretrizes .nav-link {
+    color: #5F7686;
+    border-radius: 0;
+}
+#navegacaoDiretrizes .nav-link:hover .nav-title,
+#navegacaoDiretrizes .nav-link.active .nav-title {
+    display: inline;
+}
+#navegacaoDiretrizes .nav-link:hover {
+    border-bottom: 3px solid #5F7686;
+}
+#navegacaoDiretrizes .nav-link {
+    height: 45px !important;
+    margin-bottom: -1px;
+}
+#checklist table {
+    width: 100%;
+}
+#checklist table tbody {
+    display: flex;
+    flex-direction: column;
+    row-gap: 36px;
+}
+#checklist table thead tr {
+    display: grid;
+    grid-template-columns: 5fr 128px 168px 6fr;
+    gap: 16px;
+    padding-bottom: 36px;
+}
+#checklist table tbody tr {
+    display: grid;
+    grid-template-columns: 5fr 144px 184px 6fr;
+}
+#checklist table tbody tr {
+    background-color: #F5F8FA;
+    padding: 16px;
+    border-radius: 12px;
+    position: relative;
+}
+#checklist table tbody tr .classificacao {
+    position: absolute;
+    top: -12px;
+    left: 16px;
+}
+#checklist table th,
+#checklist table h3,
+#checklist table p {
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 28px;
+    color: #283239;
+    margin: 0;
+}
+#checklist table p {
+    font-weight: 400;
+}
+#checklist table tbody tr td:not(#checklist table tbody tr td:nth-child(2), #checklist table tbody tr td.classificacao) {
+    padding-left: 16px;
+}
+#checklist table tbody tr td:not(#checklist table tbody tr td:last-child, #checklist table tbody tr td.classificacao) {
+    padding-right: 16px;
+    border-right: 1px solid #94A7B3;
+}
+#conteudo_checklist section h2 {
+    display: none;
+}
+#checklist table th {
+    border-bottom: 3px solid #CFD7DD;
+}
