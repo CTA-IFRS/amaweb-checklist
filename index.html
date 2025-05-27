@@ -90,7 +90,7 @@
           <p>Esta checklist foi criada para auxiliar na conformidade com esta Norma. Para cada item, há uma coluna informando se ele é um requisito ou uma recomendação. Também há uma coluna com informações referentes ao respectivo critério de sucesso (C.S.) e nível de conformidade (A, AA ou AAA) do documento WCAG 2.2. A última coluna serve para a marcação da conformidade. “Sim” signifca que atende ao item. “Não” signifca não atende e “N/A” signifca que esse critério não se aplica.</p>
         </div>
         <div class="d-flex flex-row justify-content-between flex-wrap pt-4">
-            <button type="button" class="btn btn-primary">Filtros<i class="bi bi-funnel pl-1"></i></button>
+            <button type="button" class="btn btn-primary" id="btn-abrir-filtros">Filtros<i class="bi bi-funnel pl-1"></i></button>
             <div role="group" aria-labelledby="exibir-como-label" class="d-flex flex-row">
                 <label id="exibir-como-label" for="exibir-como-select">Exibir como:</label>
                 <select id="exibir-como-select" name="exibir-como" class="form-select ml-2 mr-2">
@@ -281,73 +281,344 @@
                   </ul>
               </div>
           </nav>
-          <section id="secao1" role="tabpanel" aria-labelledby="tab-secao1" class="pt-4">
-            <h2>Interação por teclado</h2>
-            <p>Alguns usuários não conseguem utilizar o mouse, ou podem utilizar tecnologia assistiva que não permitem o uso preciso ou total do cursor. É importante que a interface e o conteúdo possam ser navegados e operados utilizando somente o teclado.</p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Item</th>
-                  <th>Critério WCAG</th>
-                  <th>Checklist</th>
-                  <th>Observações</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="classificacao">
-                    <span class="badge bg-primary">Requisito</span>
-                  </td>
-                  <td>
-                    <h3>5.1.1 Indicador de foco visível</h3>
-                    <p>Todos os elementos focáveis possuem um indicador de foco visível.</p>
-                  </td>
-                  <td>
-                    <p>2.4.7 (AA)</p>
-                  </td>
-                  <td>
-                    <select class="form-select" aria-label="Selecionar checklist para indicador de foco visível">
+          <form action="">
+            <section id="secao1" role="tabpanel" aria-labelledby="tab-secao1" class="pt-4">
+              <h2>Interação por teclado</h2>
+              <p>Alguns usuários não conseguem utilizar o mouse, ou podem utilizar tecnologia assistiva que não permitem o uso preciso ou total do cursor. É importante que a interface e o conteúdo possam ser navegados e operados utilizando somente o teclado.</p>
+              <div class="tabela">
+                <div class="titulos">
+                  <div><strong>Item</strong></div>
+                  <div><strong>Critério WCAG</strong></div>
+                  <div><strong><i>Checklist</i></strong></div>
+                  <div id="obs-titulo"><strong>Observações</strong></div>
+                </div>
+                <fieldset>
+                  <label for="item_5-1-1" class="colunas col1 pt-2 pb-1">
+                    <strong>5.1.1 Indicador de foco visível</strong> <br>
+                    Todos os elementos focáveis possuem um indicador de foco visível.
+                  </label>
+                  <span class="colunas col2">2.4.7 (AA)</span>
+                  <span class="classificacao badge badge-primary">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-1-1">
                       <option value="">Selecione</option>
                       <option value="sim">Sim</option>
                       <option value="nao">Não</option>
                       <option value="na">N/A</option>
                     </select>
-                  </td>
-                  <td><input class="form-control" type="text" aria-label="Observações para indicador de foco visível"/></td>
-                </tr>
-                <tr>
-                  <td class="classificacao">
-                    <span class="badge bg-primary">Recomendações</span>
-                  </td>
-                  <td>
-                    <h3>5.1.2 Elemento em foco totalmente visível</h3>
-                    <p>Todos os elementos focáveis estão completamente visíveis quando recebem foco.
-                      <br>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.1.3,
-                      <br>Elemento em foco parcialmente visível.
-                    </p>
-                  </td>
-                  <td>
-                    <p>2.4.7 (AA)</p>
-                  </td>
-                  <td>
-                    <select class="form-select" aria-label="Selecionar checklist para indicador de foco visível">
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-1-2" class="colunas col1 pt-2 pb-1">
+                    <strong>5.1.2 Elemento em foco totalmente visível</strong> <br>
+                    Todos os elementos focáveis estão completamente visíveis quando recebem foco. <br>
+                    <small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.1.3, Elemento em foco parcialmente visível.</small>
+                  </label>
+                  <span class="colunas col2">2.4.11 (AA) <br> 2.4.12 (AAA)</span>
+                  <span class="classificacao badge badge-secondary">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-1-2">
                       <option value="">Selecione</option>
                       <option value="sim">Sim</option>
                       <option value="nao">Não</option>
                       <option value="na">N/A</option>
                     </select>
-                  </td>
-                  <td><input class="form-control" type="text" aria-label="Observações para indicador de foco visível" /></td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-1-3" class="colunas col1 pt-2 pb-1">
+                    <strong>5.1.3 Elemento em foco parcialmente visível</strong> <br>
+                    Todos os elementos focáveis estão pelo menos parcialmente visíveis quando recebem foco, considerando a sobreposição por elementos de autoria do desenvolvedor.
+                  </label>
+                  <span class="colunas col2">2.4.11 (AA)</span>
+                  <span class="classificacao badge badge-primary">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-1-3">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-1-4" class="colunas col1 pt-2 pb-1">
+                    <strong>5.1.4 Ordem de foco previsível</strong> <br>
+                    Todos os elementos focáveis recebem foco em ordem sequencial lógica e intuitiva, consistente com a apresentação e que preserva o signifcado e a operabilidade.
+                  </label>
+                  <span class="colunas col2">2.4.3 (A)</span>
+                  <span class="classificacao badge badge-primary">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-1-4">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-1-5" class="colunas col1 pt-2 pb-1">
+                    <strong>5.1.5 Uso de foco</strong> <br>
+                    Todos os elementos focáveis são utilizados para interação.
+                  </label>
+                  <span class="colunas col2">2.1.1 (A) <br> 2.1.3 (AAA)</span>
+                  <span class="classificacao badge badge-secondary">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-1-5">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-1-6" class="colunas col1 pt-2 pb-1">
+                    <strong>5.1.6 Armadilha de foco</strong> <br>
+                    Não há componentes que bloqueiam, impedem ou interrompem a navegação por teclado.
+                  </label>
+                  <span class="colunas col2">2.1.2 (A)</span>
+                  <span class="classificacao badge badge-primary">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-1-6">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-1-7" class="colunas col1 pt-2 pb-1">
+                    <strong>5.1.7 Conteúdo adicional</strong> <br>
+                    Não há conteúdo adicional que seja exibido somente pelo foco do teclado ou posicionamento do cursor. <br>
+                    <small>NOTA Cumprindo o descrito neste item, cumpre-se também os itens 5.1.8, Conteúdo adicional persistente, e 5.1.9, Conteúdo adicional dispensável.</small>
+                  </label>
+                  <span class="colunas col2">1.4.13 (AA)</span>
+                  <span class="classificacao badge badge-secondary">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-1-7">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-1-8" class="colunas col1 pt-2 pb-1">
+                    <strong>5.1.8 Conteúdo adicional persistente</strong> <br>
+                    Todo conteúdo adicional exibido por foco do teclado ou posicionamento do cursor permanece visível até que o usuário retire o foco, posicione o cursor fora do componente ou dispense-o de outra forma, ou até que a informação transmitida pelo conteúdo deixe de ser válida.
+                  </label>
+                  <span class="colunas col2">1.4.13 (AA)</span>
+                  <span class="classificacao badge badge-primary">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-1-8">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-1-9" class="colunas col1 pt-2 pb-1">
+                    <strong>5.1.9 Conteúdo adicional dispensável</strong> <br>
+                    Todo conteúdo adicional exibido por foco do teclado ou posicionamento do cursor pode ser dispensado sem a necessidade de retirar o foco ou reposicionar o cursor; ou <br>
+                    O conteúdo adicional exibido comunica um erro de entrada, ou não oculta ou substitui outro conteúdo.
+                  </label>
+                  <span class="colunas col2">1.4.13 (AA)</span>
+                  <span class="classificacao badge badge-primary">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-1-9">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-1-10" class="colunas col1 pt-2 pb-1">
+                    <strong>5.1.10 Atalhos de teclado</strong> <br>
+                    Não há atalhos de teclado que utilizam uma única tecla, de forma que sempre haja a presença de uma tecla modifcadora (como Ctrl ou Alt). <br>
+                    <small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.1.11, Atalhos de teclado sem tecla modifcadora.</small>
+                  </label>
+                  <span class="colunas col2">2.1.4 (A)</span>
+                  <span class="classificacao badge badge-secondary">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-1-10">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-1-11" class="colunas col1 pt-2 pb-1">
+                    <strong>5.1.11 Atalhos de teclado sem tecla modifcadora</strong> <br>
+                    Há um mecanismo simples para desativar ou remapear o atalho de teclado sem tecla modifcadora; ou <br>
+                    O atalho só é acionado quando um componente específco está em foco.
+                  </label>
+                  <span class="colunas col2">2.1.4 (A)</span>
+                  <span class="classificacao badge badge-primary">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-1-11">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-1-12" class="colunas col1 pt-2 pb-1">
+                    <strong>5.1.12 Acessibilidade por teclado total</strong> <br>
+                    Todas as funcionalidades da página são acessíveis com o teclado, sem exceção. <br>
+                    <small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.1.13, Acessibilidade por teclado parcial.</small>
+                  </label>
+                  <span class="colunas col2">2.1.1(A) <br> 2.1.3 (AAA)</span>
+                  <span class="classificacao badge badge-secondary">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-1-12">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-1-13" class="colunas col1 pt-2 pb-1">
+                    <strong>5.1.13 Acessibilidade por teclado parcial</strong> <br>
+                    Todas as funcionalidades da página que não são acessíveis pelo teclado não admitem modo de operação equivalente utilizando somente o teclado (por exemplo, desenho à mão livre).
+                  </label>
+                  <span class="colunas col2">2.1.1 (A)</span>
+                  <span class="classificacao badge badge-primary">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-1-13">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-1-14" class="colunas col1 pt-2 pb-1">
+                    <strong>5.1.14 Mecanismos de entrada simultâneos</strong> <br>
+                    Não há funcionalidade na página que restringe o uso de algum mecanismo de entrada disponível; ou <br>
+                    A restrição do uso do mecanismo de entrada específco é essencial, necessária para garantir a segurança do conteúdo ou para respeitar as confgurações do usuário.
+                  </label>
+                  <span class="colunas col2">2.5.6 (AAA)</span>
+                  <span class="classificacao badge badge-secondary">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-1-14">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-1-15" class="colunas col1 pt-2 pb-1">
+                    <strong>5.1.15 Comportamento de componentes customizados</strong> <br>
+                    Todos os componentes customizados possuem comportamento previsível. <br>
+                    <small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.1.16, Instruções para componentes customizados.</small>
+                  </label>
+                  <span class="colunas col2">2.1.1 (A) <br> 2.1.3 (AAA)</span>
+                  <span class="classificacao badge badge-secondary">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-1-15">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-1-16" class="colunas col1 pt-2 pb-1">
+                    <strong>5.1.16 Instruções para componentes customizados</strong> <br>
+                    Todos os componentes customizados que exigem interações complexas e comportamento não previsível possuem instruções para operação.
+                  </label>
+                  <span class="colunas col2">3.3.2 (A)</span>
+                  <span class="classificacao badge badge-primary">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-1-16">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+              </div>
+          </form>
+          <div id="botoes_inferiores" class="d-flex flex-row justify-content-between py-5">
+            <button type="button" class="btn btn-outline-primary">Imprimir<i class="bi bi-printer pl-2"></i></button>
+            <div>
+              <button type="button" class="btn btn-outline-primary"><i class="bi bi-arrow-left pr-2"></i>Voltar</button>
+              <button type="button" class="btn btn-primary">Continuar<i class="bi bi-arrow-right pl-2"></i></button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <!--##########################################################-->
     <!-- Footer -->
-    <footer class="container-fluid mt-5" id="footer">
+    <footer class="container-fluid" id="footer">
         <div class="container p-5 d-none d-lg-block">
             <div class="fw-semibold d-flex flex-column">
                 <div class="d-flex">
@@ -413,6 +684,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/high_contrast.js"></script>
+    <script src="js/checklist.js"></script>
 
 </body>
 </html>

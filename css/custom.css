@@ -1,6 +1,7 @@
 #filtros {
     background-color: #F5F8FA;
     box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.15);
+    display: none;
 }
 #filtros-title {
     font-weight: 700;
@@ -101,67 +102,92 @@
     border-radius: 0;
 }
 #navegacaoDiretrizes .nav-link:hover .nav-title,
-#navegacaoDiretrizes .nav-link.active .nav-title {
+#navegacaoDiretrizes .nav-link.active .nav-title,
+#navegacaoDiretrizes .nav-link:focus .nav-title {
     display: inline;
 }
-#navegacaoDiretrizes .nav-link:hover {
+#navegacaoDiretrizes .nav-link:hover,
+#navegacaoDiretrizes .nav-link:focus {
     border-bottom: 3px solid #5F7686;
 }
 #navegacaoDiretrizes .nav-link {
     height: 45px !important;
     margin-bottom: -1px;
 }
-#checklist table {
-    width: 100%;
-}
-#checklist table tbody {
+#checklist form .tabela {
     display: flex;
     flex-direction: column;
     row-gap: 36px;
 }
-#checklist table thead tr {
+#checklist form .titulos {
     display: grid;
     grid-template-columns: 5fr 128px 168px 6fr;
     gap: 16px;
-    padding-bottom: 36px;
 }
-#checklist table tbody tr {
+#checklist .tabela fieldset {
     display: grid;
     grid-template-columns: 5fr 144px 184px 6fr;
-}
-#checklist table tbody tr {
     background-color: #F5F8FA;
     padding: 16px;
     border-radius: 12px;
     position: relative;
+    align-items: center;
 }
-#checklist table tbody tr .classificacao {
+#checklist .tabela .classificacao {
     position: absolute;
     top: -12px;
     left: 16px;
 }
-#checklist table th,
-#checklist table h3,
-#checklist table p {
+#checklist .tabela .titulos strong,
+#checklist .tabela label {
     font-weight: 800;
     font-size: 16px;
     line-height: 28px;
     color: #283239;
     margin: 0;
 }
-#checklist table p {
+#checklist .tabela label {
     font-weight: 400;
 }
-#checklist table tbody tr td:not(#checklist table tbody tr td:nth-child(2), #checklist table tbody tr td.classificacao) {
+#checklist .tabela label strong {
+    padding-bottom: 5px;
+}
+#checklist .tabela .colunas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+#checklist .tabela .colunas.col2 {
+    align-items: center;
+}
+#checklist .tabela .colunas:not(#checklist .tabela .colunas.col1) {
     padding-left: 16px;
 }
-#checklist table tbody tr td:not(#checklist table tbody tr td:last-child, #checklist table tbody tr td.classificacao) {
+#checklist .tabela .colunas:not(#checklist .tabela .colunas.col4) {
     padding-right: 16px;
     border-right: 1px solid #94A7B3;
 }
 #conteudo_checklist section h2 {
     display: none;
 }
-#checklist table th {
+#checklist .tabela .titulos >div {
     border-bottom: 3px solid #CFD7DD;
+}
+#checklist .badge {
+    background-color: #E7EBEE;
+    color: #44545F;
+    font-weight: 500;
+    font-size: 14px;
+    --bs-badge-padding-x: 0.90em;
+    --bs-badge-padding-y: 0.4em;
+    border-radius: 50rem;
+}
+.badge-primary {
+    background-color: #C9F3E6 !important;
+    color: #15654E !important;
+}
+.badge-secondary {
+    background-color: #DEEAF7 !important;
+    color: #1C4987 !important;
 }
