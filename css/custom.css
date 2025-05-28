@@ -117,7 +117,7 @@
 #checklist form .tabela {
     display: flex;
     flex-direction: column;
-    row-gap: 36px;
+    row-gap: 32px;
 }
 #checklist form .titulos {
     display: grid;
@@ -157,9 +157,6 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
-}
-#checklist .tabela .colunas.col2 {
-    align-items: center;
 }
 #checklist .tabela .colunas:not(#checklist .tabela .colunas.col1) {
     padding-left: 16px;
