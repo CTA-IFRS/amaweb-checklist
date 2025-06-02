@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const navItems = document.querySelectorAll('#navegacaoDiretrizes li.nav-item');
     const navButtons = document.querySelectorAll('#navegacaoDiretrizes button');
     const secoes = document.querySelectorAll('[id^="secao_"]');
+    const fieldsets = document.querySelectorAll('#secoes_checklist fieldset');
+    const selectExibirComo = document.getElementById('exibir-como-select');
+    const btnAplicarExibicao = document.querySelector('#form-exibir-como button[type="button"]');
+    const navDiretrizes = document.getElementById('navegacaoDiretrizes');
+    const tituloSecoes = document.querySelectorAll('#secoes_checklist h2');
 
     btnFiltros.addEventListener('click', function() {
         filtrosDiv.style.display = 'block';
@@ -67,12 +72,52 @@ document.addEventListener('DOMContentLoaded', function() {
         navButtons.forEach(btn => btn.classList.remove('active'));
         if (primeiroAtivo) {
             primeiroAtivo.classList.add('active');
-            const secaoId = 'secao_' + primeiroAtivo.id.replace('tab-', '');
-            secoes.forEach(secao => {
-                secao.style.display = secao.id === secaoId ? 'block' : 'none';
-            });
         } else {
-            secoes.forEach(secao => (secao.style.display = 'none'));
+        }
+        aplicarExibicao();
+    }
+
+    function aplicarExibicao() {
+        const modo = selectExibirComo.value;
+
+        if (modo === 'secao') {
+            navDiretrizes.style.display = 'flex';
+            
+            Array.from(tituloSecoes).forEach(h2 => {
+                h2.style.display = 'none';
+            });
+
+            let btnAtivo = null;
+            navButtons.forEach(btn => {
+                if (btn.classList.contains('active')) {
+                    btnAtivo = btn;
+                }
+            });
+
+            let secaoParaMostrarId = null;
+            if (btnAtivo) {
+                secaoParaMostrarId = 'secao_' + btnAtivo.id.replace('tab-', '');
+            } else if (secoes.length > 0) {
+                secaoParaMostrarId = secoes[0].id;
+            }
+
+            secoes.forEach(secao => {
+                secao.style.display = (secao.id === secaoParaMostrarId) ? 'block' : 'none';
+            });
+        } else if (modo === 'lista') {
+            navDiretrizes.style.display = 'none';
+            
+            Array.from(tituloSecoes).forEach(h2 => {
+                h2.style.display = 'flex';
+            });
+
+            diretrizCheckboxes.forEach(cb => {
+                const secaoId = cb.id.replace('filtro_', 'secao_');
+                const secao = document.getElementById(secaoId);
+                if (secao) {
+                    secao.style.display = cb.checked ? 'block' : 'none';
+                }
+            });
         }
     }
 
@@ -88,6 +133,10 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         aplicarFiltros();
         filtrosDiv.style.display = 'none';
+    });
+
+    btnAplicarExibicao.addEventListener('click', function() {
+        aplicarExibicao();
     });
 
     exibirTudo.addEventListener('change', function () {
@@ -112,10 +161,56 @@ document.addEventListener('DOMContentLoaded', function() {
             navButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
 
-            const targetId = 'secao_' + this.id.replace('tab-', '');
-            secoes.forEach(secao => {
-                secao.style.display = secao.id === targetId ? 'block' : 'none';
+            aplicarExibicao();
+        });
+    });
+
+    fieldsets.forEach(fieldset => {
+        const inputs = fieldset.querySelectorAll('select, input');
+        const badge = fieldset.querySelector('.classificacao');
+
+        const isRequisito = badge && badge.classList.contains('requisito');
+        const isRecomendacao = badge && badge.classList.contains('recomendacao');
+
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                fieldset.classList.add('focused');
+                if (isRequisito) {
+                    fieldset.classList.add('primary');
+                }
+                if (isRecomendacao) {
+                    fieldset.classList.add('secondary');
+                }
             });
+
+            input.addEventListener('blur', () => {
+                fieldset.classList.remove('focused', 'primary', 'secondary');
+            });
+        });
+    });
+    atualizarExibirTudoCheckbox();
+
+    window.addEventListener('beforeprint', () => {
+        const container = document.getElementById('secoes_checklist');
+        
+        container.querySelectorAll('input').forEach(input => {
+            let p = input.nextElementSibling;
+            if (!p || !p.classList.contains('print-value')) {
+            p = document.createElement('p');
+            p.classList.add('print-value');
+            input.insertAdjacentElement('afterend', p);
+            }
+            p.textContent = input.value;
+        });
+
+        container.querySelectorAll('select').forEach(select => {
+            let p = select.nextElementSibling;
+            if (!p || !p.classList.contains('print-value')) {
+            p = document.createElement('p');
+            p.classList.add('print-value');
+            select.insertAdjacentElement('afterend', p);
+            }
+            p.textContent = select.options[select.selectedIndex].text;
         });
     });
 });

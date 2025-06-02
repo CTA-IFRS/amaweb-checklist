@@ -88,10 +88,15 @@
 #navegacaoDiretrizes .navbar-nav {
     gap: 2rem !important;
 }
-#navegacaoDiretrizes .navbar-nav .nav-link.active {
+#navegacaoDiretrizes .navbar-nav .nav-link.active,
+#secoes_checklist h2 {
     color: var(--primary-primary-900, #104736);
     font-weight: 700;
     border-bottom: 3px solid #1C886B;
+}
+#secoes_checklist h2 {
+    font-size: 20px;
+    padding-bottom: 12px;
 }
 #navegacaoDiretrizes .nav-title {
     display: none;
@@ -128,10 +133,17 @@
     display: grid;
     grid-template-columns: 5fr 144px 184px 6fr;
     background-color: #F5F8FA;
-    padding: 16px;
+    padding: 14px;
     border-radius: 12px;
     position: relative;
     align-items: center;
+    border: 2px solid #F5F8FA;
+}
+#checklist .tabela fieldset.focused.primary {
+    border: 2px solid #20A785;
+}
+#checklist .tabela fieldset.focused.secondary {
+    border: 2px solid #709FE1;
 }
 #checklist .tabela .classificacao {
     position: absolute;
@@ -187,4 +199,101 @@
 .badge-secondary {
     background-color: #DEEAF7 !important;
     color: #1C4987 !important;
+}
+.print-value {
+  display: none;
+}
+@media print {
+    #secoes_checklist section {
+        display: block !important;
+    }
+    #conteudo_checklist section h2 {
+        display: flex !important;
+    }
+    #menuAcessibilidade,
+    #menu-principal,
+    #navegacaoDiretrizes,
+    footer,
+    .sumir-impressao,
+    #conteudo_checklist section h2 i.bi,
+    #btn-back-to-top {
+        display: none !important;
+    }
+    #checklist form .tabela {
+        row-gap: 0;
+    }
+    #checklist .tabela fieldset {
+        background-color: unset;
+        border: unset;
+        border: 2px solid #000;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        border-radius: 0;
+        grid-template-columns: 32% 105px 110px 75px 40%;
+        padding: 0;
+    }
+    #checklist .tabela .classificacao {
+        position: relative;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        top: unset;
+        left: unset;
+        border-radius: 0;
+        background-color: transparent !important;
+        color: var(--bs-body-color) !important;
+    }
+    #checklist form .titulos {
+        background-color: #E0E0E0;
+        grid-template-columns: 32% 105px 110px 75px 40%;
+        gap: 0;
+        border: 2px solid #000;
+        border-bottom: 1px solid #000;
+    }
+    #checklist .tabela .titulos .class {
+        display: block !important;
+    }
+    #checklist .container {
+        max-width: calc(100% - 135px);
+    }
+    #checklist .tabela .titulos strong, #checklist .tabela label, #checklist .tabela .colunas {
+        font-size: 12px;
+        line-height: 20px;
+        color: #000;
+    }
+    #checklist .tabela .colunas,
+    #checklist .tabela .classificacao {
+        padding: 8px !important;
+    }
+    #checklist .tabela .colunas:not(#checklist .tabela .colunas.col4),
+    #checklist .tabela .classificacao {
+        padding-right: 16px;
+        border-right: 2px solid #000;
+    }
+    #checklist .tabela .titulos > div {
+        border-bottom: 0;
+        border-right: 2px solid #000;
+        padding: 8px !important;
+    }
+    #checklist .tabela .titulos #obs-titulo {
+        border-right: 0;
+    }
+    input, select {
+        display: none !important;
+    }
+    .print-value {
+        display: block !important;
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+    #secoes_checklist p:not(#secoes_checklist .tabela p) {
+        display: none;
+    }
+    #secoes_checklist h2 {
+        font-size: 18px;
+        border-bottom: none;
+        color: #000000;
+    }   
 }

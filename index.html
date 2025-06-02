@@ -85,20 +85,20 @@
     <!-- Conteúdo principal -->
     <div id="checklist" class="bg-white">
       <div class="container pt-5">
-        <div class="column">
+        <div class="column sumir-impressao">
           <h2 class="fw-bold">Checklist ABNT NBR 17225</h2>
           <p>Esta checklist foi criada para auxiliar na conformidade com esta Norma. Para cada item, há uma coluna informando se ele é um requisito ou uma recomendação. Também há uma coluna com informações referentes ao respectivo critério de sucesso (C.S.) e nível de conformidade (A, AA ou AAA) do documento WCAG 2.2. A última coluna serve para a marcação da conformidade. “Sim” signifca que atende ao item. “Não” signifca não atende e “N/A” signifca que esse critério não se aplica.</p>
         </div>
-        <div class="d-flex flex-row justify-content-between flex-wrap pt-4">
+        <div class="d-flex flex-row justify-content-between flex-wrap pt-4 sumir-impressao">
             <button type="button" class="btn btn-primary" id="btn-abrir-filtros">Filtros<i class="bi bi-funnel pl-1"></i></button>
-            <div role="group" aria-labelledby="exibir-como-label" class="d-flex flex-row">
-                <label id="exibir-como-label" for="exibir-como-select">Exibir como:</label>
-                <select id="exibir-como-select" name="exibir-como" class="form-select ml-2 mr-2">
-                    <option value="secao">Seção</option>
-                    <option value="lista">Lista</option>
-                </select>
-                <button type="button" class="btn btn-outline-primary">Aplicar</button>
-            </div>
+            <form id="form-exibir-como" class="d-flex align-items-center">
+              <label id="exibir-como-label" for="exibir-como-select">Exibir como:</label>
+              <select id="exibir-como-select" name="exibir-como" class="form-select ml-2 mr-2" style="width: 215px;">
+                  <option value="secao">Seção</option>
+                  <option value="lista">Lista</option>
+              </select>
+              <button type="button" class="btn btn-outline-primary" aria-label="Aplicar exibição selecionada">Aplicar</button>
+            </form>
             <div id="filtros" class="w-100 p-4 mt-4">
               <div class="d-flex justify-content-between">
                 <h2 id="filtros-title" class="text-gray-900 mb-4">Filtros</h2>
@@ -285,14 +285,15 @@
                   </ul>
               </div>
           </nav>
-          <form action="">
+          <form action="" id="secoes_checklist">
             <section id="secao_interacao_teclado" role="tabpanel" aria-labelledby="tab-secao1" class="pt-4">
-              <h2>Interação por teclado</h2>
+              <h2><i class="bi bi-keyboard pr-2" style="font-size: 23px;"></i>Interação por teclado</h2>
               <p>Alguns usuários não conseguem utilizar o <i>mouse</i>, ou podem utilizar tecnologia assistiva que não permitem o uso preciso ou total do cursor. É importante que a interface e o conteúdo possam ser navegados e operados utilizando somente o teclado.</p>
               <div class="tabela">
                 <div class="titulos">
                   <div><strong>Item</strong></div>
                   <div><strong>Critério WCAG</strong></div>
+                  <div class="class" style="display: none;"><strong>Classificação</strong></div>
                   <div><strong><i>Checklist</i></strong></div>
                   <div id="obs-titulo"><strong>Observações</strong></div>
                 </div>
@@ -611,12 +612,13 @@
               </div>
             </section>
             <section id="secao_imagens" role="tabpanel" aria-labelledby="tab-secao2" class="pt-4">
-              <h2>Imagens</h2>
+              <h2><i class="bi bi-card-image pr-2" style="font-size: 19px;"></i>Imagens</h2>
               <p>Imagens facilitam a compreensão e tornam o conteúdo mais amigável ao transmitir informações de forma visual. A acessibilidade em imagens garante que todos os usuários, incluindo aqueles que utilizam tecnologia assistiva, possam perceber, compreender e interagir com o conteúdo visual em interfaces e documentos.</p>
               <div class="tabela">
                 <div class="titulos">
                   <div><strong>Item</strong></div>
                   <div><strong>Critério WCAG</strong></div>
+                  <div class="class" style="display: none;"><strong>Class.</strong></div>
                   <div><strong><i>Checklist</i></strong></div>
                   <div id="obs-titulo"><strong>Observações</strong></div>
                 </div>
@@ -739,176 +741,851 @@
               </div>
             </section>
             <section id="secao_cabecalhos" role="tabpanel" aria-labelledby="tab-secao3" class="pt-4">
-              <h2>Cabeçalhos</h2>
+              <h2><i class="bi bi-card-heading pr-2" style="font-size: 22px;"></i>Cabeçalhos</h2>
               <p>Os níveis de cabeçalho organizam a estrutura, a ordem de importância e a subordinação dos conteúdos da página, facilitando a leitura e a compreensão. Além disso, funcionam como ferramenta de navegação para que os usuários de tecnologia assistiva encontrem facilmente o conteúdo desejado. O uso de hierarquia correta dos níveis de cabeçalho é um requisito para que essa navegação ocorra adequadamente.</p>
               <div class="tabela">
                 <div class="titulos">
                   <div><strong>Item</strong></div>
                   <div><strong>Critério WCAG</strong></div>
+                  <div class="class" style="display: none;"><strong>Class.</strong></div>
                   <div><strong><i>Checklist</i></strong></div>
                   <div id="obs-titulo"><strong>Observações</strong></div>
                 </div>
+                <fieldset>
+                  <label for="item_5-3-1" class="colunas col1 pt-2 pb-1">
+                    <strong>5.3.1 Semântica de cabeçalho</strong> <br>
+                    Todos os cabeçalhos possuem semântica determinada programaticamente.
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-3-1">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-3-2" class="colunas col1 pt-2 pb-1">
+                    <strong>5.3.2 Uso de cabeçalhos</strong> <br>
+                    Todos os cabeçalhos são utilizados para identifcar seções de conteúdo.
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">1.3.1 (A) <br> 2.4.6 (AA)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-3-2">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-3-3" class="colunas col1 pt-2 pb-1">
+                    <strong>5.3.3 Cabeçalho principal</strong> <br>
+                    Há um, e somente um, cabeçalho de nível 1, que identifca a página.
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">2.4.6 (AA) <br> 2.4.10 (AAA)</span>
+                  <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-3-3">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-3-4" class="colunas col1 pt-2 pb-1">
+                    <strong>5.3.4 Seções com cabeçalhos</strong> <br>
+                    Todas as seções de conteúdo possuem um cabeçalho que as identifca.
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">2.4.10 (AAA)</span>
+                  <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-3-4">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-3-5" class="colunas col1 pt-2 pb-1">
+                    <strong>5.3.5 Estrutura de cabeçalhos</strong> <br>
+                    Todos os cabeçalhos seguem uma estrutura hierárquica, lógica e semântica.
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">1.3.1 (A) <br> 2.4.6 (AA) <br> 2.4.10 (AAA)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-3-5">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
               </div>
             </section>
             <section id="secao_regioes" role="tabpanel" aria-labelledby="tab-secao4" class="pt-4">
-              <h2>Regiões</h2>
+              <h2><i class="bi bi-grid-1x2 pr-2"></i>Regiões</h2>
               <p>Regiões (marcos) ajudam a comunicar o leiaute e as áreas importantes da página, como a de navegação e a do conteúdo principal. O uso de regiões com marcação semântica correta facilita a compreensão da estrutura da página e permite fácil acesso a essas áreas.</p>
               <div class="tabela">
                 <div class="titulos">
                   <div><strong>Item</strong></div>
                   <div><strong>Critério WCAG</strong></div>
+                  <div class="class" style="display: none;"><strong>Class.</strong></div>
                   <div><strong><i>Checklist</i></strong></div>
                   <div id="obs-titulo"><strong>Observações</strong></div>
                 </div>
+                <fieldset>
+                  <label for="item_5-4-1" class="colunas col1 pt-2 pb-1">
+                    <strong>5.4.1 Semântica de região</strong> <br>
+                    Todas as regiões da página possuem semântica determinada programaticamente e condizente com a sua função e tipo de conteúdo.
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">1.3.1 (A) <br> 1.3.6 (AAA)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-4-1">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-4-2" class="colunas col1 pt-2 pb-1">
+                    <strong>5.4.2 Uso de regiões</strong> <br>
+                    Todas as regiões são utilizadas para organizar os conteúdos da página de acordo com o tipo de conteúdo.
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">1.3.1 (A) <br> 1.3.6 (AAA)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-4-2">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-4-3" class="colunas col1 pt-2 pb-1">
+                    <strong>5.4.3 Conteúdo em regiões</strong> <br>
+                    Todo o conteúdo está contido em regiões.
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">1.3.6 (AAA)</span>
+                  <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-4-3">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-4-4" class="colunas col1 pt-2 pb-1">
+                    <strong>5.4.4 Regiões únicas</strong> <br>
+                    <p>Não há mais do que uma região do tipo <i>‘header’</i>/<i>’banner’</i>, <i>‘main’</i> ou <i>‘footer’</i>/<i>’contentinfo’</i>.</p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">1.3.1 (A) <br> 1.3.6 (AAA)</span>
+                  <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-4-4">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-4-5" class="colunas col1 pt-2 pb-1">
+                    <strong>5.4.5 Regiões identifcadas unicamente</strong> <br>
+                    Todas as regiões do mesmo tipo possuem um nome acessível único que as identifca.
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">1.3.1 (A) <br> 4.1.2 (A)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-4-5">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
               </div>
             </section>
             <section id="secao_listas" role="tabpanel" aria-labelledby="tab-secao5" class="pt-4">
-              <h2>Listas</h2>
+              <h2><i class="bi bi-list-ul pr-2" style="font-size: 22px;"></i>Listas</h2>
               <p>Listas permitem a identifcação do agrupamento de itens relacionados, apresentados de forma sequencial ou não sequencial. Conteúdos organizados em listas facilitam a compreensão e a navegação.</p>
               <div class="tabela">
                 <div class="titulos">
                   <div><strong>Item</strong></div>
                   <div><strong>Critério WCAG</strong></div>
+                  <div class="class" style="display: none;"><strong>Class.</strong></div>
                   <div><strong><i>Checklist</i></strong></div>
                   <div id="obs-titulo"><strong>Observações</strong></div>
                 </div>
+                <fieldset>
+                  <label for="item_5-5-1" class="colunas col1 pt-2 pb-1">
+                    <strong>5.5.1 Semântica de lista</strong> <br>
+                    Todas as listas possuem semântica determinada programaticamente e condizente com o tipo de relação entre os itens (ordenada, não ordenada e de defnições).
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-5-1">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-5-2" class="colunas col1 pt-2 pb-1">
+                    <strong>5.5.2 Uso de listas</strong> <br>
+                    Todas as listas são utilizadas para agrupamento de itens de mesma natureza.
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-5-2">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
               </div>
             </section>
             <section id="secao_tabelas" role="tabpanel" aria-labelledby="tab-secao6" class="pt-4">
-              <h2>Tabelas</h2>
+              <h2><i class="bi bi-layout-three-columns pr-2" style="font-size: 20px;"></i>Tabelas</h2>
               <p>Tabelas são uma forma estruturada de apresentar dados, que facilita a compreensão das relações entre diferentes tipos de informação. A disposição de dados tabulares em estrutura visual e semanticamente identifcada benefcia todos os usuários.</p>
               <div class="tabela">
                 <div class="titulos">
                   <div><strong>Item</strong></div>
                   <div><strong>Critério WCAG</strong></div>
+                  <div class="class" style="display: none;"><strong>Class.</strong></div>
                   <div><strong><i>Checklist</i></strong></div>
                   <div id="obs-titulo"><strong>Observações</strong></div>
                 </div>
+                <fieldset>
+                  <label for="item_5-6-1" class="colunas col1 pt-2 pb-1">
+                    <strong>5.6.1 Semântica de tabela</strong> <br>
+                    Todas as tabelas de dados possuem semântica determinada programaticamente.
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-6-1">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-6-2" class="colunas col1 pt-2 pb-1">
+                    <strong>5.6.2 Uso de Tabelas</strong> <br>
+                    Todas as tabelas são utilizadas para apresentar dados tabulares. Não há tabelas de leiaute; ou <br>
+                    Todas as tabelas de leiaute não possuem semântica determinada.
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-6-2">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-6-3" class="colunas col1 pt-2 pb-1">
+                    <strong>5.6.3 Cabeçalhos de tabela</strong> <br>
+                    Todas as células de dados de uma tabela estão associadas com os respectivos cabeçalhos de linha e coluna de forma programaticamente determinada.
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-6-3">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-6-4" class="colunas col1 pt-2 pb-1">
+                    <strong>5.6.4 Título de tabela</strong> <br>
+                    Todas as tabelas possuem um título ou legenda que as identifca.
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">2.4.6 (AA) <br> 2.4.10 (AAA)</span>
+                  <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-6-4">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-6-5" class="colunas col1 pt-2 pb-1">
+                    <strong>5.6.5 Título de tabela associado</strong> <br>
+                    Todos os títulos ou legendas de tabela estão associados à respectiva tabela de forma programaticamente determinada.
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-6-5">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-6-6" class="colunas col1 pt-2 pb-1">
+                    <strong>5.6.6 Descrição para tabelas complexas</strong> <br>
+                    Todas as tabelas complexas possuem uma descrição da tabela em texto.
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">3.1.5 (AAA)</span>
+                  <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-6-6">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
               </div>
             </section>
             <section id="secao_links_navegacao" role="tabpanel" aria-labelledby="tab-secao7" class="pt-4">
-              <h2><i>Links</i> e navegação</h2>
+              <h2><i class="bi bi-hand-index-thumb pr-2" style="font-size: 23px;"></i><i>Links</i> e navegação</h2>
               <p><i>Links</i> permitem que o usuário navegue entre as páginas e entre os conteúdos de uma mesma página. Os <i>links</i> devem informar claramente o seu destino e devem ser facilmente encontrados na página.</p>
               <div class="tabela">
                 <div class="titulos">
                   <div><strong>Item</strong></div>
                   <div><strong>Critério WCAG</strong></div>
+                  <div class="class" style="display: none;"><strong>Class.</strong></div>
                   <div><strong><i>Checklist</i></strong></div>
                   <div id="obs-titulo"><strong>Observações</strong></div>
                 </div>
+                <fieldset>
+                  <label for="item_5-7-1" class="colunas col1 pt-2 pb-1">
+                    <strong>5.7.1 Semântica de <i>link</i></strong> <br>
+                    <p>Todos os <i>links</i> possuem semântica determinada programaticamente.</p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-7-1">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-7-2" class="colunas col1 pt-2 pb-1">
+                    <strong>5.7.2 Uso de <i>links</i></strong> <br>
+                    <p>Todos os <i>links</i> são utilizados para navegação.</p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-7-2">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-7-3" class="colunas col1 pt-2 pb-1">
+                    <strong>5.7.3 Propósito do <i>link</i> sem contexto</strong> <br>
+                    <p>Todos os <i>links</i> possuem texto, texto alternativo ou nome acessível
+                      que indica sua função ou destino. <br>
+                      <small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.7.4,
+                      Propósito do <i>link</i> no contexto.</small>
+                    </p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">2.4.4 (A) <br> 2.4.9 (AAA)</span>
+                  <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-7-3">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-7-4" class="colunas col1 pt-2 pb-1">
+                    <strong>5.7.4 Propósito do <i>link</i> no contexto</strong> <br>
+                    <p>Todos os <i>links</i> possuem texto, texto alternativo ou nome acessível que, em conjunto com o contexto do <i>link</i>, informa sua função ou destino.</p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">2.4.4 (A)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-7-4">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-7-5" class="colunas col1 pt-2 pb-1">
+                    <strong>5.7.5 <i>Links</i> com identifcação consistente</strong> <br>
+                    <p>Não há <i>links</i> com texto, texto alternativo ou nome acessível iguais que levam para destinos diferentes.</p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">3.2.4 (AA) <br> 2.4.9 (AAA)</span>
+                  <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-7-5">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-7-6" class="colunas col1 pt-2 pb-1">
+                    <strong>5.7.6 <i>Links</i> que abrem em uma nova guia ou janela</strong> <br>
+                    <p>Não há <i>links</i> que abrem em uma nova guia ou janela; ou <br>
+                      Todos os <i>links</i> que abrem em uma nova guia ou janela informam isso ao usuário.
+                    </p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">2.4.4 (A) <br> 2.4.9 (AAA) <br> 3.2.5 (AAA)</span>
+                  <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-7-6">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-7-7" class="colunas col1 pt-2 pb-1">
+                    <strong>5.7.7 <i>Links</i> para arquivos (não HTML)</strong> <br>
+                    <p>Todos os <i>links</i> para arquivos incluem no texto ou no texto alternativo a informação do formato e tamanho do arquivo; ou <br>
+                      O <i>link</i> para arquivo informa isso ao usuário de outra forma.
+                    </p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">2.4.4 (A) <br> 2.4.9 (AAA)</span>
+                  <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-7-7">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-7-8" class="colunas col1 pt-2 pb-1">
+                    <strong>5.7.8 <i>Links</i> para sites externos</strong> <br>
+                    <p>Todos os <i>links</i> para sites externos informam isso ao usuário.</p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">2.4.4 (A) <br> 2.4.9 (AAA)</span>
+                  <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-7-8">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-7-9" class="colunas col1 pt-2 pb-1">
+                    <strong>5.7.9 Texto complementar do <i>link</i></strong> <br>
+                    <p>Não há texto complementar que repete o texto, texto alternativo ou nome acessível do <i>link</i>.</p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">2.4.4 (A)</span>
+                  <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-7-9">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-7-10" class="colunas col1 pt-2 pb-1">
+                    <strong>5.7.10 <i>Links</i> adjacentes</strong> <br>
+                    <p>Não há <i>links</i> adjacentes que levam para o mesmo destino.</p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">2.4.4 (A)</span>
+                  <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-7-10">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-7-11" class="colunas col1 pt-2 pb-1">
+                    <strong>5.7.11 <i>Links</i> para contornar blocos de conteúdo</strong> <br>
+                    <p>Há um ou mais <i>links</i> (ou outro mecanismo) que permitem contornar blocos de conteúdo na página.</p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">2.4.1 (A)</span>
+                  <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-7-11">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-7-12" class="colunas col1 pt-2 pb-1">
+                    <strong>5.7.12 <i>Links</i> para contornar blocos de conteúdo em conjunto de páginas</strong> <br>
+                    <p>Há um ou mais <i>links</i> (ou outro mecanismo) que permitem contornar blocos de conteúdo que se repetem em um conjunto de páginas.</p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">2.4.1 (A)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-7-12">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-7-13" class="colunas col1 pt-2 pb-1">
+                    <strong>5.7.13 Alternativas para localização</strong> <br>
+                    <p>Há mais de uma forma para encontrar uma página em um conjunto de páginas; ou <br>
+                      A página é o resultado ou uma etapa de um processo.
+                    </p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">2.4.5 (AA)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-7-13">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-7-14" class="colunas col1 pt-2 pb-1">
+                    <strong>5.7.14 Localização em conjunto de páginas</strong> <br>
+                    <p>Há informação sobre a localização do usuário em relação às demais páginas ou seções do <i>site</i>.</p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">2.4.8 (AAA)</span>
+                  <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-7-14">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-7-15" class="colunas col1 pt-2 pb-1">
+                    <strong>5.7.15 Navegação consistente</strong> <br>
+                    <p>Todos os mecanismos de navegação que se repetem em um conjunto de páginas estão na mesma ordem relativa; ou <br>
+                      A posição do mecanismo é alterada pelo usuário.
+                    </p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">3.2.3 (AA)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-7-15">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="item_5-7-16" class="colunas col1 pt-2 pb-1">
+                    <strong>5.7.16 Ajuda consistente</strong> <br>
+                    <p>Todos os mecanismos de ajuda que se repetem em um conjunto de páginas estão na mesma ordem relativa; ou <br>
+                      A posição do mecanismo é alterada pelo usuário.
+                    </p>
+                  </label>
+                  <span class="colunas col2 align-items-center text-center">3.2.6 (A)</span>
+                  <span class="classificacao badge badge-primary requisito">Requisito</span>
+                  <div class="colunas col3">
+                    <select class="form-select" id="item_5-7-16">
+                      <option value="">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                      <option value="na">N/A</option>
+                    </select>
+                  </div>
+                  <div class="colunas col4">
+                    <input class="form-control" type="text" aria-labelledby="obs-titulo"/>
+                  </div>
+                </fieldset>
               </div>
             </section>
             <section id="secao_botoes_controles" role="tabpanel" aria-labelledby="tab-secao8" class="pt-4">
-              <h2>Botões e controles</h2>
+              <h2><i class="bi bi-toggles pr-2" style="font-size: 20px;"></i>Botões e controles</h2>
               <p>Elementos interativos, como <i>links</i> e botões, permitem que o usuário navegue para um destino ou execute uma ação, respectivamente. É importante que todos os elementos interativos sejam perceptíveis, compreensíveis e passíveis de acionamento para todos os usuários.</p>
               <div class="tabela">
                 <div class="titulos">
                   <div><strong>Item</strong></div>
                   <div><strong>Critério WCAG</strong></div>
+                  <div class="class" style="display: none;"><strong>Class.</strong></div>
                   <div><strong><i>Checklist</i></strong></div>
                   <div id="obs-titulo"><strong>Observações</strong></div>
                 </div>
               </div>
             </section>
             <section id="secao_formularios_dados" role="tabpanel" aria-labelledby="tab-secao9" class="pt-4">
-              <h2>Formulários e entrada de dados</h2>
+              <h2><i class="bi bi-menu-button-wide pr-2" style="font-size: 21px;"></i>Formulários e entrada de dados</h2>
               <p>Formulários permitem que os usuários insiram e enviem informações, e são essenciais para funcionalidades como envio de mensagens, realização de pedidos e cadastros. Instruções claras para inserir e corrigir informações possibilitam que os usuários preencham dados de forma correta e efciente.</p>
               <div class="tabela">
                 <div class="titulos">
                   <div><strong>Item</strong></div>
                   <div><strong>Critério WCAG</strong></div>
+                  <div class="class" style="display: none;"><strong>Class.</strong></div>
                   <div><strong><i>Checklist</i></strong></div>
                   <div id="obs-titulo"><strong>Observações</strong></div>
                 </div>
               </div>
             </section>
             <section id="secao_apresentacao" role="tabpanel" aria-labelledby="tab-secao10" class="pt-4">
-              <h2>Apresentação</h2>
+              <h2><i class="bi bi-layout-text-window pr-2" style="font-size: 21px;"></i>Apresentação</h2>
               <p>O conteúdo de uma página pode ser apresentado de diversas formas, incluindo variações de cores, fontes, leiautes, imagens e outras características sensoriais. A acessibilidade na estética e no design visual, de acordo com boas práticas, permite a percepção, compreensão e interação com o conteúdo para todas as pessoas.</p>
               <div class="tabela">
                 <div class="titulos">
                   <div><strong>Item</strong></div>
                   <div><strong>Critério WCAG</strong></div>
+                  <div class="class" style="display: none;"><strong>Class.</strong></div>
                   <div><strong><i>Checklist</i></strong></div>
                   <div id="obs-titulo"><strong>Observações</strong></div>
                 </div>
               </div>
             </section>
             <section id="secao_uso_cores" role="tabpanel" aria-labelledby="tab-secao11" class="pt-4">
-              <h2>Uso de cores</h2>
+              <h2><i class="bi bi-circle-half pr-2" style="font-size: 21px;"></i>Uso de cores</h2>
               <p>A cor é um recurso importante no <i>design</i> de conteúdo da <i>web</i>. A acessibilidade no uso de cores permite que pessoas que não podem ver ou perceber as cores também consigam compreender e utilizar o conteúdo.</p>
               <div class="tabela">
                 <div class="titulos">
                   <div><strong>Item</strong></div>
                   <div><strong>Critério WCAG</strong></div>
+                  <div class="class" style="display: none;"><strong>Class.</strong></div>
                   <div><strong><i>Checklist</i></strong></div>
                   <div id="obs-titulo"><strong>Observações</strong></div>
                 </div>
               </div>
             </section>
             <section id="secao_conteudo_textual" role="tabpanel" aria-labelledby="tab-secao12" class="pt-4">
-              <h2>Conteúdo textual</h2>
+              <h2><i class="bi bi-type pr-2" style="font-size: 22px;"></i>Conteúdo textual</h2>
               <p>Conteúdo em texto é essencial para apresentar informações na <i>web</i>. Textos escritos, estruturados e marcados de forma acessível, e que permitem a formatação mais adequada para cada usuário, são mais fáceis de ler e de serem compreendidos por todas as pessoas.</p>
               <div class="tabela">
                 <div class="titulos">
                   <div><strong>Item</strong></div>
                   <div><strong>Critério WCAG</strong></div>
+                  <div class="class" style="display: none;"><strong>Class.</strong></div>
                   <div><strong><i>Checklist</i></strong></div>
                   <div id="obs-titulo"><strong>Observações</strong></div>
                 </div>
               </div>
             </section>
             <section id="secao_codificacao_marcacao" role="tabpanel" aria-labelledby="tab-secao13" class="pt-4">
-              <h2>Codifcação e marcação semântica</h2>
+              <h2><i class="bi bi-code-slash pr-2" style="font-size: 22px;"></i>Codifcação e marcação semântica</h2>
               <p>Conjunto de códigos que determina o comportamento e a funcionalidade de todo o <i>site</i> ou aplicação <i>web</i>. Um código com boa qualidade é robusto, o que o torna compatível com uma ampla gama de agentes de usuário, como navegadores e tecnologias assistivas.</p>
               <div class="tabela">
                 <div class="titulos">
                   <div><strong>Item</strong></div>
                   <div><strong>Critério WCAG</strong></div>
+                  <div class="class" style="display: none;"><strong>Class.</strong></div>
                   <div><strong><i>Checklist</i></strong></div>
                   <div id="obs-titulo"><strong>Observações</strong></div>
                 </div>
               </div>
             </section>
             <section id="secao_audio_video" role="tabpanel" aria-labelledby="tab-secao14" class="pt-4">
-              <h2>Áudio e vídeo</h2>
+              <h2><i class="bi bi-volume-up-fill pr-2" style="font-size: 23px;"></i>Áudio e vídeo</h2>
               <p>Conteúdo multimídia, incluindo áudio e vídeo ao vivo ou pré-gravado, é um dos tipos de recursos para a <i>web</i>. Todos podem perceber e interagir com esse tipo de conteúdo se forem oferecidas alternativas equivalentes.</p>
               <div class="tabela">
                 <div class="titulos">
                   <div><strong>Item</strong></div>
                   <div><strong>Critério WCAG</strong></div>
+                  <div class="class" style="display: none;"><strong>Class.</strong></div>
                   <div><strong><i>Checklist</i></strong></div>
                   <div id="obs-titulo"><strong>Observações</strong></div>
                 </div>
               </div>
             </section>
             <section id="secao_animacao" role="tabpanel" aria-labelledby="tab-secao15" class="pt-4">
-              <h2>Animação</h2>
+              <h2><i class="bi bi-film pr-2"></i>Animação</h2>
               <p>Conteúdos que se movem, piscam ou rolam, que mudam de estado de modo que transmitem uma sensação de movimento, sejam autonomamente ou em resposta a uma ação do usuário. Animações podem gerar barreiras ou distrações para usuários que têm difculdade para acompanhar o movimento ou que possuem défcit de atenção. É importante que sejam fornecidas opções para controlar ou desativar essas animações.</p>
               <div class="tabela">
                 <div class="titulos">
                   <div><strong>Item</strong></div>
                   <div><strong>Critério WCAG</strong></div>
+                  <div class="class" style="display: none;"><strong>Class.</strong></div>
                   <div><strong><i>Checklist</i></strong></div>
                   <div id="obs-titulo"><strong>Observações</strong></div>
                 </div>
               </div>
             </section>
             <section id="secao_tempo" role="tabpanel" aria-labelledby="tab-secao16" class="pt-4">
-              <h2>Tempo</h2>
+              <h2><i class="bi bi-alarm pr-2" style="font-size: 21px;"></i>Tempo</h2>
               <p>Algumas atividades na <i>web</i> exigem limites de tempo para a sua realização. Esses limites devem considerar pessoas que necessitam de mais tempo para ler ou completar tarefas.</p>
               <div class="tabela">
                 <div class="titulos">
                   <div><strong>Item</strong></div>
                   <div><strong>Critério WCAG</strong></div>
+                  <div class="class" style="display: none;"><strong>Class.</strong></div>
                   <div><strong><i>Checklist</i></strong></div>
                   <div id="obs-titulo"><strong>Observações</strong></div>
                 </div>
               </div>
             </section>
           </form>
-          <div id="botoes_inferiores" class="d-flex flex-row justify-content-between py-5">
-            <button type="button" class="btn btn-outline-primary">Imprimir<i class="bi bi-printer pl-2"></i></button>
+          <div id="botoes_inferiores" class="d-flex flex-row justify-content-between py-5 sumir-impressao">
+            <button type="button" class="btn btn-outline-primary" onclick="window.print()">Imprimir<i class="bi bi-printer pl-2"></i></button>
             <div>
               <button type="button" class="btn btn-outline-primary"><i class="bi bi-arrow-left pr-2"></i>Voltar</button>
               <button type="button" class="btn btn-primary">Continuar<i class="bi bi-arrow-right pl-2"></i></button>
