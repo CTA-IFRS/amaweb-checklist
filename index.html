@@ -85,9 +85,31 @@
     <!-- Conteúdo principal -->
     <div id="checklist" class="bg-white">
       <div class="container pt-5">
-        <div class="column sumir-impressao">
+        <div class="column">
+          <img class="logo_amaweb d-none aparecer-impressao" src="img/logo2.png" alt="Logo AMAWeb">
           <h2 class="fw-bold">Checklist ABNT NBR 17225</h2>
-          <p>Esta checklist foi criada para auxiliar na conformidade com esta Norma. Para cada item, há uma coluna informando se ele é um requisito ou uma recomendação. Também há uma coluna com informações referentes ao respectivo critério de sucesso (C.S.) e nível de conformidade (A, AA ou AAA) do documento WCAG 2.2. A última coluna serve para a marcação da conformidade. “Sim” signifca que atende ao item. “Não” signifca não atende e “N/A” signifca que esse critério não se aplica.</p>
+          <p class="sumir-impressao">Esta checklist foi criada para auxiliar na conformidade com esta Norma. Para cada item, há uma coluna informando se ele é um requisito ou uma recomendação. Também há uma coluna com informações referentes ao respectivo critério de sucesso (C.S.) e nível de conformidade (A, AA ou AAA) do documento WCAG 2.2. A terceira coluna serve para a marcação da conformidade. “Sim” significa que atende ao item. “Não” significa não atende e “N/A” significa que esse critério não se aplica.</p>
+        </div>
+        <div id="infos_impressao" class="d-none aparecer-impressao">
+          <div class="d-flex justify-content-between">
+            <p id="dataHora"></p>
+            <p>X páginas</p>
+          </div>
+          <div class="d-grid box">
+            <div>
+              <p class="h3"><strong>Informações</strong></p>
+              <div class="d-flex align-items-center">
+                <div class="pieContainer">
+                  <div class="pieBackground"></div>
+                  <div id="pieSlices"></div>
+                </div>
+                <div class="legend pl-3" id="legend"></div>
+              </div>
+            </div>
+            <div>
+              <p class="h3" id="secoes_analisadas"></p>
+            </div>
+          </div>
         </div>
         <div class="d-flex flex-row justify-content-between flex-wrap pt-4 sumir-impressao">
             <button type="button" class="btn btn-primary" id="btn-abrir-filtros">Filtros<i class="bi bi-funnel pl-1"></i></button>
@@ -358,7 +380,7 @@
                 <fieldset>
                   <label for="item_5-1-4" class="colunas col1 pt-2 pb-1">
                     <strong>5.1.4 Ordem de foco previsível</strong> <br>
-                    Todos os elementos focáveis recebem foco em ordem sequencial lógica e intuitiva, consistente com a apresentação e que preserva o signifcado e a operabilidade.
+                    Todos os elementos focáveis recebem foco em ordem sequencial lógica e intuitiva, consistente com a apresentação e que preserva o significado e a operabilidade.
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.3 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1585,7 +1607,7 @@
             </section>
           </form>
           <div id="botoes_inferiores" class="d-flex flex-row justify-content-between py-5 sumir-impressao">
-            <button type="button" class="btn btn-outline-primary" onclick="window.print()">Imprimir<i class="bi bi-printer pl-2"></i></button>
+            <button type="button" id="btnImprimir" class="btn btn-outline-primary">Imprimir<i class="bi bi-printer pl-2"></i></button>
             <div>
               <button type="button" class="btn btn-outline-primary"><i class="bi bi-arrow-left pr-2"></i>Voltar</button>
               <button type="button" class="btn btn-primary">Continuar<i class="bi bi-arrow-right pl-2"></i></button>
@@ -1664,5 +1686,16 @@
     <script src="js/high_contrast.js"></script>
     <script src="js/checklist.js"></script>
 
+    <div id="confirmModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <button id="btnCloseModal" class="btn-close" aria-label="Fechar" style="position: absolute; top: 10px; right: 10px;"></button>
+        <h3><i class="bi bi-exclamation-circle-fill pr-2"></i>Alguns campos não foram preenchidos</h3>
+        <p id="confirmMessage"></p>
+        <div class="modal-buttons pt-1">
+          <button id="btnConfirmNo" class="btn btn-outline-secondary">Não</button>
+          <button id="btnConfirmYes" class="btn btn-outline-secondary">Sim</button>
+        </div>
+      </div>
+    </div>
 </body>
 </html>

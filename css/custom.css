@@ -85,9 +85,6 @@
     border-bottom: 2px solid #94A7B3;
     box-sizing: border-box;
 }
-#navegacaoDiretrizes .navbar-nav {
-    gap: 2rem !important;
-}
 #navegacaoDiretrizes .navbar-nav .nav-link.active,
 #secoes_checklist h2 {
     color: var(--primary-primary-900, #104736);
@@ -105,6 +102,7 @@
 #navegacaoDiretrizes .nav-link {
     color: #5F7686;
     border-radius: 0;
+    padding: 0 15px;
 }
 #navegacaoDiretrizes .nav-link:hover .nav-title,
 #navegacaoDiretrizes .nav-link.active .nav-title,
@@ -203,12 +201,55 @@
 .print-value {
   display: none;
 }
+#confirmModal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#confirmModal .modal-content {
+    background: #E7EBEE;
+    padding: 24px 16px;
+    max-width: 480px;
+    border-left: 4px solid #283239;
+    border-radius: 0;
+}
+#confirmModal h3 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #283239;
+    max-width: 300px;
+}
+#confirmModal #confirmMessage {
+    color: #343A40;
+}
+#confirmModal .btn-outline-secondary {
+    --bs-btn-color: #283239;
+    --bs-btn-border-color: #283239;
+    --bs-btn-hover-color: #E7EBEE;
+    --bs-btn-hover-bg: #283239;
+    --bs-btn-hover-border-color: #283239;
+    --bs-btn-focus-shadow-rgb: 108, 117, 125;
+    --bs-btn-active-color: #E7EBEE;
+    --bs-btn-active-bg: #283239;
+    --bs-btn-active-border-color: #283239;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #283239;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #283239;
+    --bs-gradient: none;
+}
 @media print {
-    #secoes_checklist section {
-        display: block !important;
-    }
-    #conteudo_checklist section h2 {
-        display: flex !important;
+    @page {
+        size: landscape;
     }
     #menuAcessibilidade,
     #menu-principal,
@@ -286,6 +327,7 @@
     .print-value {
         display: block !important;
         font-size: 12px;
+        max-width: 280px;
         margin-bottom: 0;
     }
     #secoes_checklist p:not(#secoes_checklist .tabela p) {
@@ -295,5 +337,79 @@
         font-size: 18px;
         border-bottom: none;
         color: #000000;
-    }   
+    }
+    #checklist .logo_amaweb {
+        width: 90px;
+        height: 50px;
+        object-fit: contain;
+        display: flex;
+        margin: 0 auto;
+    }
+    #checklist h2.fw-bold {
+        font-size: 15px;
+        text-align: center;
+        margin-top: 25px;
+    }
+    #infos_impressao p {
+        font-size: 12px !important;
+        margin-bottom: 0;
+    }
+    #infos_impressao .box {
+        border: 2px solid #000;
+        padding: 8px;
+        grid-template-columns: 300px 1fr;
+    }
+    #infos_impressao .box p.h3 {
+        font-size: 14px;
+        border-bottom: none;
+        color: #000000;
+    }
+    #infos_impressao .box p.h3 strong {
+        font-weight: 700;
+    }
+    #infos_impressao .box p {
+        font-size: 12px;
+        line-height: 22px !important;
+        margin-bottom: 0;
+    }
+    #secoes_checklist h2 {
+        font-size: 15px;
+    }
+    .pieContainer {
+        position: relative;
+        width: 70px;
+        height: 70px;
+    }
+    .pieBackground {
+        background-color: #e0e0e0;
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
+    .hold, .pie {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
+    .hold {
+        clip: rect(0px, 70px, 70px, 35px);
+    }
+    .pie {
+        clip: rect(0px, 35px, 70px, 0px);
+        transform: rotate(0deg);
+    }
+    .color-box {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        margin-right: 5px;
+    }
+    #secoes_checklist p {
+        line-height: unset !important;
+    }
+    .aparecer-impressao {
+        display: block !important;
+    }
 }
