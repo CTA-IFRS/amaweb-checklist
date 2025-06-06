@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('secoes_checklist');
     const btnCloseModal = document.getElementById('btnCloseModal');
     const confirmModal = document.getElementById('confirmModal');
+    const btnVoltar = document.getElementById('btn-voltar');
+    const btnContinuar = document.getElementById('btn-continuar');
 
     btnFiltros.addEventListener('click', function() {
         filtrosDiv.style.display = 'block';
@@ -84,6 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
         aplicarExibicao();
     }
 
+    let secoesFiltradas = [];
+    let indiceAtual = 0;
+
     function aplicarExibicao() {
         const modo = selectExibirComo.value;
 
@@ -94,6 +99,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 h2.style.display = 'none';
             });
 
+            const checkboxesMarcados = Array.from(document.querySelectorAll('input[type="checkbox"][id^="filtro_"]:checked'));
+            secoesFiltradas = checkboxesMarcados.map(cb => {
+                const secaoId = 'secao_' + cb.id.replace('filtro_', '');
+                return document.getElementById(secaoId);
+            }).filter(Boolean);
+
             let btnAtivo = null;
             navButtons.forEach(btn => {
                 if (btn.classList.contains('active')) {
@@ -103,14 +114,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let secaoParaMostrarId = null;
             if (btnAtivo) {
-                secaoParaMostrarId = 'secao_' + btnAtivo.id.replace('tab-', '');
-            } else if (secoes.length > 0) {
-                secaoParaMostrarId = secoes[0].id;
+                const id = 'secao_' + btnAtivo.id.replace('tab-', '');
+                secaoParaMostrarId = document.getElementById(id);
+                indiceAtual = secoesFiltradas.findIndex(secao => secao.id === id);
             }
 
-            secoes.forEach(secao => {
-                secao.style.display = (secao.id === secaoParaMostrarId) ? 'block' : 'none';
-            });
+            if (!secaoParaMostrarId || indiceAtual === -1) {
+                indiceAtual = 0;
+                secaoParaMostrarId = secoesFiltradas[indiceAtual];
+            }
+            
+            secoes.forEach(secao => secao.style.display = 'none');
+            if (secaoParaMostrarId) {
+                secaoParaMostrarId.style.display = 'block';
+            }
+
+            atualizarBotoesNavegacao();
+
         } else if (modo === 'lista') {
             navDiretrizes.style.display = 'none';
             
@@ -127,6 +147,86 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+
+    navButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            navButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const secaoId = 'secao_' + btn.id.replace('tab-', '');
+            const secao = document.getElementById(secaoId);
+
+            if (selectExibirComo.value === 'secao') {
+                const index = secoesFiltradas.findIndex(s => s.id === secaoId);
+                if (index !== -1) {
+                    secoes.forEach(s => s.style.display = 'none');
+                    secao.style.display = 'block';
+                    indiceAtual = index;
+                    atualizarBotoesNavegacao();
+                }
+            } else {
+                secao.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    function voltarSecao() {
+        if (indiceAtual > 0) {
+            secoesFiltradas[indiceAtual].style.display = 'none';
+            indiceAtual--;
+            secoesFiltradas[indiceAtual].style.display = 'block';
+            atualizarBotoesNavegacao();
+        }
+    }
+
+    function avancarSecao() {
+        if (indiceAtual < secoesFiltradas.length - 1) {
+            secoesFiltradas[indiceAtual].style.display = 'none';
+            indiceAtual++;
+            secoesFiltradas[indiceAtual].style.display = 'block';
+            atualizarBotoesNavegacao();
+        }
+    }
+
+    function atualizarBotoesNavegacao() {
+        btnVoltar.disabled = indiceAtual === 0;
+        btnContinuar.disabled = indiceAtual >= secoesFiltradas.length - 1;
+    }
+
+    btnVoltar.addEventListener('click', voltarSecao);
+    btnContinuar.addEventListener('click', avancarSecao);
+
+    function getBotoesVisiveis() {
+        return Array.from(navButtons).filter(btn => btn.offsetParent !== null);
+    }
+
+    function getIndexAtivo() {
+        const visiveis = getBotoesVisiveis();
+        return visiveis.findIndex(btn => btn.classList.contains('active'));
+    }
+
+    function setAbaAtiva(index) {
+        const visiveis = getBotoesVisiveis();
+        if (visiveis.length === 0) return;
+
+        visiveis.forEach(btn => btn.classList.remove('active'));
+        visiveis[index].classList.add('active');
+    }
+
+    btnVoltar.addEventListener('click', () => {
+        const index = getIndexAtivo();
+        if (index > 0) {
+            setAbaAtiva(index - 1);
+        }
+    });
+
+    btnContinuar.addEventListener('click', () => {
+        const visiveis = getBotoesVisiveis();
+        const index = getIndexAtivo();
+        if (index < visiveis.length - 1) {
+            setAbaAtiva(index + 1);
+        }
+    });
 
     navItems.forEach(item => (item.style.display = 'inline-block'));
     secoes.forEach((secao, index) => {
