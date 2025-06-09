@@ -124,12 +124,12 @@
 }
 #checklist form .titulos {
     display: grid;
-    grid-template-columns: 5fr 128px 168px 6fr;
+    grid-template-columns: 5fr 119px 152px 6fr;
     gap: 16px;
 }
 #checklist .tabela fieldset {
     display: grid;
-    grid-template-columns: 5fr 144px 184px 6fr;
+    grid-template-columns: 5fr 135px 160px 6fr;
     background-color: #F5F8FA;
     padding: 14px;
     border-radius: 12px;
