@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const filtroRequisitos = document.getElementById('filtro_requisitos');
     const filtroRecomendacoes = document.getElementById('filtro_recomendacoes');
     const navItems = document.querySelectorAll('#navegacaoDiretrizes li.nav-item');
-    const navButtons = document.querySelectorAll('#navegacaoDiretrizes button');
+    const navButtons = document.querySelectorAll('#navegacaoDiretrizes a');
     const secoes = document.querySelectorAll('[id^="secao_"]');
     const fieldsets = document.querySelectorAll('#secoes_checklist fieldset');
     const selectExibirComo = document.getElementById('exibir-como-select');
@@ -21,13 +21,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const confirmModal = document.getElementById('confirmModal');
     const btnVoltar = document.getElementById('btn-voltar');
     const btnContinuar = document.getElementById('btn-continuar');
+    const btnImprimir = document.getElementById('btnImprimir');
 
     btnFiltros.addEventListener('click', function() {
-        filtrosDiv.style.display = 'block';
+        if (btnFiltros.getAttribute('aria-expanded') === 'false') {
+            filtrosDiv.style.display = 'block';
+            btnFiltros.setAttribute('aria-expanded', 'true');
+        } else {
+            filtrosDiv.style.display = 'none';
+            btnFiltros.setAttribute('aria-expanded', 'false');
+        }
     });
 
     btnClose.addEventListener('click', function() {
         filtrosDiv.style.display = 'none';
+        btnFiltros.setAttribute('aria-expanded', 'false');
     });
 
     btnCloseModal.addEventListener('click', function() {
@@ -151,7 +159,9 @@ document.addEventListener('DOMContentLoaded', function() {
     navButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             navButtons.forEach(b => b.classList.remove('active'));
+            navButtons.forEach(b => b.ariaSelected = 'false');
             btn.classList.add('active');
+            btn.ariaSelected = 'true';
 
             const secaoId = 'secao_' + btn.id.replace('tab-', '');
             const secao = document.getElementById(secaoId);
@@ -189,8 +199,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function atualizarBotoesNavegacao() {
-        btnVoltar.disabled = indiceAtual === 0;
-        btnContinuar.disabled = indiceAtual >= secoesFiltradas.length - 1;
+        if (indiceAtual === 0) {
+            btnVoltar.classList.add('disabled-link');
+            btnVoltar.setAttribute('aria-disabled', 'true');
+        } else {
+            btnVoltar.classList.remove('disabled-link');
+            btnVoltar.setAttribute('aria-disabled', 'false');
+        }
+
+        if (indiceAtual >= secoesFiltradas.length - 1) {
+            btnContinuar.classList.add('disabled-link');
+            btnContinuar.setAttribute('aria-disabled', 'true');
+        } else {
+            btnContinuar.classList.remove('disabled-link');
+            btnContinuar.setAttribute('aria-disabled', 'false');
+        }
     }
 
     btnVoltar.addEventListener('click', voltarSecao);
@@ -299,14 +322,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('beforeprint', () => {
         
-        container.querySelectorAll('input').forEach(input => {
-            let p = input.nextElementSibling;
+        container.querySelectorAll('textarea').forEach(textarea => {
+            let p = textarea.nextElementSibling;
             if (!p || !p.classList.contains('print-value')) {
             p = document.createElement('p');
             p.classList.add('print-value');
-            input.insertAdjacentElement('afterend', p);
+            textarea.insertAdjacentElement('afterend', p);
             }
-            p.textContent = input.value;
+            p.textContent = textarea.value;
         });
 
         container.querySelectorAll('select').forEach(select => {
@@ -413,7 +436,7 @@ document.addEventListener('DOMContentLoaded', function() {
         btnNo.addEventListener('click', onNo);
     }
 
-    document.getElementById('btnImprimir').addEventListener('click', function() {
+    function dispararImprimir() {
         const secoesComCamposVazios = [];
 
         const diretrizCheckboxesMarcados = Array.from(document.querySelectorAll('input[type="checkbox"][id^="filtro_"]:checked:not(#filtro_requisitos):not(#filtro_recomendacoes)'));
@@ -446,6 +469,13 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         } else {
             window.print();
+        }
+    }
+    btnImprimir.addEventListener('click', dispararImprimir);
+
+    btnImprimir.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            dispararImprimir();
         }
     });
 

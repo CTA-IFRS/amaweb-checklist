@@ -95,9 +95,13 @@
     font-size: 20px;
     padding-bottom: 12px;
 }
-#navegacaoDiretrizes .nav-title {
-    display: none;
-    transition: 0.3s ease;
+#navegacaoDiretrizes .nav-title:not(#navegacaoDiretrizes .nav-link:hover .nav-title, #navegacaoDiretrizes .nav-link.active .nav-title, #navegacaoDiretrizes .nav-link:focus .nav-title) {
+    display: inline;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
 }
 #navegacaoDiretrizes .nav-link {
     color: #5F7686;
@@ -116,6 +120,9 @@
 #navegacaoDiretrizes .nav-link {
     height: 45px !important;
     margin-bottom: -1px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 #checklist form .tabela {
     display: flex;
@@ -321,7 +328,7 @@
     #checklist .tabela .titulos #obs-titulo {
         border-right: 0;
     }
-    input, select {
+    input, select, textarea {
         display: none !important;
     }
     .print-value {
@@ -412,4 +419,33 @@
     .aparecer-impressao {
         display: block !important;
     }
+}
+.font-italic {
+    font-style: italic;
+}
+.titulo-item {
+    display: block;
+    margin-bottom: 10px;
+}
+.conteudo-item {
+    display: block;
+    margin-bottom: 10px;
+}
+#secoes_checklist textarea {
+    min-height: 90px;
+}
+#form-exibir-como {
+    right: 0;
+}
+.visualmente-oculto {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+}
+.disabled-link[aria-disabled="true"] {
+    opacity: 70%;
+    pointer-events: none;
+    cursor: default;
 }
