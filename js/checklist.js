@@ -175,10 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (selectExibirComo.value === 'secao') {
                 const index = secoesFiltradas.findIndex(s => s.id === secaoId);
                 if (index !== -1) {
-                    secoes.forEach(s => s.style.display = 'none');
-                    secao.style.display = 'block';
-                    indiceAtual = index;
-                    atualizarBotoesNavegacao();
+                    irParaSecao(index);
                 }
             } else {
                 secao.scrollIntoView({ behavior: 'smooth' });
@@ -186,21 +183,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    function irParaSecao(novoIndice) {
+        if (novoIndice >= 0 && novoIndice < secoesFiltradas.length) {
+            secoesFiltradas[indiceAtual].style.display = 'none';
+            indiceAtual = novoIndice;
+            secoesFiltradas[indiceAtual].style.display = 'block';
+            setAbaAtiva(indiceAtual);
+            atualizarBotoesNavegacao();
+        }
+    }
+
     function voltarSecao() {
         if (indiceAtual > 0) {
-            secoesFiltradas[indiceAtual].style.display = 'none';
-            indiceAtual--;
-            secoesFiltradas[indiceAtual].style.display = 'block';
-            atualizarBotoesNavegacao();
+            irParaSecao(indiceAtual - 1);
         }
     }
 
     function avancarSecao() {
         if (indiceAtual < secoesFiltradas.length - 1) {
-            secoesFiltradas[indiceAtual].style.display = 'none';
-            indiceAtual++;
-            secoesFiltradas[indiceAtual].style.display = 'block';
-            atualizarBotoesNavegacao();
+            irParaSecao(indiceAtual + 1);
         }
     }
 
@@ -223,7 +224,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const spanVoltar = btnVoltar.querySelector('span.visualmente-oculto');
         const spanContinuar = btnContinuar.querySelector('span.visualmente-oculto');
-        
 
         if (secoesFiltradas.length > 1) {
             const nomeSegundaSecao = secoesFiltradas[1].querySelector('h2')?.textContent || 'próxima';
@@ -235,7 +235,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (indiceAtual > 0) {
             const nomeSecaoVoltar = secoesFiltradas[indiceAtual - 1].querySelector('h2')?.textContent || 'anterior';
             spanVoltar.textContent = `para seção ${nomeSecaoVoltar}`;
-            
         } else {
             spanVoltar.textContent = 'para seção anterior';
         }
@@ -251,6 +250,18 @@ document.addEventListener('DOMContentLoaded', function() {
     btnVoltar.addEventListener('click', voltarSecao);
     btnContinuar.addEventListener('click', avancarSecao);
 
+    function ativarComTecla(el, acao) {
+        el.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                acao();
+            }
+        });
+    }
+
+    ativarComTecla(btnVoltar, voltarSecao);
+    ativarComTecla(btnContinuar, avancarSecao);
+
     function getBotoesVisiveis() {
         return Array.from(navButtons).filter(btn => btn.offsetParent !== null);
     }
@@ -262,26 +273,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function setAbaAtiva(index) {
         const visiveis = getBotoesVisiveis();
-        if (visiveis.length === 0) return;
+        if (visiveis.length === 0 || index < 0 || index >= visiveis.length) return;
 
-        visiveis.forEach(btn => btn.classList.remove('active'));
-        visiveis[index].classList.add('active');
+        visiveis.forEach(btn => {
+            btn.classList.remove('active');
+            btn.ariaSelected = 'false';
+        });
+
+        const ativo = visiveis[index];
+        ativo.classList.add('active');
+        ativo.ariaSelected = 'true';
     }
-
-    btnVoltar.addEventListener('click', () => {
-        const index = getIndexAtivo();
-        if (index > 0) {
-            setAbaAtiva(index - 1);
-        }
-    });
-
-    btnContinuar.addEventListener('click', () => {
-        const visiveis = getBotoesVisiveis();
-        const index = getIndexAtivo();
-        if (index < visiveis.length - 1) {
-            setAbaAtiva(index + 1);
-        }
-    });
 
     navItems.forEach(item => (item.style.display = 'inline-block'));
     secoes.forEach((secao, index) => {
@@ -609,4 +611,46 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     updatePieFromSelects();
+
+    function contarRespostas() {
+        const resultados = {
+            requisitos: { total: 0, preenchidos: 0 },
+            recomendacoes: { total: 0, preenchidos: 0 }
+        };
+
+        if (!Array.isArray(secoesFiltradas)) return resultados;
+
+        secoesFiltradas.forEach(secao => {
+            const fieldsets = secao.querySelectorAll('fieldset');
+
+            fieldsets.forEach(fieldset => {
+                const select = fieldset.querySelector('select');
+                const classificacao = fieldset.querySelector('.classificacao');
+
+                if (!select || !classificacao) return;
+
+                const tipo = classificacao.classList.contains('requisito') ? 'requisitos' : classificacao.classList.contains('recomendacao') ? 'recomendacoes' : null;
+
+                if (!tipo) return;
+
+                resultados[tipo].total++;
+
+                if (select.value.trim() !== '') {
+                    resultados[tipo].preenchidos++;
+                }
+            });
+        });
+
+        return resultados;
+    }
+
+    function atualizarResumoRespostas() {
+        const resumo = contarRespostas();
+        document.getElementById('resumoRespostas').textContent = `${resumo.requisitos.preenchidos}/${resumo.requisitos.total} REQUISITOS  |  ` + `${resumo.recomendacoes.preenchidos}/${resumo.recomendacoes.total} RECOMENDAÇÕES`;
+    }
+    
+    document.querySelectorAll('select.form-select').forEach(select => {
+        select.addEventListener('change', atualizarResumoRespostas);
+    });
+
 });

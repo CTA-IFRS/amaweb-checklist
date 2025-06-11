@@ -162,7 +162,8 @@
     left: 16px;
 }
 #checklist .tabela .titulos strong,
-#checklist .tabela label {
+#checklist .tabela label,
+#resumoRespostas {
     font-weight: 800;
     font-size: 16px;
     line-height: 28px;
@@ -363,7 +364,8 @@
         text-align: center;
         margin-top: 25px;
     }
-    #infos_impressao p {
+    #infos_impressao p,
+    #resumoRespostas {
         font-size: 12px !important;
         margin-bottom: 0;
     }
@@ -488,6 +490,7 @@
 }
 .mobile_only {
     display: none;
+    padding-bottom: 10px;
 }
 @media screen and (max-width: 992px) {
     #navegacaoDiretrizes #navbarNav {
@@ -516,10 +519,30 @@
         grid-template-columns: 2fr 3fr;
     }
     #checklist .tabela .colunas:first-child {
-        padding-right: 0;
-        border-right: 0;
+        padding-right: 0 !important;
+        border-right: 0 !important;
     }
-    #checklist .tabela label.colunas {
+    #checklist .tabela .colunas.col1,
+    #checklist .tabela .colunas.col4 {
         grid-column: span 2;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        border-right: 0 !important;
+    }
+    #checklist .tabela .colunas.col2 {
+        text-align: left !important;
+        align-items: flex-start !important;
+        padding-left: 0 !important;
+    }
+    #checklist .tabela .colunas.col3 {
+        padding-right: 0 !important;
+        border-right: 0 !important;
+    }
+    #checklist .tabela .colunas.col4 {
+        padding-top: 15px;
+    }
+    #confirmModal .modal-content {
+        width: calc(100% - 80px);
+        box-sizing: border-box;
     }
 }
