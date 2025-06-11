@@ -111,7 +111,7 @@
             </div>
           </div>
         </div>
-        <div class="d-flex flex-row justify-content-between flex-wrap pt-4 sumir-impressao position-relative">
+        <div class="d-flex flex-column flex-lg-row justify-content-between flex-wrap pt-4 sumir-impressao position-relative">
             <button type="button" class="btn btn-primary" id="btn-abrir-filtros" aria-expanded="false">Filtros<i class="bi bi-funnel pl-1"></i></button>
             <div id="filtros" class="w-100 p-4 mt-4">
               <div class="d-flex justify-content-between">
@@ -119,7 +119,7 @@
                 <button type="button" aria-label="Fechar" class="btn-close"></button>
               </div>
               <form id="form-filtros" class="row">
-                <fieldset class="col-3 py-2">
+                <fieldset class="col-lg-3 col-12 py-2">
                   <legend class="mb-4">Classificação</legend>
                   <div class="form-group form-check mb-4">
                     <input type="checkbox" class="form-check-input" checked id="filtro_requisitos">
@@ -130,7 +130,7 @@
                     <label class="form-check-label" for="filtro_recomendacoes">Exibir “recomendações”</label>
                   </div>
                 </fieldset>
-                <fieldset class="col-9 row py-2">
+                <fieldset class="col-lg-9 col-12 row py-2">
                   <legend class="mb-4">DIRETRIZES</legend>
                   <div class="esquerda col-5">
                     <div class="form-group form-check mb-4">
@@ -211,7 +211,7 @@
                 </div>
               </form>
             </div>
-            <form id="form-exibir-como" class="d-flex align-items-center position-absolute">
+            <form id="form-exibir-como" class="d-flex align-items-center pt-3 pt-lg-0">
               <label id="exibir-como-label" for="exibir-como-select">Exibir como:</label>
               <select id="exibir-como-select" name="exibir-como" class="form-select ml-2 mr-2" style="width: 215px;">
                   <option value="secao">Seção</option>
@@ -324,9 +324,10 @@
                     <strong class="titulo-item">5.1.1 Indicador de foco visível</strong>
                     <span class="conteudo-item">Todos os elementos focáveis possuem um indicador de foco visível.</span>
                   </label>
-                  <span class="colunas col2 align-items-center text-center">2.4.7 (AA)</span>
+                  <span class="colunas col2 align-items-center text-center"><strong class="mobile_only">Critério WCAG</strong>2.4.7 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
                   <div class="colunas col3">
+                    <strong class="mobile_only"><span class="font-italic">Checklist</span></strong>
                     <select class="form-select" id="item_5-1-1">
                       <option value="">Selecione</option>
                       <option value="sim">Sim</option>
@@ -646,8 +647,8 @@
                 </div>
                 <fieldset>
                   <label for="item_5-2-1" class="colunas col1 pt-2 pb-1">
-                    <strong>5.2.1 Texto alternativo para imagens de conteúdo</strong> <br>
-                    Todas as imagens que transmitem informação ou conteúdo relevante possuem texto alternativo que descreve essa informação ou conteúdo.
+                    <strong class="titulo-item">5.2.1 Texto alternativo para imagens de conteúdo</strong>
+                    <span class="conteudo-item">Todas as imagens que transmitem informação ou conteúdo relevante possuem texto alternativo que descreve essa informação ou conteúdo.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.1.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -665,8 +666,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-2-2" class="colunas col1 pt-2 pb-1">
-                    <strong>5.2.2 Texto alternativo para imagens funcionais</strong> <br>
-                    Todas as imagens funcionais possuem texto alternativo que descreve a funcionalidade do elemento.
+                    <strong class="titulo-item">5.2.2 Texto alternativo para imagens funcionais</strong>
+                    <span class="conteudo-item">Todas as imagens funcionais possuem texto alternativo que descreve a funcionalidade do elemento.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.1.1 (A) <br> 2.4.4.(A) <br> 2.4.9 (AAA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -684,8 +685,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-2-3" class="colunas col1 pt-2 pb-1">
-                    <strong>5.2.3 Texto alternativo para imagens decorativas</strong> <br>
-                    Todas as imagens decorativas possuem texto alternativo vazio ou estão implementadas de outra forma, de modo que podem ser ignoradas por tecnologia assistiva.
+                    <strong class="titulo-item">5.2.3 Texto alternativo para imagens decorativas</strong>
+                    <span class="conteudo-item">Todas as imagens decorativas possuem texto alternativo vazio ou estão implementadas de outra forma, de modo que podem ser ignoradas por tecnologia assistiva.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.1.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -703,8 +704,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-2-4" class="colunas col1 pt-2 pb-1">
-                    <strong>5.2.4 Descrição para imagens complexas</strong> <br>
-                    Todas as imagens complexas possuem texto alternativo que as identifica e têm descrição detalhada disponível na página (próximo à respectiva imagem) ou em outra página indicada.
+                    <strong class="titulo-item">5.2.4 Descrição para imagens complexas</strong>
+                    <span class="conteudo-item">Todas as imagens complexas possuem texto alternativo que as identifica e têm descrição detalhada disponível na página (próximo à respectiva imagem) ou em outra página indicada.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.1.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -722,10 +723,10 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-2-5" class="colunas col1 pt-2 pb-1">
-                    <strong>5.2.5 Imagens de texto</strong> <br>
-                    Não há imagens de texto; ou <br>
-                    Todas as imagens de texto são essenciais e possuem texto alternativo com o mesmo conteúdo; ou <br>
-                    É possível customizar as imagens de texto não essenciais e elas possuem texto alternativo com o mesmo conteúdo.
+                    <strong class="titulo-item">5.2.5 Imagens de texto</strong>
+                    <span class="conteudo-item">Não há imagens de texto; ou </span>
+                    <span class="conteudo-item">Todas as imagens de texto são essenciais e possuem texto alternativo com o mesmo conteúdo; ou </span>
+                    <span class="conteudo-item">É possível customizar as imagens de texto não essenciais e elas possuem texto alternativo com o mesmo conteúdo.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.1.1 (A) <br> 1.4.5 (AA) <br> 1.4.9 (AAA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -743,8 +744,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-2-6" class="colunas col1 pt-2 pb-1">
-                    <strong>5.2.6 Texto alternativo para mapas de imagens</strong> <br>
-                    Todos os mapas de imagens possuem texto alternativo para cada área interativa.
+                    <strong class="titulo-item">5.2.6 Texto alternativo para mapas de imagens</strong>
+                    <span class="conteudo-item">Todos os mapas de imagens possuem texto alternativo para cada área interativa.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.1.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -775,8 +776,8 @@
                 </div>
                 <fieldset>
                   <label for="item_5-3-1" class="colunas col1 pt-2 pb-1">
-                    <strong>5.3.1 Semântica de cabeçalho</strong> <br>
-                    Todos os cabeçalhos possuem semântica determinada programaticamente.
+                    <strong class="titulo-item">5.3.1 Semântica de cabeçalho</strong>
+                    <span class="conteudo-item">Todos os cabeçalhos possuem semântica determinada programaticamente.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -794,8 +795,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-3-2" class="colunas col1 pt-2 pb-1">
-                    <strong>5.3.2 Uso de cabeçalhos</strong> <br>
-                    Todos os cabeçalhos são utilizados para identificar seções de conteúdo.
+                    <strong class="titulo-item">5.3.2 Uso de cabeçalhos</strong>
+                    <span class="conteudo-item">Todos os cabeçalhos são utilizados para identificar seções de conteúdo.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A) <br> 2.4.6 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -813,8 +814,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-3-3" class="colunas col1 pt-2 pb-1">
-                    <strong>5.3.3 Cabeçalho principal</strong> <br>
-                    Há um, e somente um, cabeçalho de nível 1, que identifica a página.
+                    <strong class="titulo-item">5.3.3 Cabeçalho principal</strong>
+                    <span class="conteudo-item">Há um, e somente um, cabeçalho de nível 1, que identifica a página.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.6 (AA) <br> 2.4.10 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -832,8 +833,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-3-4" class="colunas col1 pt-2 pb-1">
-                    <strong>5.3.4 Seções com cabeçalhos</strong> <br>
-                    Todas as seções de conteúdo possuem um cabeçalho que as identifica.
+                    <strong class="titulo-item">5.3.4 Seções com cabeçalhos</strong>
+                    <span class="conteudo-item">Todas as seções de conteúdo possuem um cabeçalho que as identifica.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.10 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -851,8 +852,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-3-5" class="colunas col1 pt-2 pb-1">
-                    <strong>5.3.5 Estrutura de cabeçalhos</strong> <br>
-                    Todos os cabeçalhos seguem uma estrutura hierárquica, lógica e semântica.
+                    <strong class="titulo-item">5.3.5 Estrutura de cabeçalhos</strong>
+                    <span class="conteudo-item">Todos os cabeçalhos seguem uma estrutura hierárquica, lógica e semântica.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A) <br> 2.4.6 (AA) <br> 2.4.10 (AAA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -883,8 +884,8 @@
                 </div>
                 <fieldset>
                   <label for="item_5-4-1" class="colunas col1 pt-2 pb-1">
-                    <strong>5.4.1 Semântica de região</strong> <br>
-                    Todas as regiões da página possuem semântica determinada programaticamente e condizente com a sua função e tipo de conteúdo.
+                    <strong class="titulo-item">5.4.1 Semântica de região</strong>
+                    <span class="conteudo-item">Todas as regiões da página possuem semântica determinada programaticamente e condizente com a sua função e tipo de conteúdo.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A) <br> 1.3.6 (AAA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -902,8 +903,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-4-2" class="colunas col1 pt-2 pb-1">
-                    <strong>5.4.2 Uso de regiões</strong> <br>
-                    Todas as regiões são utilizadas para organizar os conteúdos da página de acordo com o tipo de conteúdo.
+                    <strong class="titulo-item">5.4.2 Uso de regiões</strong>
+                    <span class="conteudo-item">Todas as regiões são utilizadas para organizar os conteúdos da página de acordo com o tipo de conteúdo.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A) <br> 1.3.6 (AAA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -921,8 +922,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-4-3" class="colunas col1 pt-2 pb-1">
-                    <strong>5.4.3 Conteúdo em regiões</strong> <br>
-                    Todo o conteúdo está contido em regiões.
+                    <strong class="titulo-item">5.4.3 Conteúdo em regiões</strong>
+                    <span class="conteudo-item">Todo o conteúdo está contido em regiões.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.6 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -940,8 +941,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-4-4" class="colunas col1 pt-2 pb-1">
-                    <strong>5.4.4 Regiões únicas</strong> <br>
-                    <p>Não há mais do que uma região do tipo <span class="font-italic">‘header’</span>/<span class="font-italic">’banner’</span>, <span class="font-italic">‘main’</span> ou <span class="font-italic">‘footer’</span>/<span class="font-italic">’contentinfo’</span>.</p>
+                    <strong class="titulo-item">5.4.4 Regiões únicas</strong>
+                    <span class="conteudo-item">Não há mais do que uma região do tipo <span class="font-italic">‘header’</span>/<span class="font-italic">’banner’</span>, <span class="font-italic">‘main’</span> ou <span class="font-italic">‘footer’</span>/<span class="font-italic">’contentinfo’</span>.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A) <br> 1.3.6 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -959,8 +960,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-4-5" class="colunas col1 pt-2 pb-1">
-                    <strong>5.4.5 Regiões identificadas unicamente</strong> <br>
-                    Todas as regiões do mesmo tipo possuem um nome acessível único que as identifica.
+                    <strong class="titulo-item">5.4.5 Regiões identificadas unicamente</strong>
+                    <span class="conteudo-item">Todas as regiões do mesmo tipo possuem um nome acessível único que as identifica.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A) <br> 4.1.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -991,8 +992,8 @@
                 </div>
                 <fieldset>
                   <label for="item_5-5-1" class="colunas col1 pt-2 pb-1">
-                    <strong>5.5.1 Semântica de lista</strong> <br>
-                    Todas as listas possuem semântica determinada programaticamente e condizente com o tipo de relação entre os itens (ordenada, não ordenada e de definições).
+                    <strong class="titulo-item">5.5.1 Semântica de lista</strong>
+                    <span class="conteudo-item">Todas as listas possuem semântica determinada programaticamente e condizente com o tipo de relação entre os itens (ordenada, não ordenada e de definições).</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1010,8 +1011,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-5-2" class="colunas col1 pt-2 pb-1">
-                    <strong>5.5.2 Uso de listas</strong> <br>
-                    Todas as listas são utilizadas para agrupamento de itens de mesma natureza.
+                    <strong class="titulo-item">5.5.2 Uso de listas</strong>
+                    <span class="conteudo-item">Todas as listas são utilizadas para agrupamento de itens de mesma natureza.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1042,8 +1043,8 @@
                 </div>
                 <fieldset>
                   <label for="item_5-6-1" class="colunas col1 pt-2 pb-1">
-                    <strong>5.6.1 Semântica de tabela</strong> <br>
-                    Todas as tabelas de dados possuem semântica determinada programaticamente.
+                    <strong class="titulo-item">5.6.1 Semântica de tabela</strong>
+                    <span class="conteudo-item">Todas as tabelas de dados possuem semântica determinada programaticamente.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1061,9 +1062,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-6-2" class="colunas col1 pt-2 pb-1">
-                    <strong>5.6.2 Uso de Tabelas</strong> <br>
-                    Todas as tabelas são utilizadas para apresentar dados tabulares. Não há tabelas de leiaute; ou <br>
-                    Todas as tabelas de leiaute não possuem semântica determinada.
+                    <strong class="titulo-item">5.6.2 Uso de Tabelas</strong>
+                    <span class="conteudo-item">Todas as tabelas são utilizadas para apresentar dados tabulares. Não há tabelas de leiaute; ou </span>
+                    <span class="conteudo-item">Todas as tabelas de leiaute não possuem semântica determinada.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1081,8 +1082,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-6-3" class="colunas col1 pt-2 pb-1">
-                    <strong>5.6.3 Cabeçalhos de tabela</strong> <br>
-                    Todas as células de dados de uma tabela estão associadas com os respectivos cabeçalhos de linha e coluna de forma programaticamente determinada.
+                    <strong class="titulo-item">5.6.3 Cabeçalhos de tabela</strong>
+                    <span class="conteudo-item">Todas as células de dados de uma tabela estão associadas com os respectivos cabeçalhos de linha e coluna de forma programaticamente determinada.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1100,8 +1101,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-6-4" class="colunas col1 pt-2 pb-1">
-                    <strong>5.6.4 Título de tabela</strong> <br>
-                    Todas as tabelas possuem um título ou legenda que as identifica.
+                    <strong class="titulo-item">5.6.4 Título de tabela</strong>
+                    <span class="conteudo-item">Todas as tabelas possuem um título ou legenda que as identifica.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.6 (AA) <br> 2.4.10 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -1119,8 +1120,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-6-5" class="colunas col1 pt-2 pb-1">
-                    <strong>5.6.5 Título de tabela associado</strong> <br>
-                    Todos os títulos ou legendas de tabela estão associados à respectiva tabela de forma programaticamente determinada.
+                    <strong class="titulo-item">5.6.5 Título de tabela associado</strong>
+                    <span class="conteudo-item">Todos os títulos ou legendas de tabela estão associados à respectiva tabela de forma programaticamente determinada.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1138,8 +1139,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-6-6" class="colunas col1 pt-2 pb-1">
-                    <strong>5.6.6 Descrição para tabelas complexas</strong> <br>
-                    Todas as tabelas complexas possuem uma descrição da tabela em texto.
+                    <strong class="titulo-item">5.6.6 Descrição para tabelas complexas</strong>
+                    <span class="conteudo-item">Todas as tabelas complexas possuem uma descrição da tabela em texto.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.1.5 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -1170,8 +1171,8 @@
                 </div>
                 <fieldset>
                   <label for="item_5-7-1" class="colunas col1 pt-2 pb-1">
-                    <strong>5.7.1 Semântica de <span class="font-italic">link</span></strong> <br>
-                    <p>Todos os <span class="font-italic">links</span> possuem semântica determinada programaticamente.</p>
+                    <strong class="titulo-item">5.7.1 Semântica de <span class="font-italic">link</span></strong>
+                    <span class="conteudo-item">Todos os <span class="font-italic">links</span> possuem semântica determinada programaticamente.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1189,8 +1190,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-7-2" class="colunas col1 pt-2 pb-1">
-                    <strong>5.7.2 Uso de <span class="font-italic">links</span></strong> <br>
-                    <p>Todos os <span class="font-italic">links</span> são utilizados para navegação.</p>
+                    <strong class="titulo-item">5.7.2 Uso de <span class="font-italic">links</span></strong>
+                    <span class="conteudo-item">Todos os <span class="font-italic">links</span> são utilizados para navegação.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1208,12 +1209,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-7-3" class="colunas col1 pt-2 pb-1">
-                    <strong>5.7.3 Propósito do <span class="font-italic">link</span> sem contexto</strong> <br>
-                    <p>Todos os <span class="font-italic">links</span> possuem texto, texto alternativo ou nome acessível
-                      que indica sua função ou destino. <br>
-                      <small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.7.4,
-                      Propósito do <span class="font-italic">link</span> no contexto.</small>
-                    </p>
+                    <strong class="titulo-item">5.7.3 Propósito do <span class="font-italic">link</span> sem contexto</strong>
+                    <span class="conteudo-item">Todos os <span class="font-italic">links</span> possuem texto, texto alternativo ou nome acessível que indica sua função ou destino. </span>
+                    <span class="conteudo-item"><small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.7.4, Propósito do <span class="font-italic">link</span> no contexto.</small></span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.4 (A) <br> 2.4.9 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -1231,8 +1229,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-7-4" class="colunas col1 pt-2 pb-1">
-                    <strong>5.7.4 Propósito do <span class="font-italic">link</span> no contexto</strong> <br>
-                    <p>Todos os <span class="font-italic">links</span> possuem texto, texto alternativo ou nome acessível que, em conjunto com o contexto do <span class="font-italic">link</span>, informa sua função ou destino.</p>
+                    <strong class="titulo-item">5.7.4 Propósito do <span class="font-italic">link</span> no contexto</strong>
+                    <span class="conteudo-item">Todos os <span class="font-italic">links</span> possuem texto, texto alternativo ou nome acessível que, em conjunto com o contexto do <span class="font-italic">link</span>, informa sua função ou destino.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.4 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1250,8 +1248,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-7-5" class="colunas col1 pt-2 pb-1">
-                    <strong>5.7.5 <span class="font-italic">Links</span> com identificação consistente</strong> <br>
-                    <p>Não há <span class="font-italic">links</span> com texto, texto alternativo ou nome acessível iguais que levam para destinos diferentes.</p>
+                    <strong class="titulo-item">5.7.5 <span class="font-italic">Links</span> com identificação consistente</strong>
+                    <span class="conteudo-item">Não há <span class="font-italic">links</span> com texto, texto alternativo ou nome acessível iguais que levam para destinos diferentes.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.2.4 (AA) <br> 2.4.9 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -1269,10 +1267,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-7-6" class="colunas col1 pt-2 pb-1">
-                    <strong>5.7.6 <span class="font-italic">Links</span> que abrem em uma nova guia ou janela</strong> <br>
-                    <p>Não há <span class="font-italic">links</span> que abrem em uma nova guia ou janela; ou <br>
-                      Todos os <span class="font-italic">links</span> que abrem em uma nova guia ou janela informam isso ao usuário.
-                    </p>
+                    <strong class="titulo-item">5.7.6 <span class="font-italic">Links</span> que abrem em uma nova guia ou janela</strong>
+                    <span class="conteudo-item">Não há <span class="font-italic">links</span> que abrem em uma nova guia ou janela; ou </span>
+                    <span class="conteudo-item">Todos os <span class="font-italic">links</span> que abrem em uma nova guia ou janela informam isso ao usuário.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.4 (A) <br> 2.4.9 (AAA) <br> 3.2.5 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -1290,10 +1287,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-7-7" class="colunas col1 pt-2 pb-1">
-                    <strong>5.7.7 <span class="font-italic">Links</span> para arquivos (não HTML)</strong> <br>
-                    <p>Todos os <span class="font-italic">links</span> para arquivos incluem no texto ou no texto alternativo a informação do formato e tamanho do arquivo; ou <br>
-                      O <span class="font-italic">link</span> para arquivo informa isso ao usuário de outra forma.
-                    </p>
+                    <strong class="titulo-item">5.7.7 <span class="font-italic">Links</span> para arquivos (não HTML)</strong>
+                    <span class="conteudo-item">Todos os <span class="font-italic">links</span> para arquivos incluem no texto ou no texto alternativo a informação do formato e tamanho do arquivo; ou </span>
+                    <span class="conteudo-item">O <span class="font-italic">link</span> para arquivo informa isso ao usuário de outra forma.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.4 (A) <br> 2.4.9 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -1311,8 +1307,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-7-8" class="colunas col1 pt-2 pb-1">
-                    <strong>5.7.8 <span class="font-italic">Links</span> para sites externos</strong> <br>
-                    <p>Todos os <span class="font-italic">links</span> para sites externos informam isso ao usuário.</p>
+                    <strong class="titulo-item">5.7.8 <span class="font-italic">Links</span> para sites externos</strong>
+                    <span class="conteudo-item">Todos os <span class="font-italic">links</span> para sites externos informam isso ao usuário.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.4 (A) <br> 2.4.9 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -1330,8 +1326,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-7-9" class="colunas col1 pt-2 pb-1">
-                    <strong>5.7.9 Texto complementar do <span class="font-italic">link</span></strong> <br>
-                    <p>Não há texto complementar que repete o texto, texto alternativo ou nome acessível do <span class="font-italic">link</span>.</p>
+                    <strong class="titulo-item">5.7.9 Texto complementar do <span class="font-italic">link</span></strong>
+                    <span class="conteudo-item">Não há texto complementar que repete o texto, texto alternativo ou nome acessível do <span class="font-italic">link</span>.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.4 (A)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -1349,8 +1345,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-7-10" class="colunas col1 pt-2 pb-1">
-                    <strong>5.7.10 <span class="font-italic">Links</span> adjacentes</strong> <br>
-                    <p>Não há <span class="font-italic">links</span> adjacentes que levam para o mesmo destino.</p>
+                    <strong class="titulo-item">5.7.10 <span class="font-italic">Links</span> adjacentes</strong>
+                    <span class="conteudo-item">Não há <span class="font-italic">links</span> adjacentes que levam para o mesmo destino.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.4 (A)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -1368,8 +1364,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-7-11" class="colunas col1 pt-2 pb-1">
-                    <strong>5.7.11 <span class="font-italic">Links</span> para contornar blocos de conteúdo</strong> <br>
-                    <p>Há um ou mais <span class="font-italic">links</span> (ou outro mecanismo) que permitem contornar blocos de conteúdo na página.</p>
+                    <strong class="titulo-item">5.7.11 <span class="font-italic">Links</span> para contornar blocos de conteúdo</strong>
+                    <span class="conteudo-item">Há um ou mais <span class="font-italic">links</span> (ou outro mecanismo) que permitem contornar blocos de conteúdo na página.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.1 (A)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -1387,8 +1383,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-7-12" class="colunas col1 pt-2 pb-1">
-                    <strong>5.7.12 <span class="font-italic">Links</span> para contornar blocos de conteúdo em conjunto de páginas</strong> <br>
-                    <p>Há um ou mais <span class="font-italic">links</span> (ou outro mecanismo) que permitem contornar blocos de conteúdo que se repetem em um conjunto de páginas.</p>
+                    <strong class="titulo-item">5.7.12 <span class="font-italic">Links</span> para contornar blocos de conteúdo em conjunto de páginas</strong>
+                    <span class="conteudo-item">Há um ou mais <span class="font-italic">links</span> (ou outro mecanismo) que permitem contornar blocos de conteúdo que se repetem em um conjunto de páginas.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1406,10 +1402,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-7-13" class="colunas col1 pt-2 pb-1">
-                    <strong>5.7.13 Alternativas para localização</strong> <br>
-                    <p>Há mais de uma forma para encontrar uma página em um conjunto de páginas; ou <br>
-                      A página é o resultado ou uma etapa de um processo.
-                    </p>
+                    <strong class="titulo-item">5.7.13 Alternativas para localização</strong>
+                    <span class="conteudo-item">Há mais de uma forma para encontrar uma página em um conjunto de páginas; ou </span>
+                    <span class="conteudo-item">A página é o resultado ou uma etapa de um processo.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.5 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1427,8 +1422,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-7-14" class="colunas col1 pt-2 pb-1">
-                    <strong>5.7.14 Localização em conjunto de páginas</strong> <br>
-                    <p>Há informação sobre a localização do usuário em relação às demais páginas ou seções do <span class="font-italic">site</span>.</p>
+                    <strong class="titulo-item">5.7.14 Localização em conjunto de páginas</strong>
+                    <span class="conteudo-item">Há informação sobre a localização do usuário em relação às demais páginas ou seções do <span class="font-italic">site</span>.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.8 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -1446,10 +1441,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-7-15" class="colunas col1 pt-2 pb-1">
-                    <strong>5.7.15 Navegação consistente</strong> <br>
-                    <p>Todos os mecanismos de navegação que se repetem em um conjunto de páginas estão na mesma ordem relativa; ou <br>
-                      A posição do mecanismo é alterada pelo usuário.
-                    </p>
+                    <strong class="titulo-item">5.7.15 Navegação consistente</strong>
+                    <span class="conteudo-item">Todos os mecanismos de navegação que se repetem em um conjunto de páginas estão na mesma ordem relativa; ou </span>
+                    <span class="conteudo-item">A posição do mecanismo é alterada pelo usuário.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.2.3 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1467,10 +1461,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-7-16" class="colunas col1 pt-2 pb-1">
-                    <strong>5.7.16 Ajuda consistente</strong> <br>
-                    <p>Todos os mecanismos de ajuda que se repetem em um conjunto de páginas estão na mesma ordem relativa; ou <br>
-                      A posição do mecanismo é alterada pelo usuário.
-                    </p>
+                    <strong class="titulo-item">5.7.16 Ajuda consistente</strong>
+                    <span class="conteudo-item">Todos os mecanismos de ajuda que se repetem em um conjunto de páginas estão na mesma ordem relativa; ou </span>
+                    <span class="conteudo-item">A posição do mecanismo é alterada pelo usuário.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.2.6 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1501,8 +1494,8 @@
                 </div>
                 <fieldset>
                   <label for="item_5-8-1" class="colunas col1 pt-2 pb-1">
-                    <strong>5.8.1 Semântica de botão</strong> <br>
-                    Todos os botões possuem semântica determinada programaticamente.
+                    <strong class="titulo-item">5.8.1 Semântica de botão</strong>
+                    <span class="conteudo-item">Todos os botões possuem semântica determinada programaticamente.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1520,8 +1513,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-8-2" class="colunas col1 pt-2 pb-1">
-                    <strong>5.8.2 Uso de botões</strong> <br>
-                    Todos os botões são utilizados para acionar uma funcionalidade.
+                    <strong class="titulo-item">5.8.2 Uso de botões</strong>
+                    <span class="conteudo-item">Todos os botões são utilizados para acionar uma funcionalidade.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1539,8 +1532,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-8-3" class="colunas col1 pt-2 pb-1">
-                    <strong>5.8.3 Propósito do botão</strong> <br>
-                    Todos os botões possuem texto, texto alternativo ou nome acessível que indica sua função.
+                    <strong class="titulo-item">5.8.3 Propósito do botão</strong>
+                    <span class="conteudo-item">Todos os botões possuem texto, texto alternativo ou nome acessível que indica sua função.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">4.1.2 (A) <br> 2.4.6 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1558,8 +1551,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-8-4" class="colunas col1 pt-2 pb-1">
-                    <strong>5.8.4 Identificação consistente na página</strong> <br>
-                    Todos os componentes que possuem a mesma funcionalidade e se repetem na página são identificados de maneira consistente.
+                    <strong class="titulo-item">5.8.4 Identificação consistente na página</strong>
+                    <span class="conteudo-item">Todos os componentes que possuem a mesma funcionalidade e se repetem na página são identificados de maneira consistente.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.2.4 (AA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -1577,8 +1570,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-8-5" class="colunas col1 pt-2 pb-1">
-                    <strong>5.8.5 Identificação consistente em conjunto de páginas</strong> <br>
-                    Todos os componentes que possuem a mesma funcionalidade e se repetem em um conjunto de páginas são identificados de maneira consistente.
+                    <strong class="titulo-item">5.8.5 Identificação consistente em conjunto de páginas</strong>
+                    <span class="conteudo-item">Todos os componentes que possuem a mesma funcionalidade e se repetem em um conjunto de páginas são identificados de maneira consistente.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.2.4 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1596,13 +1589,13 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-8-6" class="colunas col1 pt-2 pb-1">
-                    <strong>5.8.6 Área de acionamento (aprimorada)</strong> <br>
-                    Todos os elementos interativos têm área de acionamento de pelo menos 44 pixels CSS de altura e largura; ou <br>
-                    Existe um controle com função equivalente na mesma página, com área de acionamento de pelo menos 44 pixels CSS de altura e largura; ou <br>
-                    O elemento está em uma sentença ou bloco de texto; ou <br>
-                    O tamanho do elemento é determinado pelo agente de usuário; ou <br>
-                    O tamanho do elemento é essencial para transmitir a informação. <br>
-                    <small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.8.7, Área de acionamento (mínima).</small>
+                    <strong class="titulo-item">5.8.6 Área de acionamento (aprimorada)</strong>
+                    <span class="conteudo-item">Todos os elementos interativos têm área de acionamento de pelo menos 44 pixels CSS de altura e largura; ou </span>
+                    <span class="conteudo-item">Existe um controle com função equivalente na mesma página, com área de acionamento de pelo menos 44 pixels CSS de altura e largura; ou </span>
+                    <span class="conteudo-item">O elemento está em uma sentença ou bloco de texto; ou </span>
+                    <span class="conteudo-item">O tamanho do elemento é determinado pelo agente de usuário; ou </span>
+                    <span class="conteudo-item">O tamanho do elemento é essencial para transmitir a informação. </span>
+                    <span class="conteudo-item"><small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.8.7, Área de acionamento (mínima).</small></span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.5.8 (AA) <br> 2.5.5 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -1620,13 +1613,13 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-8-7" class="colunas col1 pt-2 pb-1">
-                    <strong>5.8.7 Área de acionamento (mínima)</strong> <br>
-                    Todos os elementos interativos têm área de acionamento de pelo menos 24 pixels CSS de altura e largura; ou <br>
-                    O elemento tem espaçamento em relação aos elementos de interação adjacentes, de tal modo que a soma do tamanho do elemento mais o espaçamento é de pelo menos 24 pixels CSS em todas as direções; ou <br>
-                    Existe um controle com função equivalente na mesma página com área de acionamento de pelo menos 24 pixels CSS de altura e largura; ou <br>
-                    O elemento está em uma sentença ou bloco de texto, ou seu tamanho está delimitado pela altura da linha do texto; ou <br>
-                    O tamanho do elemento é determinado pelo agente de usuário; ou <br>
-                    O tamanho do elemento é essencial ou legalmente exigido para transmitir a informação.
+                    <strong class="titulo-item">5.8.7 Área de acionamento (mínima)</strong>
+                    <span class="conteudo-item">Todos os elementos interativos têm área de acionamento de pelo menos 24 pixels CSS de altura e largura; ou </span>
+                    <span class="conteudo-item">O elemento tem espaçamento em relação aos elementos de interação adjacentes, de tal modo que a soma do tamanho do elemento mais o espaçamento é de pelo menos 24 pixels CSS em todas as direções; ou </span>
+                    <span class="conteudo-item">Existe um controle com função equivalente na mesma página com área de acionamento de pelo menos 24 pixels CSS de altura e largura; ou </span>
+                    <span class="conteudo-item">O elemento está em uma sentença ou bloco de texto, ou seu tamanho está delimitado pela altura da linha do texto; ou </span>
+                    <span class="conteudo-item">O tamanho do elemento é determinado pelo agente de usuário; ou </span>
+                    <span class="conteudo-item">O tamanho do elemento é essencial ou legalmente exigido para transmitir a informação.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.5.8 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1644,9 +1637,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-8-8" class="colunas col1 pt-2 pb-1">
-                    <strong>5.8.8 Mudança de contexto previsível</strong> <br>
-                    Toda mudança de contexto é iniciada apenas a pedido do usuário; ou <br>
-                    Há um mecanismo para desativar essas mudanças de contexto.
+                    <strong class="titulo-item">5.8.8 Mudança de contexto previsível</strong>
+                    <span class="conteudo-item">Toda mudança de contexto é iniciada apenas a pedido do usuário; ou </span>
+                    <span class="conteudo-item">Há um mecanismo para desativar essas mudanças de contexto.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.2.1 (A) <br> 3.2.2 (A) <br> 3.2.5 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -1664,8 +1657,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-8-9" class="colunas col1 pt-2 pb-1">
-                    <strong>5.8.9 Mudança de contexto previsível no foco</strong> <br>
-                    Não há componentes acionados somente pelo foco do teclado ou posicionamento do cursor, que provocam uma mudança de contexto.
+                    <strong class="titulo-item">5.8.9 Mudança de contexto previsível no foco</strong>
+                    <span class="conteudo-item">Não há componentes acionados somente pelo foco do teclado ou posicionamento do cursor, que provocam uma mudança de contexto.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.2.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1683,9 +1676,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-8-10" class="colunas col1 pt-2 pb-1">
-                    <strong>5.8.10 Mudança de contexto previsível na entrada</strong> <br>
-                    Não há componentes que provocam mudança de contexto enquanto o usuário insere ou seleciona informações; ou <br>
-                    O usuário é avisado sobre esse comportamento antes de utilizar o componente.
+                    <strong class="titulo-item">5.8.10 Mudança de contexto previsível na entrada</strong>
+                    <span class="conteudo-item">Não há componentes que provocam mudança de contexto enquanto o usuário insere ou seleciona informações; ou </span>
+                    <span class="conteudo-item">O usuário é avisado sobre esse comportamento antes de utilizar o componente.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.2.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1703,12 +1696,11 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-8-11" class="colunas col1 pt-2 pb-1">
-                    <strong>5.8.11 Acionamento por ponteiro único</strong> <br>
-                    <p>Não há funcionalidade operada por ponteiro único que é acionada pelo pressionamento do ponteiro (<span class="font-italic">down-event</span>); ou <br>
-                      O acionamento completo da funcionalidade só é finalizado ao soltar o ponteiro (<span class="font-italic">up–event</span>), e existe um mecanismo para interromper o acionamento antes da finalização ou para desfazer o acionamento após a finalização; ou <br>
-                      Soltar o ponteiro reverte o acionamento ocasionado pelo pressionamento do ponteiro; ou <br>
-                      O acionamento completo da funcionalidade pelo pressionamento do ponteiro é essencial.
-                    </p>
+                    <strong class="titulo-item">5.8.11 Acionamento por ponteiro único</strong>
+                    <span class="conteudo-item">Não há funcionalidade operada por ponteiro único que é acionada pelo pressionamento do ponteiro (<span class="font-italic">down-event</span>); ou </span>
+                    <span class="conteudo-item">O acionamento completo da funcionalidade só é finalizado ao soltar o ponteiro (<span class="font-italic">up–event</span>), e existe um mecanismo para interromper o acionamento antes da finalização ou para desfazer o acionamento após a finalização; ou </span>
+                    <span class="conteudo-item">Soltar o ponteiro reverte o acionamento ocasionado pelo pressionamento do ponteiro; ou </span>
+                    <span class="conteudo-item">O acionamento completo da funcionalidade pelo pressionamento do ponteiro é essencial.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.5.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1726,10 +1718,10 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-8-12" class="colunas col1 pt-2 pb-1">
-                    <strong>5.8.12 Operação por gestos de ponteiro</strong> <br>
-                    Toda funcionalidade operada por gestos multiponto ou baseados em caminhos pode ser operada também por um ponteiro único, sem um gesto baseado em caminho; ou <br>
-                    O gesto multiponto ou baseado em caminho é essencial; ou <br>
-                    A funcionalidade é determinada pelo agente usuário, e não modificada pelo desenvolvedor.
+                    <strong class="titulo-item">5.8.12 Operação por gestos de ponteiro</strong>
+                    <span class="conteudo-item">Toda funcionalidade operada por gestos multiponto ou baseados em caminhos pode ser operada também por um ponteiro único, sem um gesto baseado em caminho; ou </span>
+                    <span class="conteudo-item">O gesto multiponto ou baseado em caminho é essencial; ou </span>
+                    <span class="conteudo-item">A funcionalidade é determinada pelo agente usuário, e não modificada pelo desenvolvedor.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.5.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1747,10 +1739,10 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-8-13" class="colunas col1 pt-2 pb-1">
-                    <strong>5.8.13 Operação por movimento de arrastar</strong> <br>
-                    Toda funcionalidade operada por movimento de arrastar pode ser operada também por um ponteiro único sem movimento de arrastar; ou <br>
-                    O movimento de arrastar é essencial; ou <br>
-                    A funcionalidade é determinada pelo agente usuário, e não modificada pelo desenvolvedor.
+                    <strong class="titulo-item">5.8.13 Operação por movimento de arrastar</strong>
+                    <span class="conteudo-item">Toda funcionalidade operada por movimento de arrastar pode ser operada também por um ponteiro único sem movimento de arrastar; ou </span>
+                    <span class="conteudo-item">O movimento de arrastar é essencial; ou </span>
+                    <span class="conteudo-item">A funcionalidade é determinada pelo agente usuário, e não modificada pelo desenvolvedor.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.5.7 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1768,10 +1760,10 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-8-14" class="colunas col1 pt-2 pb-1">
-                    <strong>5.8.14 Operação por movimento</strong> <br>
-                    Toda funcionalidade operada por movimento pode ser operada também por componentes que não exigem esse modo de operação, e a resposta aos movimentos pode ser desabilitada para evitar acionamento acidental; ou <br>
-                    Existe um mecanismo para operar o controle de movimento de outra forma; ou <br>
-                    O movimento é essencial para a funcionalidade, e desabilitá-lo invalidaria a atividade.
+                    <strong class="titulo-item">5.8.14 Operação por movimento</strong>
+                    <span class="conteudo-item">Toda funcionalidade operada por movimento pode ser operada também por componentes que não exigem esse modo de operação, e a resposta aos movimentos pode ser desabilitada para evitar acionamento acidental; ou </span>
+                    <span class="conteudo-item">Existe um mecanismo para operar o controle de movimento de outra forma; ou </span>
+                    <span class="conteudo-item">O movimento é essencial para a funcionalidade, e desabilitá-lo invalidaria a atividade.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.5.4 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1789,8 +1781,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-8-15" class="colunas col1 pt-2 pb-1">
-                    <strong>5.8.15 Controles com retorno</strong> <br>
-                    <p>Todos os controles têm um retorno (<span class="font-italic">feedback</span>) perceptível ao usuário quando são acionados.</p>
+                    <strong class="titulo-item">5.8.15 Controles com retorno</strong>
+                    <span class="conteudo-item">Todos os controles têm um retorno (<span class="font-italic">feedback</span>) perceptível ao usuário quando são acionados.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.3 (A) <br> 4.1.3 (AA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -1821,9 +1813,9 @@
                 </div>
                 <fieldset>
                   <label for="item_5-9-1" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.1 Rótulo de campo</strong> <br>
-                    Todos os campos de formulário possuem um rótulo que os identifica; ou <br>
-                    O campo de formulário possui propósito visualmente evidente e um nome acessível que o identifica.
+                    <strong class="titulo-item">5.9.1 Rótulo de campo</strong>
+                    <span class="conteudo-item">Todos os campos de formulário possuem um rótulo que os identifica; ou </span>
+                    <span class="conteudo-item">O campo de formulário possui propósito visualmente evidente e um nome acessível que o identifica.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.2.2 (A) <br> 4.1.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1841,8 +1833,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-2" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.2 Rótulo de campo previsível</strong> <br>
-                    Todos os rótulos estão posicionados de maneira previsível em relação aos respectivos campos de formulário.
+                    <strong class="titulo-item">5.9.2 Rótulo de campo previsível</strong>
+                    <span class="conteudo-item">Todos os rótulos estão posicionados de maneira previsível em relação aos respectivos campos de formulário.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A) <br> 3.3.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1860,8 +1852,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-3" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.3 Rótulo de campo associado</strong> <br>
-                    Todos os rótulos estão associados aos respectivos campos de formulário de forma programaticamente determinada.
+                    <strong class="titulo-item">5.9.3 Rótulo de campo associado</strong>
+                    <span class="conteudo-item">Todos os rótulos estão associados aos respectivos campos de formulário de forma programaticamente determinada.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1879,9 +1871,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-4" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.4 Rótulo de campo descritivo</strong> <br>
-                    Todos os rótulos identificam o propósito do respectivo campo de formulário; ou <br>
-                    O rótulo, em conjunto com o agrupamento do campo, identifica o propósito do respectivo campo de formulário.
+                    <strong class="titulo-item">5.9.4 Rótulo de campo descritivo</strong>
+                    <span class="conteudo-item">Todos os rótulos identificam o propósito do respectivo campo de formulário; ou </span>
+                    <span class="conteudo-item">O rótulo, em conjunto com o agrupamento do campo, identifica o propósito do respectivo campo de formulário.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.6 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1899,8 +1891,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-5" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.5 Textos de ajuda previsíveis</strong> <br>
-                    Todos os textos de ajuda estão posicionados de maneira previsível em relação aos campos do formulário.
+                    <strong class="titulo-item">5.9.5 Textos de ajuda previsíveis</strong>
+                    <span class="conteudo-item">Todos os textos de ajuda estão posicionados de maneira previsível em relação aos campos do formulário.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.3.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1918,8 +1910,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-6" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.6 Campos relacionados</strong> <br>
-                    Todos os campos de entrada relacionados possuem agrupamento determinado programaticamente.
+                    <strong class="titulo-item">5.9.6 Campos relacionados</strong>
+                    <span class="conteudo-item">Todos os campos de entrada relacionados possuem agrupamento determinado programaticamente.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1937,8 +1929,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-7" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.7 Campos obrigatórios</strong> <br>
-                    Todos os campos obrigatórios estão devidamente identificados, de forma que todos possam perceber.
+                    <strong class="titulo-item">5.9.7 Campos obrigatórios</strong>
+                    <span class="conteudo-item">Todos os campos obrigatórios estão devidamente identificados, de forma que todos possam perceber.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.3.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1956,8 +1948,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-8" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.8 Tipo de dado determinado</strong> <br>
-                    Todos os campos de entrada têm seu tipo de dado determinado programaticamente.
+                    <strong class="titulo-item">5.9.8 Tipo de dado determinado</strong>
+                    <span class="conteudo-item">Todos os campos de entrada têm seu tipo de dado determinado programaticamente.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.5 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1975,8 +1967,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-9" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.9 Mensagem de erro descritiva</strong> <br>
-                    Todas as mensagens de erro descrevem em texto qual é o erro e identificam qual é o campo com erro.
+                    <strong class="titulo-item">5.9.9 Mensagem de erro descritiva</strong>
+                    <span class="conteudo-item">Todas as mensagens de erro descrevem em texto qual é o erro e identificam qual é o campo com erro.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -1994,9 +1986,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-10" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.10 Sugestão de correção</strong> <br>
-                    Todas as mensagens de erro fornecem sugestões de correção de entrada de dados, quando conhecidas; ou <br>
-                    A sugestão de correção coloca em risco a segurança ou o propósito do conteúdo.
+                    <strong class="titulo-item">5.9.10 Sugestão de correção</strong>
+                    <span class="conteudo-item">Todas as mensagens de erro fornecem sugestões de correção de entrada de dados, quando conhecidas; ou </span>
+                    <span class="conteudo-item">A sugestão de correção coloca em risco a segurança ou o propósito do conteúdo.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.3.3 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2014,9 +2006,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-11" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.11 Prevenção de erro</strong> <br>
-                    Todos os formulários permitem uma forma de reverter, verificar ou confirmar os dados. <br>
-                    <small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.9.12, Prevenção de erro para formulários críticos.</small>
+                    <strong class="titulo-item">5.9.11 Prevenção de erro</strong>
+                    <span class="conteudo-item">Todos os formulários permitem uma forma de reverter, verificar ou confirmar os dados. </span>
+                    <span class="conteudo-item"><small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.9.12, Prevenção de erro para formulários críticos.</small></span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.3.4 (AA) <br> 3.3.6 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -2034,8 +2026,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-12" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.12 Prevenção de erro para formulários críticos</strong> <br>
-                    Todos os formulários críticos permitem uma forma de reverter, verificar ou confirmar os dados.
+                    <strong class="titulo-item">5.9.12 Prevenção de erro para formulários críticos</strong>
+                    <span class="conteudo-item">Todos os formulários críticos permitem uma forma de reverter, verificar ou confirmar os dados.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.3.4 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2053,8 +2045,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-13" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.13 Ajuda contextual</strong> <br>
-                    Há ajuda contextual, como instruções e dicas relevantes, que auxilia o usuário a preencher e enviar os formulários.
+                    <strong class="titulo-item">5.9.13 Ajuda contextual</strong>
+                    <span class="conteudo-item">Há ajuda contextual, como instruções e dicas relevantes, que auxilia o usuário a preencher e enviar os formulários.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.3.5 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -2072,8 +2064,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-14" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.14 Botão de submissão</strong> <br>
-                    Todos os formulários possuem um botão para a submissão dos dados.
+                    <strong class="titulo-item">5.9.14 Botão de submissão</strong>
+                    <span class="conteudo-item">Todos os formulários possuem um botão para a submissão dos dados.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.2.2 (A)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -2091,11 +2083,11 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-15" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.15 Reentrada de dados</strong> <br>
-                    Todos os campos de entrada que exigem dados previamente inseridos são preenchidos automaticamente ou estão disponíveis para seleção; ou <br>
-                    A reentrada de dados é essencial; ou <br>
-                    A informação inserida é necessária por segurança; ou <br>
-                    A informação previamente inserida não é mais válida.
+                    <strong class="titulo-item">5.9.15 Reentrada de dados</strong>
+                    <span class="conteudo-item">Todos os campos de entrada que exigem dados previamente inseridos são preenchidos automaticamente ou estão disponíveis para seleção; ou </span>
+                    <span class="conteudo-item">A reentrada de dados é essencial; ou </span>
+                    <span class="conteudo-item">A informação inserida é necessária por segurança; ou </span>
+                    <span class="conteudo-item">A informação previamente inserida não é mais válida.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.3.7 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2113,8 +2105,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-16" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.16 Validação sensorial ou por movimento</strong> <br>
-                    Todo método de validação que exige uma percepção ou capacidade motora específica possui uma alternativa que não possui a mesma exigência.
+                    <strong class="titulo-item">5.9.16 Validação sensorial ou por movimento</strong>
+                    <span class="conteudo-item">Todo método de validação que exige uma percepção ou capacidade motora específica possui uma alternativa que não possui a mesma exigência.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.1.1 (A) <br> 2.5.4 (A) <br> 2.5.6 (AAA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2132,11 +2124,11 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-17" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.17 Autenticação acessível (aprimorado)</strong> <br>
-                    Não há testes de função cognitiva em processos de autenticação; ou <br>
-                    Há um método de autenticação alternativo sem teste de função cognitiva; ou <br>
-                    Há um mecanismo para auxiliar o usuário a completar o teste de função cognitiva. <br>
-                    <small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.8.18, Autenticação acessível (mínima).</small>
+                    <strong class="titulo-item">5.9.17 Autenticação acessível (aprimorado)</strong>
+                    <span class="conteudo-item">Não há testes de função cognitiva em processos de autenticação; ou </span>
+                    <span class="conteudo-item">Há um método de autenticação alternativo sem teste de função cognitiva; ou </span>
+                    <span class="conteudo-item">Há um mecanismo para auxiliar o usuário a completar o teste de função cognitiva. </span>
+                    <span class="conteudo-item"><small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.8.18, Autenticação acessível (mínima).</small></span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.3.8 (AA) <br> 3.3.9 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -2154,12 +2146,12 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-9-18" class="colunas col1 pt-2 pb-1">
-                    <strong>5.9.18 Autenticação acessível (mínima)</strong> <br>
-                    Não há testes de função cognitiva em processos de autenticação; ou <br>
-                    Há um método de autenticação alternativo sem teste de função cognitiva; ou <br>
-                    Há um mecanismo para auxiliar o usuário a completar o teste de função cognitiva; ou <br>
-                    O teste é um método de reconhecimento de objetos; ou <br>
-                    O teste serve para identificar um conteúdo não textual fornecido pelo usuário.
+                    <strong class="titulo-item">5.9.18 Autenticação acessível (mínima)</strong>
+                    <span class="conteudo-item">Não há testes de função cognitiva em processos de autenticação; ou </span>
+                    <span class="conteudo-item">Há um método de autenticação alternativo sem teste de função cognitiva; ou </span>
+                    <span class="conteudo-item">Há um mecanismo para auxiliar o usuário a completar o teste de função cognitiva; ou </span>
+                    <span class="conteudo-item">O teste é um método de reconhecimento de objetos; ou </span>
+                    <span class="conteudo-item">O teste serve para identificar um conteúdo não textual fornecido pelo usuário.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.3.8 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2190,8 +2182,8 @@
                 </div>
                 <fieldset>
                   <label for="item_5-10-1" class="colunas col1 pt-2 pb-1">
-                    <strong>5.10.1 Características sensoriais</strong> <br>
-                    Não há instruções para compreender e utilizar o conteúdo que dependem somente das características sensoriais dos componentes, como forma, cor, tamanho, localização visual, orientação e som.
+                    <strong class="titulo-item">5.10.1 Características sensoriais</strong>
+                    <span class="conteudo-item">Não há instruções para compreender e utilizar o conteúdo que dependem somente das características sensoriais dos componentes, como forma, cor, tamanho, localização visual, orientação e som.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.3 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2209,8 +2201,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-10-2" class="colunas col1 pt-2 pb-1">
-                    <strong>5.10.2 Ordem de apresentação</strong> <br>
-                    A apresentação dos elementos conforme aparecem na tela é tal que preserva o significado e a operabilidade.
+                    <strong class="titulo-item">5.10.2 Ordem de apresentação</strong>
+                    <span class="conteudo-item">A apresentação dos elementos conforme aparecem na tela é tal que preserva o significado e a operabilidade.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2228,9 +2220,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-10-3" class="colunas col1 pt-2 pb-1">
-                    <strong>5.10.3 Orientação de exibição</strong> <br>
-                    O conteúdo não restringe sua visualização e operação a uma única orientação de exibição, como de retrato ou paisagem; ou <br>
-                    A orientação específica de exibição é essencial.
+                    <strong class="titulo-item">5.10.3 Orientação de exibição</strong>
+                    <span class="conteudo-item">O conteúdo não restringe sua visualização e operação a uma única orientação de exibição, como de retrato ou paisagem; ou </span>
+                    <span class="conteudo-item">A orientação específica de exibição é essencial.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.4 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2248,10 +2240,10 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-10-4" class="colunas col1 pt-2 pb-1">
-                    <strong>5.10.4 <span class="font-italic">Design</span>responsivo</strong> <br>
-                    Não há perda de informação ou funcionalidade, nem barra de rolagem em duas dimensões para conteúdo de rolagem horizontal apresentado com altura equivalente a 256 pixels CSS; ou <br>
-                    Não há perda de informação ou funcionalidade, nem barra de rolagem em duas dimensões para conteúdo de rolagem vertical apresentado com largura equivalente a 320 pixels CSS; ou <br>
-                    O conteúdo exige leiaute bidimensional para uso ou significado (por exemplo, mapas, diagramas, vídeos, jogos, apresentações, tabelas de dados e interfaces).
+                    <strong class="titulo-item">5.10.4 <span class="font-italic">Design</span>responsivo</strong>
+                    <span class="conteudo-item">Não há perda de informação ou funcionalidade, nem barra de rolagem em duas dimensões para conteúdo de rolagem horizontal apresentado com altura equivalente a 256 pixels CSS; ou </span>
+                    <span class="conteudo-item">Não há perda de informação ou funcionalidade, nem barra de rolagem em duas dimensões para conteúdo de rolagem vertical apresentado com largura equivalente a 320 pixels CSS; ou </span>
+                    <span class="conteudo-item">O conteúdo exige leiaute bidimensional para uso ou significado (por exemplo, mapas, diagramas, vídeos, jogos, apresentações, tabelas de dados e interfaces).</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.10 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2269,8 +2261,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-10-5" class="colunas col1 pt-2 pb-1">
-                    <strong>5.10.5 Área do indicador de foco visível</strong> <br>
-                    O indicador de foco visível dos elementos focáveis tem área pelo menos equivalente ao perímetro do elemento com 2 pixels CSS de espessura.
+                    <strong class="titulo-item">5.10.5 Área do indicador de foco visível</strong>
+                    <span class="conteudo-item">O indicador de foco visível dos elementos focáveis tem área pelo menos equivalente ao perímetro do elemento com 2 pixels CSS de espessura.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.13 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -2301,8 +2293,8 @@
                 </div>
                 <fieldset>
                   <label for="item_5-11-1" class="colunas col1 pt-2 pb-1">
-                    <strong>5.11.1 Uso de cores</strong> <br>
-                    Não há elementos que fazem uso somente de cores para transmitir informações, indicar uma ação, pedir uma resposta ou distinguir um elemento visual.
+                    <strong class="titulo-item">5.11.1 Uso de cores</strong>
+                    <span class="conteudo-item">Não há elementos que fazem uso somente de cores para transmitir informações, indicar uma ação, pedir uma resposta ou distinguir um elemento visual.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2320,11 +2312,11 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-11-2" class="colunas col1 pt-2 pb-1">
-                    <strong>5.11.2 Contraste para texto (aprimorado)</strong> <br>
-                    Todo conteúdo de texto, incluindo imagens de texto, tem relação de contraste de pelo menos 7:1 com o fundo; ou <br>
-                    O conteúdo de texto está em tamanho grande e tem relação de contraste de pelo menos 4,5:1 com o fundo; ou <br>
-                    O texto faz parte de um logotipo ou está em plano secundário. <br>
-                    <small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.11.3, Contraste para texto (mínimo).</small>
+                    <strong class="titulo-item">5.11.2 Contraste para texto (aprimorado)</strong>
+                    <span class="conteudo-item">Todo conteúdo de texto, incluindo imagens de texto, tem relação de contraste de pelo menos 7:1 com o fundo; ou </span>
+                    <span class="conteudo-item">O conteúdo de texto está em tamanho grande e tem relação de contraste de pelo menos 4,5:1 com o fundo; ou </span>
+                    <span class="conteudo-item">O texto faz parte de um logotipo ou está em plano secundário. </span>
+                    <span class="conteudo-item"><small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.11.3, Contraste para texto (mínimo).</small></span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.3 (AA) <br> 1.4.6 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -2342,10 +2334,10 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-11-3" class="colunas col1 pt-2 pb-1">
-                    <strong>5.11.3 Contraste para texto (mínimo)</strong> <br>
-                    Todo conteúdo de texto, incluindo imagens de texto, tem relação de contraste de pelo menos 4,5:1 com o fundo; ou <br>
-                    O conteúdo de texto está em tamanho grande e tem relação de contraste de pelo menos 3:1 com o fundo; ou <br>
-                    O texto faz parte de um logotipo ou está em plano secundário.
+                    <strong class="titulo-item">5.11.3 Contraste para texto (mínimo)</strong>
+                    <span class="conteudo-item">Todo conteúdo de texto, incluindo imagens de texto, tem relação de contraste de pelo menos 4,5:1 com o fundo; ou </span>
+                    <span class="conteudo-item">O conteúdo de texto está em tamanho grande e tem relação de contraste de pelo menos 3:1 com o fundo; ou </span>
+                    <span class="conteudo-item">O texto faz parte de um logotipo ou está em plano secundário.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.3 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2363,9 +2355,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-11-4" class="colunas col1 pt-2 pb-1">
-                    <strong>5.11.4 Contraste para componentes</strong> <br>
-                    Todos os componentes de interface têm relação de contraste de pelo menos 3:1 com o fundo e entre seus estados; ou <br>
-                    O componente está em estado inativo.
+                    <strong class="titulo-item">5.11.4 Contraste para componentes</strong>
+                    <span class="conteudo-item">Todos os componentes de interface têm relação de contraste de pelo menos 3:1 com o fundo e entre seus estados; ou </span>
+                    <span class="conteudo-item">O componente está em estado inativo.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.11 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2383,9 +2375,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-11-5" class="colunas col1 pt-2 pb-1">
-                    <strong>5.11.5 Contraste para objetos gráficos</strong> <br>
-                    Todas as partes de objetos gráficos necessárias para compreender o conteúdo têm relação de contraste de pelo menos 3:1 com o fundo e entre si; ou <br>
-                    A apresentação específica dos objetos gráficos é essencial para a informação transmitida.
+                    <strong class="titulo-item">5.11.5 Contraste para objetos gráficos</strong>
+                    <span class="conteudo-item">Todas as partes de objetos gráficos necessárias para compreender o conteúdo têm relação de contraste de pelo menos 3:1 com o fundo e entre si; ou </span>
+                    <span class="conteudo-item">A apresentação específica dos objetos gráficos é essencial para a informação transmitida.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.11 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2403,8 +2395,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-11-6" class="colunas col1 pt-2 pb-1">
-                    <strong>5.11.6 Contraste para indicador de foco visível</strong> <br>
-                    O indicador de foco visível dos elementos focáveis tem relação de contraste de pelo menos 3:1 com o fundo e entre os estados em foco e sem foco.
+                    <strong class="titulo-item">5.11.6 Contraste para indicador de foco visível</strong>
+                    <span class="conteudo-item">O indicador de foco visível dos elementos focáveis tem relação de contraste de pelo menos 3:1 com o fundo e entre os estados em foco e sem foco.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.11 (AA) <br> 2.4.13 (AAA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2435,9 +2427,9 @@
                 </div>
                 <fieldset>
                   <label for="item_5-12-1" class="colunas col1 pt-2 pb-1">
-                    <strong>5.12.1 Espaçamento entre as linhas</strong> <br>
-                    Todos os blocos de texto têm espaçamento entre as linhas (entrelinhas) de pelo menos 1,5 vez o tamanho da fonte; ou <br>
-                    Existe um mecanismo para configurar o espaçamento e não há perda de conteúdo ou funcionalidade quando o critério acima é cumprido.
+                    <strong class="titulo-item">5.12.1 Espaçamento entre as linhas</strong>
+                    <span class="conteudo-item">Todos os blocos de texto têm espaçamento entre as linhas (entrelinhas) de pelo menos 1,5 vez o tamanho da fonte; ou </span>
+                    <span class="conteudo-item">Existe um mecanismo para configurar o espaçamento e não há perda de conteúdo ou funcionalidade quando o critério acima é cumprido.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.12 (AA) <br> 1.4.8 (AAA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2455,9 +2447,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-12-2" class="colunas col1 pt-2 pb-1">
-                    <strong>5.12.2 Espaçamento entre os parágrafos</strong> <br>
-                    Todos os parágrafos têm espaçamento entre si de pelo menos 2 vezes o tamanho da fonte; ou <br>
-                    Existe um mecanismo para configurar o espaçamento e não há perda de conteúdo ou funcionalidade quando o critério acima é cumprido.
+                    <strong class="titulo-item">5.12.2 Espaçamento entre os parágrafos</strong>
+                    <span class="conteudo-item">Todos os parágrafos têm espaçamento entre si de pelo menos 2 vezes o tamanho da fonte; ou </span>
+                    <span class="conteudo-item">Existe um mecanismo para configurar o espaçamento e não há perda de conteúdo ou funcionalidade quando o critério acima é cumprido.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.12 (AA) <br> 1.4.8 (AAA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2475,9 +2467,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-12-3" class="colunas col1 pt-2 pb-1">
-                    <strong>5.12.3 Espaçamento entre as letras</strong> <br>
-                    Todos os blocos de texto têm espaçamento entre as letras (rastreamento) de pelo menos 0,12 vez o tamanho da fonte; ou <br>
-                    Existe um mecanismo para configurar o espaçamento e não há perda de conteúdo ou funcionalidade quando o critério acima é cumprido.
+                    <strong class="titulo-item">5.12.3 Espaçamento entre as letras</strong>
+                    <span class="conteudo-item">Todos os blocos de texto têm espaçamento entre as letras (rastreamento) de pelo menos 0,12 vez o tamanho da fonte; ou </span>
+                    <span class="conteudo-item">Existe um mecanismo para configurar o espaçamento e não há perda de conteúdo ou funcionalidade quando o critério acima é cumprido.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.12 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2495,9 +2487,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-12-4" class="colunas col1 pt-2 pb-1">
-                    <strong>5.12.4 Espaçamento entre as palavras</strong> <br>
-                    Todos os blocos de texto têm espaçamento entre as palavras de pelo menos 0,16 vez o tamanho da fonte; ou <br>
-                    Existe um mecanismo para configurar o espaçamento e não há perda de conteúdo ou funcionalidade quando o critério acima é cumprido.
+                    <strong class="titulo-item">5.12.4 Espaçamento entre as palavras</strong>
+                    <span class="conteudo-item">Todos os blocos de texto têm espaçamento entre as palavras de pelo menos 0,16 vez o tamanho da fonte; ou </span>
+                    <span class="conteudo-item">Existe um mecanismo para configurar o espaçamento e não há perda de conteúdo ou funcionalidade quando o critério acima é cumprido.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.12 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2515,10 +2507,10 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-12-5" class="colunas col1 pt-2 pb-1">
-                    <strong>5.12.5 Alinhamento de blocos de texto</strong> <br>
-                    Todos os blocos de texto estão alinhados à esquerda para idiomas que são lidos da esquerda para a direita; e <br>
-                    Todos os blocos de texto estão alinhados à direita para idiomas que são lidos da direita para a esquerda; ou <br>
-                    O alinhamento é essencial para a compreensão do conteúdo.
+                    <strong class="titulo-item">5.12.5 Alinhamento de blocos de texto</strong>
+                    <span class="conteudo-item">Todos os blocos de texto estão alinhados à esquerda para idiomas que são lidos da esquerda para a direita; e </span>
+                    <span class="conteudo-item">Todos os blocos de texto estão alinhados à direita para idiomas que são lidos da direita para a esquerda; ou </span>
+                    <span class="conteudo-item">O alinhamento é essencial para a compreensão do conteúdo.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.8 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -2536,9 +2528,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-12-6" class="colunas col1 pt-2 pb-1">
-                    <strong>5.12.6 Largura de blocos de texto</strong> <br>
-                    A largura dos blocos de texto não ultrapassa 80 caracteres (40 caracteres, se o idioma for chinês, japonês ou coreano); ou <br>
-                    Existe um mecanismo para configurar a largura dos blocos de texto e alcançar esse resultado.
+                    <strong class="titulo-item">5.12.6 Largura de blocos de texto</strong>
+                    <span class="conteudo-item">A largura dos blocos de texto não ultrapassa 80 caracteres (40 caracteres, se o idioma for chinês, japonês ou coreano); ou </span>
+                    <span class="conteudo-item">Existe um mecanismo para configurar a largura dos blocos de texto e alcançar esse resultado.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.10 (AA) <br> 1.4.8 (AAA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2556,8 +2548,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-12-7" class="colunas col1 pt-2 pb-1">
-                    <strong>5.12.7 Texto redimensionado</strong> <br>
-                    Não há perda de conteúdo ou funcionalidade quando o texto é redimensionado sem o uso de recursos de tecnologia assistiva em até 200%, de modo que o usuário não precisa rolar horizontalmente para ler uma linha de texto em uma janela de tela inteira.
+                    <strong class="titulo-item">5.12.7 Texto redimensionado</strong>
+                    <span class="conteudo-item">Não há perda de conteúdo ou funcionalidade quando o texto é redimensionado sem o uso de recursos de tecnologia assistiva em até 200%, de modo que o usuário não precisa rolar horizontalmente para ler uma linha de texto em uma janela de tela inteira.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.4 (AA) <br> 1.4.8 (AAA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2575,8 +2567,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-12-8" class="colunas col1 pt-2 pb-1">
-                    <strong>5.12.8 Semântica de texto especial</strong> <br>
-                    Todos os trechos de texto de ênfase, citação, abreviação ou outro tipo de texto especial possuem semântica determinada programaticamente.
+                    <strong class="titulo-item">5.12.8 Semântica de texto especial</strong>
+                    <span class="conteudo-item">Todos os trechos de texto de ênfase, citação, abreviação ou outro tipo de texto especial possuem semântica determinada programaticamente.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2594,8 +2586,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-12-9" class="colunas col1 pt-2 pb-1">
-                    <strong>5.12.9 Uso de texto especial</strong> <br>
-                    Todos os trechos de texto de ênfase, citação, abreviação ou texto especial são utilizados para transmitir esses propósitos.
+                    <strong class="titulo-item">5.12.9 Uso de texto especial</strong>
+                    <span class="conteudo-item">Todos os trechos de texto de ênfase, citação, abreviação ou texto especial são utilizados para transmitir esses propósitos.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2613,8 +2605,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-12-10" class="colunas col1 pt-2 pb-1">
-                    <strong>5.12.10 Definições de significado</strong> <br>
-                    Há um mecanismo para identificar definições específicas de palavras ou frases usadas de forma incomum ou restrita, incluindo expressões idiomáticas e jargões.
+                    <strong class="titulo-item">5.12.10 Definições de significado</strong>
+                    <span class="conteudo-item">Há um mecanismo para identificar definições específicas de palavras ou frases usadas de forma incomum ou restrita, incluindo expressões idiomáticas e jargões.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.1.3 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -2632,8 +2624,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-12-11" class="colunas col1 pt-2 pb-1">
-                    <strong>5.12.11 Siglas e abreviaturas</strong> <br>
-                    Há um mecanismo para identificar a forma expandida ou o significado das siglas e abreviaturas.
+                    <strong class="titulo-item">5.12.11 Siglas e abreviaturas</strong>
+                    <span class="conteudo-item">Há um mecanismo para identificar a forma expandida ou o significado das siglas e abreviaturas.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.1.4 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -2651,9 +2643,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-12-12" class="colunas col1 pt-2 pb-1">
-                    <strong>5.12.12 Nível de linguagem</strong> <br>
-                    Todo conteúdo de texto utiliza linguagem simples e clara; ou <br>
-                    Existe conteúdo suplementar ou uma versão alternativa simplificada para linguagem especializada ou recursos linguísticos complexos.
+                    <strong class="titulo-item">5.12.12 Nível de linguagem</strong>
+                    <span class="conteudo-item">Todo conteúdo de texto utiliza linguagem simples e clara; ou </span>
+                    <span class="conteudo-item">Existe conteúdo suplementar ou uma versão alternativa simplificada para linguagem especializada ou recursos linguísticos complexos.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.1.5 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -2671,8 +2663,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-12-13" class="colunas col1 pt-2 pb-1">
-                    <strong>5.12.13 Pronúncia identificada</strong> <br>
-                    Há um mecanismo para identificar a pronúncia específica de palavras cujo significado no contexto é ambíguo sem se conhecer a pronúncia.
+                    <strong class="titulo-item">5.12.13 Pronúncia identificada</strong>
+                    <span class="conteudo-item">Há um mecanismo para identificar a pronúncia específica de palavras cujo significado no contexto é ambíguo sem se conhecer a pronúncia.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.1.6 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -2703,8 +2695,8 @@
                 </div>
                 <fieldset>
                   <label for="item_5-13-1" class="colunas col1 pt-2 pb-1">
-                    <strong>5.13.1 Título da página</strong> <br>
-                    <p>A página possui um título único em relação às demais páginas do <span class="font-italic">site</span>, que a identifica.</p>
+                    <strong class="titulo-item">5.13.1 Título da página</strong>
+                    <span class="conteudo-item">A página possui um título único em relação às demais páginas do <span class="font-italic">site</span>, que a identifica.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.4.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2722,8 +2714,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-13-2" class="colunas col1 pt-2 pb-1">
-                    <strong>5.13.2 Idioma da página</strong> <br>
-                    A página tem seu idioma declarado de forma programaticamente determinada.
+                    <strong class="titulo-item">5.13.2 Idioma da página</strong>
+                    <span class="conteudo-item">A página tem seu idioma declarado de forma programaticamente determinada.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.1.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2741,9 +2733,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-13-3" class="colunas col1 pt-2 pb-1">
-                    <strong>5.13.3 Idioma das partes da página</strong> <br>
-                    Todas as partes da página que possuem idioma diferente do principal têm seu idioma declarado de forma programaticamente determinada; ou <br>
-                    O texto é um nome próprio, um termo técnico, uma palavra em um idioma indeterminado, ou uma palavra ou frase estrangeira que se tornou parte do vernáculo do texto que a envolve.
+                    <strong class="titulo-item">5.13.3 Idioma das partes da página</strong>
+                    <span class="conteudo-item">Todas as partes da página que possuem idioma diferente do principal têm seu idioma declarado de forma programaticamente determinada; ou </span>
+                    <span class="conteudo-item">O texto é um nome próprio, um termo técnico, uma palavra em um idioma indeterminado, ou uma palavra ou frase estrangeira que se tornou parte do vernáculo do texto que a envolve.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">3.1.2 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2761,8 +2753,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-13-4" class="colunas col1 pt-2 pb-1">
-                    <strong>5.13.4 Título do <span class="font-italic">frame</span></strong> <br>
-                    <p>Todo <span class="font-italic">frame</span> ou <span class="font-italic">iframe</span> possui um título único, que o identifica.</p>
+                    <strong class="titulo-item">5.13.4 Título do <span class="font-italic">frame</span></strong>
+                    <span class="conteudo-item">Todo <span class="font-italic">frame</span> ou <span class="font-italic">iframe</span> possui um título único, que o identifica.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A) <br> 4.1.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2780,8 +2772,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-13-5" class="colunas col1 pt-2 pb-1">
-                    <strong>5.13.5 Zoom não bloqueado</strong> <br>
-                    A página não bloqueia o recurso de zoom do agente de usuário.
+                    <strong class="titulo-item">5.13.5 Zoom não bloqueado</strong>
+                    <span class="conteudo-item">A página não bloqueia o recurso de zoom do agente de usuário.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.4 (AA) <br> 1.4.10 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2799,8 +2791,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-13-6" class="colunas col1 pt-2 pb-1">
-                    <strong>5.13.6 Ordem de leitura</strong> <br>
-                    A ordem dos elementos conforme aparecem no código é lógica e intuitiva, de modo que preserva o significado e a operabilidade.
+                    <strong class="titulo-item">5.13.6 Ordem de leitura</strong>
+                    <span class="conteudo-item">A ordem dos elementos conforme aparecem no código é lógica e intuitiva, de modo que preserva o significado e a operabilidade.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2818,9 +2810,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-13-7" class="colunas col1 pt-2 pb-1">
-                    <strong>5.13.7 Texto visível no nome acessível</strong> <br>
-                    Todos os componentes possuem nome acessível igual ao texto visível do componente ou do seu rótulo; ou <br>
-                    O nome acessível contém o texto visível, preferencialmente no início.
+                    <strong class="titulo-item">5.13.7 Texto visível no nome acessível</strong>
+                    <span class="conteudo-item">Todos os componentes possuem nome acessível igual ao texto visível do componente ou do seu rótulo; ou </span>
+                    <span class="conteudo-item">O nome acessível contém o texto visível, preferencialmente no início.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.5.3 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2838,8 +2830,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-13-8" class="colunas col1 pt-2 pb-1">
-                    <strong>5.13.8 Mensagens de status</strong> <br>
-                    Todas as mensagens de status são determinadas programaticamente, de modo que não seja necessário que os usuários de tecnologia assistiva tenham que dar foco no elemento.
+                    <strong class="titulo-item">5.13.8 Mensagens de status</strong>
+                    <span class="conteudo-item">Todas as mensagens de status são determinadas programaticamente, de modo que não seja necessário que os usuários de tecnologia assistiva tenham que dar foco no elemento.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">4.1.3 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2857,8 +2849,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-13-9" class="colunas col1 pt-2 pb-1">
-                    <strong>5.13.9 Propósito identificável</strong> <br>
-                    A finalidade dos componentes da interface do usuário, ícones e regiões pode ser determinada programaticamente.
+                    <strong class="titulo-item">5.13.9 Propósito identificável</strong>
+                    <span class="conteudo-item">A finalidade dos componentes da interface do usuário, ícones e regiões pode ser determinada programaticamente.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.6 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -2876,8 +2868,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-13-10" class="colunas col1 pt-2 pb-1">
-                    <strong>5.13.10 Componentes com nome acessível</strong> <br>
-                    Todos os componentes que requerem identificação por nome possuem um nome acessível.
+                    <strong class="titulo-item">5.13.10 Componentes com nome acessível</strong>
+                    <span class="conteudo-item">Todos os componentes que requerem identificação por nome possuem um nome acessível.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">4.1.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2895,9 +2887,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-13-11" class="colunas col1 pt-2 pb-1">
-                    <strong>5.13.11 Elementos nativos</strong> <br>
-                    Todos os componentes da página utilizam elementos nativos. <br>
-                    <small>NOTA Cumprindo o descrito neste item, cumpre-se também os itens 5.13.12, Semântica de componentes customizados, e 5.13.13, Estados, propriedades e valores de componentes customizados.</small>
+                    <strong class="titulo-item">5.13.11 Elementos nativos</strong>
+                    <span class="conteudo-item">Todos os componentes da página utilizam elementos nativos. </span>
+                    <span class="conteudo-item"><small>NOTA Cumprindo o descrito neste item, cumpre-se também os itens 5.13.12, Semântica de componentes customizados, e 5.13.13, Estados, propriedades e valores de componentes customizados.</small></span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -2915,8 +2907,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-13-12" class="colunas col1 pt-2 pb-1">
-                    <strong>5.13.12 Semântica de componentes customizados</strong> <br>
-                    Todos os componentes customizados possuem semântica, incluindo função, estados, propriedades e valores, determinada programaticamente, incluindo as alterações desses itens.
+                    <strong class="titulo-item">5.13.12 Semântica de componentes customizados</strong>
+                    <span class="conteudo-item">Todos os componentes customizados possuem semântica, incluindo função, estados, propriedades e valores, determinada programaticamente, incluindo as alterações desses itens.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.3.1 (A) <br> 4.1.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2934,8 +2926,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-13-13" class="colunas col1 pt-2 pb-1">
-                    <strong>5.13.13 Estados, propriedades e valores de componentes customizados</strong> <br>
-                    Todos os componentes de interface de usuário, cujos estados, propriedades e valores possam ser definidos pelo usuário, permitem que esses atributos sejam definidos programaticamente.
+                    <strong class="titulo-item">5.13.13 Estados, propriedades e valores de componentes customizados</strong>
+                    <span class="conteudo-item">Todos os componentes de interface de usuário, cujos estados, propriedades e valores possam ser definidos pelo usuário, permitem que esses atributos sejam definidos programaticamente.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">4.1.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2966,9 +2958,9 @@
                 </div>
                 <fieldset>
                   <label for="item_5-14-1" class="colunas col1 pt-2 pb-1">
-                    <strong>5.14.1 Alternativa em texto para áudio</strong> <br>
-                    Todo áudio pré-gravado tem uma alternativa em texto que transcreve todo o seu conteúdo; ou <br>
-                    O áudio é uma alternativa para um vídeo sem áudio ou texto equivalente e está claramente identificado como tal.
+                    <strong class="titulo-item">5.14.1 Alternativa em texto para áudio</strong>
+                    <span class="conteudo-item">Todo áudio pré-gravado tem uma alternativa em texto que transcreve todo o seu conteúdo; ou </span>
+                    <span class="conteudo-item">O áudio é uma alternativa para um vídeo sem áudio ou texto equivalente e está claramente identificado como tal.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.2.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -2986,9 +2978,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-14-2" class="colunas col1 pt-2 pb-1">
-                    <strong>5.14.2 Legendas descritivas para vídeo</strong> <br>
-                    Todo vídeo com áudio pré-gravado tem legendas descritivas disponíveis e equivalentes ao conteúdo do áudio; ou <br>
-                    O vídeo é uma alternativa para um texto equivalente e está claramente identificado como tal.
+                    <strong class="titulo-item">5.14.2 Legendas descritivas para vídeo</strong>
+                    <span class="conteudo-item">Todo vídeo com áudio pré-gravado tem legendas descritivas disponíveis e equivalentes ao conteúdo do áudio; ou </span>
+                    <span class="conteudo-item">O vídeo é uma alternativa para um texto equivalente e está claramente identificado como tal.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.2.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -3006,8 +2998,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-14-3" class="colunas col1 pt-2 pb-1">
-                    <strong>5.14.3 Transcrição para vídeo</strong> <br>
-                    Todo conteúdo em vídeo pré-gravado tem uma alternativa em texto que transcreve todo o seu conteúdo, visual e sonoro.
+                    <strong class="titulo-item">5.14.3 Transcrição para vídeo</strong>
+                    <span class="conteudo-item">Todo conteúdo em vídeo pré-gravado tem uma alternativa em texto que transcreve todo o seu conteúdo, visual e sonoro.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.2.1 (A) <br> 1.2.3 (A) <br> 1.2.8 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -3025,9 +3017,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-14-4" class="colunas col1 pt-2 pb-1">
-                    <strong>5.14.4 Audiodescrição para vídeo</strong> <br>
-                    Todos os vídeos pré-gravados têm audiodescrição para todo o conteúdo visual; ou <br>
-                    O áudio original é suficiente para a compreensão do conteúdo do vídeo sem o uso da visão.
+                    <strong class="titulo-item">5.14.4 Audiodescrição para vídeo</strong>
+                    <span class="conteudo-item">Todos os vídeos pré-gravados têm audiodescrição para todo o conteúdo visual; ou </span>
+                    <span class="conteudo-item">O áudio original é suficiente para a compreensão do conteúdo do vídeo sem o uso da visão.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.2.1 (A) <br> 1.2.3 (A) <br> 1.2.5 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -3045,8 +3037,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-14-5" class="colunas col1 pt-2 pb-1">
-                    <strong>5.14.5 Audiodescrição estendida para vídeo</strong> <br>
-                    Todo conteúdo em vídeo pré-gravado, cujas pausas não sejam suficientes para audiodescrição, tem uma versão com audiodescrição estendida para todo o vídeo.
+                    <strong class="titulo-item">5.14.5 Audiodescrição estendida para vídeo</strong>
+                    <span class="conteudo-item">Todo conteúdo em vídeo pré-gravado, cujas pausas não sejam suficientes para audiodescrição, tem uma versão com audiodescrição estendida para todo o vídeo.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.2.3 (A) <br> 1.2.5 (AA) <br> 1.2.7 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -3064,8 +3056,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-14-6" class="colunas col1 pt-2 pb-1">
-                    <strong>5.14.6 Janela de Libras para conteúdo em áudio</strong> <br>
-                    Janela de Libras está disponível em todo o conteúdo de áudio pré-gravado em mídia sincronizada.
+                    <strong class="titulo-item">5.14.6 Janela de Libras para conteúdo em áudio</strong>
+                    <span class="conteudo-item">Janela de Libras está disponível em todo o conteúdo de áudio pré-gravado em mídia sincronizada.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.2.6 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -3083,9 +3075,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-14-7" class="colunas col1 pt-2 pb-1">
-                    <strong>5.14.7 Controle de áudio</strong> <br>
-                    Não há áudio que toque automaticamente e dure mais que 3 s; ou <br>
-                    Existe um mecanismo para pausar, parar, silenciar ou ajustar o seu volume sem afetar o volume geral do sistema.
+                    <strong class="titulo-item">5.14.7 Controle de áudio</strong>
+                    <span class="conteudo-item">Não há áudio que toque automaticamente e dure mais que 3 s; ou </span>
+                    <span class="conteudo-item">Existe um mecanismo para pausar, parar, silenciar ou ajustar o seu volume sem afetar o volume geral do sistema.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -3103,12 +3095,12 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-14-8" class="colunas col1 pt-2 pb-1">
-                    <strong>5.14.8 Áudio sem ruído</strong> <br>
-                    Não há conteúdo em áudio que possua sons de fundo; ou <br>
-                    Não há conteúdo em áudio focado principalmente na fala ou no discurso, com a presença de sons de fundo que possam distrair ou interferir na compreensão do conteúdo; ou <br>
-                    O áudio é uma vocalização com intenção de expressão musical ou parte de um CAPTCHA; ou <br>
-                    Há um mecanismo para desligar os sons de fundo; ou <br>
-                    Os sons de fundo têm volume que não interferem no som principal.
+                    <strong class="titulo-item">5.14.8 Áudio sem ruído</strong>
+                    <span class="conteudo-item">Não há conteúdo em áudio que possua sons de fundo; ou </span>
+                    <span class="conteudo-item">Não há conteúdo em áudio focado principalmente na fala ou no discurso, com a presença de sons de fundo que possam distrair ou interferir na compreensão do conteúdo; ou </span>
+                    <span class="conteudo-item">O áudio é uma vocalização com intenção de expressão musical ou parte de um CAPTCHA; ou </span>
+                    <span class="conteudo-item">Há um mecanismo para desligar os sons de fundo; ou </span>
+                    <span class="conteudo-item">Os sons de fundo têm volume que não interferem no som principal.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.4.7 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -3126,8 +3118,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-14-9" class="colunas col1 pt-2 pb-1">
-                    <strong>5.14.9 Legendas para áudio e vídeo ao vivo</strong> <br>
-                    Todo conteúdo em áudio ou áudio e vídeo ao vivo tem legendas disponíveis.
+                    <strong class="titulo-item">5.14.9 Legendas para áudio e vídeo ao vivo</strong>
+                    <span class="conteudo-item">Todo conteúdo em áudio ou áudio e vídeo ao vivo tem legendas disponíveis.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.2.4 (AA)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -3145,8 +3137,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-14-10" class="colunas col1 pt-2 pb-1">
-                    <strong>5.14.10 Transcrição para áudio ao vivo</strong> <br>
-                    Existe uma transcrição para todo o conteúdo em áudio ao vivo.
+                    <strong class="titulo-item">5.14.10 Transcrição para áudio ao vivo</strong>
+                    <span class="conteudo-item">Existe uma transcrição para todo o conteúdo em áudio ao vivo.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">1.2.9 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -3177,10 +3169,10 @@
                 </div>
                 <fieldset>
                   <label for="item_5-15-1" class="colunas col1 pt-2 pb-1">
-                    <strong>5.15.1 Controle de animação</strong> <br>
-                    Não há animação que inicie automaticamente, dure mais que 5 s e seja apresentada em paralelo com outro conteúdo; ou <br>
-                    Existe um mecanismo para pausar, parar ou ocultar a animação; ou <br>
-                    A animação é essencial para a atividade.
+                    <strong class="titulo-item">5.15.1 Controle de animação</strong>
+                    <span class="conteudo-item">Não há animação que inicie automaticamente, dure mais que 5 s e seja apresentada em paralelo com outro conteúdo; ou </span>
+                    <span class="conteudo-item">Existe um mecanismo para pausar, parar ou ocultar a animação; ou </span>
+                    <span class="conteudo-item">A animação é essencial para a atividade.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.2.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -3198,10 +3190,10 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-15-2" class="colunas col1 pt-2 pb-1">
-                    <strong>5.15.2 Animações acionadas por interação</strong> <br>
-                    Não há animações de movimento acionadas pela interação do usuário; ou <br>
-                    Existe um mecanismo para desativar as animações de movimento acionadas pela interação do usuário; ou <br>
-                    A animação de movimento é essencial para a funcionalidade ou informação transmitida.
+                    <strong class="titulo-item">5.15.2 Animações acionadas por interação</strong>
+                    <span class="conteudo-item">Não há animações de movimento acionadas pela interação do usuário; ou </span>
+                    <span class="conteudo-item">Existe um mecanismo para desativar as animações de movimento acionadas pela interação do usuário; ou </span>
+                    <span class="conteudo-item">A animação de movimento é essencial para a funcionalidade ou informação transmitida.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.3.3 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -3219,10 +3211,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-15-3" class="colunas col1 pt-2 pb-1">
-                    <strong>5.15.3 <span class="font-italic">Flash</span> intermitente</strong> <br>
-                    <p>Não há conteúdo que pisque mais de três vezes em qualquer período de 1 s. <br>
-                      <small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.15.4, <span class="font-italic">Flash</span> intermitente limitado.</small>
-                    </p>
+                    <strong class="titulo-item">5.15.3 <span class="font-italic">Flash</span> intermitente</strong>
+                    <span class="conteudo-item">Não há conteúdo que pisque mais de três vezes em qualquer período de 1 s. </span>
+                    <span class="conteudo-item"><small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.15.4, <span class="font-italic">Flash</span> intermitente limitado.</small></span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.3.1 (A) <br> 2.3.2 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -3240,8 +3231,8 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-15-4" class="colunas col1 pt-2 pb-1">
-                    <strong>5.15.4 <span class="font-italic">Flash</span> intermitente limitado</strong> <br>
-                    <p>Todo conteúdo que pisca está abaixo dos limites de <span class="font-italic">flash</span> geral e <span class="font-italic">flash</span> vermelho.</p>
+                    <strong class="titulo-item">5.15.4 <span class="font-italic">Flash</span> intermitente limitado</strong>
+                    <span class="conteudo-item">Todo conteúdo que pisca está abaixo dos limites de <span class="font-italic">flash</span> geral e <span class="font-italic">flash</span> vermelho.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.3.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -3272,11 +3263,11 @@
                 </div>
                 <fieldset>
                   <label for="item_5-16-1" class="colunas col1 pt-2 pb-1">
-                    <strong>5.16.1 Limite de tempo</strong> <br>
-                    Não há evento ou atividade no conteúdo com limite de tempo; ou <br>
-                    O limite de tempo não é parte essencial do evento ou da atividade; ou <br>
-                    O conteúdo é uma mídia sincronizada não interativa ou um evento em tempo real. <br>
-                    <small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.16.2, Limite de tempo ajustável.</small>
+                    <strong class="titulo-item">5.16.1 Limite de tempo</strong>
+                    <span class="conteudo-item">Não há evento ou atividade no conteúdo com limite de tempo; ou </span>
+                    <span class="conteudo-item">O limite de tempo não é parte essencial do evento ou da atividade; ou </span>
+                    <span class="conteudo-item">O conteúdo é uma mídia sincronizada não interativa ou um evento em tempo real. </span>
+                    <span class="conteudo-item"><small>NOTA Cumprindo o descrito neste item, cumpre-se também o item 5.16.2, Limite de tempo ajustável.</small></span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.2.1 (A) <br> 2.2.3 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -3294,9 +3285,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-16-2" class="colunas col1 pt-2 pb-1">
-                    <strong>5.16.2 Limite de tempo ajustável</strong> <br>
-                    Há um mecanismo para desligar, ajustar ou estender o limite de tempo antes de atingi-lo; ou <br>
-                    O limite de tempo é intrínseco ao conteúdo, essencial ou superior a 20 h.
+                    <strong class="titulo-item">5.16.2 Limite de tempo ajustável</strong>
+                    <span class="conteudo-item">Há um mecanismo para desligar, ajustar ou estender o limite de tempo antes de atingi-lo; ou </span>
+                    <span class="conteudo-item">O limite de tempo é intrínseco ao conteúdo, essencial ou superior a 20 h.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.2.1 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -3314,10 +3305,10 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-16-3" class="colunas col1 pt-2 pb-1">
-                    <strong>5.16.3 Controle de atualização</strong> <br>
-                    Não há atualização que inicie automaticamente e seja apresentada em paralelo com outro conteúdo; ou <br>
-                    Existe um mecanismo para pausar, parar ou ocultar a atualização, ou para controlar a frequência da atualização; ou <br>
-                    A atualização é essencial para a atividade.
+                    <strong class="titulo-item">5.16.3 Controle de atualização</strong>
+                    <span class="conteudo-item">Não há atualização que inicie automaticamente e seja apresentada em paralelo com outro conteúdo; ou </span>
+                    <span class="conteudo-item">Existe um mecanismo para pausar, parar ou ocultar a atualização, ou para controlar a frequência da atualização; ou </span>
+                    <span class="conteudo-item">A atualização é essencial para a atividade.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.2.2 (A)</span>
                   <span class="classificacao badge badge-primary requisito">Requisito</span>
@@ -3335,10 +3326,10 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-16-4" class="colunas col1 pt-2 pb-1">
-                    <strong>5.16.4 Interrupções</strong> <br>
-                    Não há interrupções; ou <br>
-                    Existe um mecanismo para adiar ou bloquear as interrupções; ou <br>
-                    As interrupções envolvem uma emergência.
+                    <strong class="titulo-item">5.16.4 Interrupções</strong>
+                    <span class="conteudo-item">Não há interrupções; ou </span>
+                    <span class="conteudo-item">Existe um mecanismo para adiar ou bloquear as interrupções; ou </span>
+                    <span class="conteudo-item">As interrupções envolvem uma emergência.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.2.4 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -3356,9 +3347,9 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-16-5" class="colunas col1 pt-2 pb-1">
-                    <strong>5.16.5 Reautenticação</strong> <br>
-                    Não há perda de dados quando uma sessão autenticada expira. O usuário pode continuar a atividade sem perda de dados após a nova autenticação; ou <br>
-                    A perda de dados é essencial.
+                    <strong class="titulo-item">5.16.5 Reautenticação</strong>
+                    <span class="conteudo-item">Não há perda de dados quando uma sessão autenticada expira. O usuário pode continuar a atividade sem perda de dados após a nova autenticação; ou </span>
+                    <span class="conteudo-item">A perda de dados é essencial.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.2.1 (A) <br> 2.2.5 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -3376,10 +3367,10 @@
                 </fieldset>
                 <fieldset>
                   <label for="item_5-16-6" class="colunas col1 pt-2 pb-1">
-                    <strong>5.16.6 Tempo de inatividade</strong> <br>
-                    Não há perda de dados quando um limite de tempo de inatividade do usuário é atingido; ou <br>
-                    Há um aviso sobre o limite de tempo de inatividade do usuário antes da perda de dados; ou <br>
-                    O limite de tempo de inatividade do usuário sem perda de dados é de pelo menos 20 h.
+                    <strong class="titulo-item">5.16.6 Tempo de inatividade</strong>
+                    <span class="conteudo-item">Não há perda de dados quando um limite de tempo de inatividade do usuário é atingido; ou </span>
+                    <span class="conteudo-item">Há um aviso sobre o limite de tempo de inatividade do usuário antes da perda de dados; ou </span>
+                    <span class="conteudo-item">O limite de tempo de inatividade do usuário sem perda de dados é de pelo menos 20 h.</span>
                   </label>
                   <span class="colunas col2 align-items-center text-center">2.2.1 (A) <br> 2.2.6 (AAA)</span>
                   <span class="classificacao badge badge-secondary recomendacao">Recomendação</span>
@@ -3412,8 +3403,8 @@
               </div>
             </div>
             <div class="botoes-navegacao d-flex">
-              <a id="btn-voltar" type="button" class="btn btn-outline-primary d-flex mr-1 disabled-link" aria-disabled="true" tabindex="0"><i class="bi bi-arrow-left pr-2"></i>Voltar <span class="visualmente-oculto d-flex">para seção __________</span></a>
-              <a id="btn-continuar" type="button" class="btn btn-primary d-flex" tabindex="0">Continuar <span class="visualmente-oculto d-flex">para seção __________</span><i class="bi bi-arrow-right pl-2"></i></a>
+              <a id="btn-voltar" type="button" class="btn btn-outline-primary d-flex mr-1 disabled-link" aria-disabled="true" tabindex="0"><i class="bi bi-arrow-left pr-2"></i>Voltar <span class="visualmente-oculto d-flex"></span></a>
+              <a id="btn-continuar" type="button" class="btn btn-primary d-flex" tabindex="0">Continuar <span class="visualmente-oculto d-flex">para seção Imagens</span><i class="bi bi-arrow-right pl-2"></i></a>
             </div>
           </div>
         </div>

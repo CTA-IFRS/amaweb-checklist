@@ -94,7 +94,13 @@ document.addEventListener('DOMContentLoaded', function() {
         aplicarExibicao();
     }
 
-    let secoesFiltradas = [];
+    let secoesFiltradas = Array.from(document.querySelectorAll('input[type="checkbox"][id^="filtro_"]:checked'))
+    .map(cb => {
+        const secaoId = 'secao_' + cb.id.replace('filtro_', '');
+        return document.getElementById(secaoId);
+    })
+    .filter(Boolean);
+
     let indiceAtual = 0;
 
     function aplicarExibicao() {
@@ -214,6 +220,32 @@ document.addEventListener('DOMContentLoaded', function() {
             btnContinuar.classList.remove('disabled-link');
             btnContinuar.setAttribute('aria-disabled', 'false');
         }
+
+        const spanVoltar = btnVoltar.querySelector('span.visualmente-oculto');
+        const spanContinuar = btnContinuar.querySelector('span.visualmente-oculto');
+        
+
+        if (secoesFiltradas.length > 1) {
+            const nomeSegundaSecao = secoesFiltradas[1].querySelector('h2')?.textContent || 'próxima';
+            spanContinuar.textContent = `para seção ${nomeSegundaSecao}`;
+        } else {
+            spanContinuar.textContent = 'para seção seguinte';
+        }
+
+        if (indiceAtual > 0) {
+            const nomeSecaoVoltar = secoesFiltradas[indiceAtual - 1].querySelector('h2')?.textContent || 'anterior';
+            spanVoltar.textContent = `para seção ${nomeSecaoVoltar}`;
+            
+        } else {
+            spanVoltar.textContent = 'para seção anterior';
+        }
+
+        if (indiceAtual < secoesFiltradas.length - 1) {
+            const nomeSecaoContinuar = secoesFiltradas[indiceAtual + 1].querySelector('h2')?.textContent || 'próxima';
+            spanContinuar.textContent = `para seção ${nomeSecaoContinuar}`;
+        } else {
+            spanContinuar.textContent = 'para seção seguinte';
+        }
     }
 
     btnVoltar.addEventListener('click', voltarSecao);
@@ -320,6 +352,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     atualizarExibirTudoCheckbox();
 
+    let testeAltoContraste = false;
+    const body = document.body;
+
     window.addEventListener('beforeprint', () => {
         
         container.querySelectorAll('textarea').forEach(textarea => {
@@ -379,6 +414,11 @@ document.addEventListener('DOMContentLoaded', function() {
             pSecoesAnalisadas.textContent = titulos.join(', ');
             pSecoesAnalisadas.innerHTML = '<strong>Seções analisadas: </strong> ' + titulos.join(', ');
         }
+
+        if (body.classList.contains("alto-contraste")) {
+            testeAltoContraste = true;
+            body.classList.remove("alto-contraste");
+        }
     });
 
     window.addEventListener('afterprint', () => {
@@ -404,6 +444,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const pSecoesAnalisadas = document.getElementById('secoes_analisadas');
         if (pSecoesAnalisadas) {
             pSecoesAnalisadas.textContent = '';
+        }
+
+        if (testeAltoContraste) {
+            document.body.classList.add("alto-contraste");
+            testeAltoContraste = false;
         }
     });
     

@@ -95,13 +95,19 @@
     font-size: 20px;
     padding-bottom: 12px;
 }
-#navegacaoDiretrizes .nav-title:not(#navegacaoDiretrizes .nav-link:hover .nav-title, #navegacaoDiretrizes .nav-link.active .nav-title, #navegacaoDiretrizes .nav-link:focus .nav-title) {
-    display: inline;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    padding: 0;
-    margin: 0;
+@media (min-width: 992px) {
+    #navegacaoDiretrizes .nav-title:not(#navegacaoDiretrizes .nav-link:hover .nav-title, #navegacaoDiretrizes .nav-link.active .nav-title, #navegacaoDiretrizes .nav-link:focus .nav-title) {
+        display: inline;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+    }
+    #form-exibir-como {
+        position: absolute;
+        right: 0;
+    }
 }
 #navegacaoDiretrizes .nav-link {
     color: #5F7686;
@@ -434,9 +440,6 @@
 #secoes_checklist textarea {
     min-height: 90px;
 }
-#form-exibir-como {
-    right: 0;
-}
 .visualmente-oculto {
     width: 0;
     height: 0;
@@ -448,4 +451,75 @@
     opacity: 70%;
     pointer-events: none;
     cursor: default;
+}
+.alto-contraste #checklist.bg-white {
+    background-color: #000000 !important;
+}
+.alto-contraste #navegacaoDiretrizes .navbar-nav .nav-link.active,
+.alto-contraste #secoes_checklist h2 {
+    border-bottom: 3px solid #ffffff;
+}
+.alto-contraste #navegacaoDiretrizes .nav-link {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+.alto-contraste #checklist .tabela .titulos strong,
+.alto-contraste #checklist .tabela label {
+    color: #ffffff !important;
+}
+.alto-contraste #checklist .tabela fieldset {
+    background-color: #111111;
+    border: 2px solid #111111;
+}
+.alto-contraste #confirmModal .modal-content {
+    background: #000000;
+}
+.alto-contraste #confirmModal h3,
+.alto-contraste #filtros-title,
+.alto-contraste #filtros legend,
+.alto-contraste #secoes_checklist h2 {
+    color: #ffffff !important;
+}
+.alto-contraste .btn-close {
+    background-color: #ffffff !important;
+}
+.alto-contraste #filtros {
+    background-color: #111111;
+}
+.mobile_only {
+    display: none;
+}
+@media screen and (max-width: 992px) {
+    #navegacaoDiretrizes #navbarNav {
+        width: unset !important;
+        position: unset !important;
+    }
+    #navegacaoDiretrizes {
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+    #exibir-como-label {
+        width: 165px;
+    }
+    #exibir-como-select {
+        width: 100% !important;
+    }
+    #filtros fieldset:nth-child(2) {
+        border-left: 0;
+        padding-left: 12px;
+        padding-top: 20px !important;
+    }
+    .mobile_only {
+        display: block !important;
+    }
+    #checklist .tabela fieldset {
+        grid-template-columns: 2fr 3fr;
+    }
+    #checklist .tabela .colunas:first-child {
+        padding-right: 0;
+        border-right: 0;
+    }
+    #checklist .tabela label.colunas {
+        grid-column: span 2;
+    }
 }
