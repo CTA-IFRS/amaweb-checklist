@@ -518,6 +518,15 @@
     #checklist .tabela fieldset {
         grid-template-columns: 2fr 3fr;
     }
+    #checklist form .titulos{
+        font-size: 0;
+        width: 0;
+        height: 0;
+        text-indent: -20000px;
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
     #checklist .tabela .colunas:first-child {
         padding-right: 0 !important;
         border-right: 0 !important;
