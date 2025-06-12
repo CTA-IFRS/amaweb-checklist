@@ -40,6 +40,11 @@
     background-color: #111111 !important;
 }
 
+.alto-contraste #footer img{
+    background-color: #fff !important;
+    padding: 2px !important;
+}
+
 .alto-contraste nav {
     border-bottom: 1px solid #ffffff;
 }
@@ -49,13 +54,25 @@
     color: #ffffff !important;
 }
 
+.alto-contraste #dropdown{
+    background-color: #111111 !important;
+    border: 1px solid #fff;
+}
+
 .alto-contraste footer {
     border-top: 1px solid #ffffff;
 }
 
 .alto-contraste nav a {
     border-color: #ffffff;
-    margin: 0 2px;
+/*    margin: 0 2px;*/
+}
+
+.alto-contraste .dropdown-item:hover,
+.alto-contraste .dropdown-item:focus{
+    background-color: #111111 !important;
+    border-left: solid 4px #fff !important;
+    padding-left: 12px !important;
 }
 
 .alto-contraste .btn,
